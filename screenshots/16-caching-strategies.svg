@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 676" width="900" height="676" role="img">
+<title>Four Caching Strategies Compared</title>
+<desc>Four mini sequence diagrams (cache-aside, read-through, write-through, write-behind) with consistency, latency and risk notes.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="675" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">Four Caching Strategies Compared</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Who talks to the database: the application itself, or the cache layer in front of it?</text>
+<rect x="24" y="84" width="420" height="268" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="112" font-size="15" fill="#1e3a8a" font-weight="bold">1. Cache-aside (lazy loading)</text>
+<rect x="40" y="124" width="112" height="28" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="96" y="142.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="96" dy="0" font-weight="bold">App / API</tspan></text>
+<line x1="96" y1="152" x2="96" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="180" y="124" width="112" height="28" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="236" y="142.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="236" dy="0" font-weight="bold">Cache (Redis)</tspan></text>
+<line x1="236" y1="152" x2="236" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="320" y="124" width="112" height="28" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="376" y="142.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="376" dy="0" font-weight="bold">Database</tspan></text>
+<line x1="376" y1="152" x2="376" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<polyline points="96,178 236,178" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="113" cy="178" r="11" fill="#2563eb"/>
+<text x="113" y="182.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="180" y="170" font-size="13" fill="#334155" text-anchor="middle">get(key)</text>
+<polyline points="236,205 96,205" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_blue)"/>
+<circle cx="219" cy="205" r="11" fill="#2563eb"/>
+<text x="219" y="209.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="152" y="197" font-size="13" fill="#334155" text-anchor="middle">miss</text>
+<polyline points="96,232 376,232" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="113" cy="232" r="11" fill="#2563eb"/>
+<text x="113" y="236.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="164" y="224" font-size="13" fill="#334155" text-anchor="middle">SELECT row</text>
+<polyline points="96,259 236,259" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="113" cy="259" r="11" fill="#2563eb"/>
+<text x="113" y="263.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="180" y="251" font-size="13" fill="#334155" text-anchor="middle">set(key, ttl)</text>
+<line x1="40" y1="280" x2="428" y2="280" stroke="#2563eb" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="40" y="300" font-size="13" fill="#1e3a8a" font-weight="bold">Consistency</text>
+<text x="124" y="300" font-size="13" fill="#1f2937">stale until TTL or invalidated</text>
+<text x="40" y="319" font-size="13" fill="#1e3a8a" font-weight="bold">Latency</text>
+<text x="124" y="319" font-size="13" fill="#1f2937">hit ~1 ms; miss pays DB + cache write</text>
+<text x="40" y="338" font-size="13" fill="#1e3a8a" font-weight="bold">Risk</text>
+<text x="124" y="338" font-size="13" fill="#1f2937">stampede; every writer must invalidate</text>
+<rect x="456" y="84" width="420" height="268" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="472" y="112" font-size="15" fill="#134e4a" font-weight="bold">2. Read-through</text>
+<rect x="472" y="124" width="112" height="28" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="528" y="142.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="528" dy="0" font-weight="bold">App / API</tspan></text>
+<line x1="528" y1="152" x2="528" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="612" y="124" width="112" height="28" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="668" y="142.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="668" dy="0" font-weight="bold">Cache (Redis)</tspan></text>
+<line x1="668" y1="152" x2="668" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="752" y="124" width="112" height="28" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="808" y="142.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="808" dy="0" font-weight="bold">Database</tspan></text>
+<line x1="808" y1="152" x2="808" y2="270" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<polyline points="528,178 668,178" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_teal)"/>
+<circle cx="545" cy="178" r="11" fill="#0f766e"/>
+<text x="545" y="182.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="612" y="170" font-size="13" fill="#334155" text-anchor="middle">get(key)</text>
+<polyline points="668,205 808,205" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_teal)"/>
+<circle cx="685" cy="205" r="11" fill="#0f766e"/>
+<text x="685" y="209.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="752" y="197" font-size="13" fill="#334155" text-anchor="middle">load on miss</text>
+<polyline points="808,232 668,232" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_teal)"/>
+<circle cx="791" cy="232" r="11" fill="#0f766e"/>
+<text x="791" y="236.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="724" y="224" font-size="13" fill="#334155" text-anchor="middle">row</text>
+<polyline points="668,259 528,259" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_teal)"/>
+<circle cx="651" cy="259" r="11" fill="#0f766e"/>
+<text x="651" y="263.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="584" y="251" font-size="13" fill="#334155" text-anchor="middle">value</text>
+<line x1="472" y1="280" x2="860" y2="280" stroke="#0d9488" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="472" y="300" font-size="13" fill="#134e4a" font-weight="bold">Consistency</text>
+<text x="556" y="300" font-size="13" fill="#1f2937">stale until TTL, like cache-aside</text>
+<text x="472" y="319" font-size="13" fill="#134e4a" font-weight="bold">Latency</text>
+<text x="556" y="319" font-size="13" fill="#1f2937">first read pays the DB load</text>
+<text x="472" y="338" font-size="13" fill="#134e4a" font-weight="bold">Risk</text>
+<text x="556" y="338" font-size="13" fill="#1f2937">needs a loader-capable cache (HybridCache)</text>
+<rect x="24" y="364" width="420" height="268" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="40" y="392" font-size="15" fill="#14532d" font-weight="bold">3. Write-through</text>
+<rect x="40" y="404" width="112" height="28" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="96" y="422.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="96" dy="0" font-weight="bold">App / API</tspan></text>
+<line x1="96" y1="432" x2="96" y2="550" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="180" y="404" width="112" height="28" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="236" y="422.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="236" dy="0" font-weight="bold">Cache (Redis)</tspan></text>
+<line x1="236" y1="432" x2="236" y2="550" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="320" y="404" width="112" height="28" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="376" y="422.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="376" dy="0" font-weight="bold">Database</tspan></text>
+<line x1="376" y1="432" x2="376" y2="550" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<polyline points="96,458 236,458" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<circle cx="113" cy="458" r="11" fill="#15803d"/>
+<text x="113" y="462.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="180" y="450" font-size="13" fill="#334155" text-anchor="middle">write(key, v)</text>
+<polyline points="236,485 376,485" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<circle cx="253" cy="485" r="11" fill="#15803d"/>
+<text x="253" y="489.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="320" y="477" font-size="13" fill="#334155" text-anchor="middle">write sync</text>
+<polyline points="376,512 236,512" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_green)"/>
+<circle cx="359" cy="512" r="11" fill="#15803d"/>
+<text x="359" y="516.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="292" y="504" font-size="13" fill="#334155" text-anchor="middle">ack</text>
+<polyline points="236,539 96,539" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_green)"/>
+<circle cx="219" cy="539" r="11" fill="#15803d"/>
+<text x="219" y="543.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="152" y="531" font-size="13" fill="#334155" text-anchor="middle">ok</text>
+<line x1="40" y1="560" x2="428" y2="560" stroke="#16a34a" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="40" y="580" font-size="13" fill="#14532d" font-weight="bold">Consistency</text>
+<text x="124" y="580" font-size="13" fill="#1f2937">strong: cache and DB written together</text>
+<text x="40" y="599" font-size="13" fill="#14532d" font-weight="bold">Latency</text>
+<text x="124" y="599" font-size="13" fill="#1f2937">slower writes, two stores in the path</text>
+<text x="40" y="618" font-size="13" fill="#14532d" font-weight="bold">Risk</text>
+<text x="124" y="618" font-size="13" fill="#1f2937">caches data that may never be read</text>
+<rect x="456" y="364" width="420" height="268" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="472" y="392" font-size="15" fill="#78350f" font-weight="bold">4. Write-behind (write-back)</text>
+<rect x="472" y="404" width="112" height="28" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="528" y="422.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="528" dy="0" font-weight="bold">App / API</tspan></text>
+<line x1="528" y1="432" x2="528" y2="550" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="612" y="404" width="112" height="28" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="668" y="422.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="668" dy="0" font-weight="bold">Cache (Redis)</tspan></text>
+<line x1="668" y1="432" x2="668" y2="550" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<rect x="752" y="404" width="112" height="28" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="808" y="422.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="808" dy="0" font-weight="bold">Database</tspan></text>
+<line x1="808" y1="432" x2="808" y2="550" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 4"/>
+<polyline points="528,458 668,458" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="545" cy="458" r="11" fill="#b45309"/>
+<text x="545" y="462.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="612" y="450" font-size="13" fill="#334155" text-anchor="middle">write(key, v)</text>
+<polyline points="668,485 528,485" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_amber)"/>
+<circle cx="651" cy="485" r="11" fill="#b45309"/>
+<text x="651" y="489.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="584" y="477" font-size="13" fill="#334155" text-anchor="middle">ok (fast)</text>
+<polyline points="668,512 808,512" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="685" cy="512" r="11" fill="#b45309"/>
+<text x="685" y="516.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="752" y="504" font-size="13" fill="#334155" text-anchor="middle">async flush</text>
+<line x1="472" y1="560" x2="860" y2="560" stroke="#d97706" stroke-width="1" stroke-dasharray="2 3"/>
+<text x="472" y="580" font-size="13" fill="#78350f" font-weight="bold">Consistency</text>
+<text x="556" y="580" font-size="13" fill="#1f2937">eventual: DB lags behind the cache</text>
+<text x="472" y="599" font-size="13" fill="#78350f" font-weight="bold">Latency</text>
+<text x="556" y="599" font-size="13" fill="#1f2937">fastest writes; DB writes are batched</text>
+<text x="472" y="618" font-size="13" fill="#78350f" font-weight="bold">Risk</text>
+<text x="556" y="618" font-size="13" fill="#1f2937">data loss if the cache dies before flush</text>
+<text x="32" y="660" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: cache-aside is the default; write-through buys consistency, write-behind buys speed but risks durability.</text>
+</g>
+</svg>

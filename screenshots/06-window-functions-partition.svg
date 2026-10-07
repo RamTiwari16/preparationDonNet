@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 572" width="900" height="572" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>Window Functions with PARTITION BY</title>
+<desc>An Employees table split into per-department windows showing ROW_NUMBER, RANK and DENSE_RANK tie behaviour, LAG and LEAD reading neighbouring rows, and a running-total frame.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="571" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">Window Functions with PARTITION BY</text>
+<text x="24" y="64" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve">every column below: fn() OVER (PARTITION BY Dept ORDER BY Salary DESC)</text>
+<text x="24" y="84" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve">SUM(Salary) OVER (... ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW)</text>
+<rect x="24" y="100" width="736" height="44" rx="6" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="50.0" y="127" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">Dept</text>
+<text x="106.0" y="127" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">Name</text>
+<text x="171.0" y="119" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">LEAD</text>
+<text x="171.0" y="136" font-size="13" fill="#475569" text-anchor="middle">next row</text>
+<text x="273.0" y="127" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">Salary</text>
+<text x="375.0" y="119" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">LAG</text>
+<text x="375.0" y="136" font-size="13" fill="#475569" text-anchor="middle">prev row</text>
+<text x="458.0" y="119" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">ROW_NUMBER</text>
+<text x="458.0" y="136" font-size="13" fill="#475569" text-anchor="middle">1, 2, 3</text>
+<text x="538.0" y="119" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">RANK</text>
+<text x="538.0" y="136" font-size="13" fill="#475569" text-anchor="middle">1, 1, 3</text>
+<text x="620.0" y="119" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">DENSE_RANK</text>
+<text x="620.0" y="136" font-size="13" fill="#475569" text-anchor="middle">1, 1, 2</text>
+<text x="715.0" y="119" font-size="13" fill="#0f172a" text-anchor="middle" font-weight="700">SUM</text>
+<text x="715.0" y="136" font-size="13" fill="#475569" text-anchor="middle">running</text>
+<rect x="24" y="148" width="736" height="120" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<line x1="76" y1="178" x2="760" y2="178" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="76" y1="208" x2="760" y2="208" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="76" y1="238" x2="760" y2="238" stroke="#cbd5e1" stroke-width="1"/>
+<text x="50" y="206.0" font-size="15" fill="#1d4ed8" text-anchor="middle" font-weight="700">IT</text>
+<text x="50" y="223.0" font-size="13" fill="#475569" text-anchor="middle">window</text>
+<rect x="414" y="152" width="88" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<rect x="510" y="152" width="56" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<rect x="574" y="152" width="92" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<text x="106.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle">Ann</text>
+<text x="171.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle">9000</text>
+<text x="273.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">9000</text>
+<text x="375.0" y="168" font-size="14" fill="#475569" text-anchor="middle" font-style="italic">NULL</text>
+<text x="458.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="538.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="620.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="715.0" y="168" font-size="14" fill="#1f2937" text-anchor="middle">9000</text>
+<rect x="414" y="182" width="88" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<rect x="510" y="182" width="56" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<rect x="574" y="182" width="92" height="22" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+<text x="106.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">Bob</text>
+<text x="171.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">7000</text>
+<text x="273.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">9000</text>
+<text x="375.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">9000</text>
+<text x="458.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">2</text>
+<text x="538.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="620.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="715.0" y="198" font-size="14" fill="#1f2937" text-anchor="middle">18000</text>
+<line x1="308" y1="166" x2="338" y2="192" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrP)"/>
+<line x1="238" y1="192" x2="208" y2="166" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrT)"/>
+<rect x="674" y="212" width="82" height="22" rx="4" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+<text x="106.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">Cy</text>
+<text x="171.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">6000</text>
+<text x="273.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">7000</text>
+<text x="375.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">9000</text>
+<text x="458.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">3</text>
+<text x="538.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">3</text>
+<text x="620.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">2</text>
+<text x="715.0" y="228" font-size="14" fill="#1f2937" text-anchor="middle">25000</text>
+<line x1="308" y1="196" x2="338" y2="222" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrP)"/>
+<line x1="238" y1="222" x2="208" y2="196" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrT)"/>
+<text x="106.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle">Dan</text>
+<text x="171.0" y="258" font-size="14" fill="#475569" text-anchor="middle" font-style="italic">NULL</text>
+<text x="273.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">6000</text>
+<text x="375.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle">7000</text>
+<text x="458.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle">4</text>
+<text x="538.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle">4</text>
+<text x="620.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle">3</text>
+<text x="715.0" y="258" font-size="14" fill="#1f2937" text-anchor="middle">31000</text>
+<line x1="308" y1="226" x2="338" y2="252" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrP)"/>
+<line x1="238" y1="252" x2="208" y2="226" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrT)"/>
+<rect x="24" y="280" width="736" height="90" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<line x1="76" y1="310" x2="760" y2="310" stroke="#cbd5e1" stroke-width="1"/>
+<line x1="76" y1="340" x2="760" y2="340" stroke="#cbd5e1" stroke-width="1"/>
+<text x="50" y="323.0" font-size="15" fill="#15803d" text-anchor="middle" font-weight="700">HR</text>
+<text x="50" y="340.0" font-size="13" fill="#475569" text-anchor="middle">window</text>
+<text x="106.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle">Eve</text>
+<text x="171.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle">6000</text>
+<text x="273.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">8000</text>
+<text x="375.0" y="300" font-size="14" fill="#475569" text-anchor="middle" font-style="italic">NULL</text>
+<text x="458.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="538.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="620.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle">1</text>
+<text x="715.0" y="300" font-size="14" fill="#1f2937" text-anchor="middle">8000</text>
+<text x="106.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">Fay</text>
+<text x="171.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">5000</text>
+<text x="273.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">6000</text>
+<text x="375.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">8000</text>
+<text x="458.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">2</text>
+<text x="538.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">2</text>
+<text x="620.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">2</text>
+<text x="715.0" y="330" font-size="14" fill="#1f2937" text-anchor="middle">14000</text>
+<line x1="308" y1="298" x2="338" y2="324" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrP)"/>
+<line x1="238" y1="324" x2="208" y2="298" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrT)"/>
+<text x="106.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle">Gus</text>
+<text x="171.0" y="360" font-size="14" fill="#475569" text-anchor="middle" font-style="italic">NULL</text>
+<text x="273.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">5000</text>
+<text x="375.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle">6000</text>
+<text x="458.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle">3</text>
+<text x="538.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle">3</text>
+<text x="620.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle">3</text>
+<text x="715.0" y="360" font-size="14" fill="#1f2937" text-anchor="middle">19000</text>
+<line x1="308" y1="328" x2="338" y2="354" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrP)"/>
+<line x1="238" y1="354" x2="208" y2="328" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arrT)"/>
+<path d="M764,151 h8 v84 h-8" fill="none" stroke="#7c3aed" stroke-width="2"/>
+<text x="780" y="170" font-size="13" fill="#6d28d9"><tspan x="780" dy="0">frame at Cy:</tspan><tspan x="780" dy="17">rows 1..3 =</tspan><tspan x="780" dy="17">9000 + 9000</tspan><tspan x="780" dy="17">+ 7000</tspan></text>
+<text x="780" y="244" font-size="13" fill="#6d28d9" font-weight="700">= 25000</text>
+<rect x="24" y="386" width="276" height="132" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="38" y="410" font-size="14" fill="#b45309" font-weight="700">Ties (Ann = Bob = 9000)</text>
+<text x="38" y="434" font-size="13" fill="#1f2937"><tspan x="38" dy="0">ROW_NUMBER: always unique; the tie</tspan><tspan x="38" dy="19">order is arbitrary, so add a tiebreaker.</tspan><tspan x="38" dy="19">RANK: ties share, then a gap (1, 1, 3).</tspan><tspan x="38" dy="19">DENSE_RANK: no gap (1, 1, 2).</tspan></text>
+<rect x="312" y="386" width="276" height="132" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="326" y="410" font-size="14" fill="#0f766e" font-weight="700">LAG / LEAD</text>
+<text x="326" y="434" font-size="13" fill="#1f2937"><tspan x="326" dy="0">Read the previous / next row of the</tspan><tspan x="326" dy="19">same window (the arrows). NULL at</tspan><tspan x="326" dy="19">the edges unless you pass a default:</tspan><tspan x="326" dy="19">LAG(Salary, 1, 0). Never crosses windows.</tspan></text>
+<rect x="600" y="386" width="276" height="132" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="614" y="410" font-size="14" fill="#6d28d9" font-weight="700">Frame gotcha</text>
+<text x="614" y="434" font-size="13" fill="#1f2937"><tspan x="614" dy="0">With ORDER BY the default frame is</tspan><tspan x="614" dy="19">RANGE ... CURRENT ROW: tied rows share</tspan><tspan x="614" dy="19">a total (Ann and Bob would both get</tspan><tspan x="614" dy="19">18000). Say ROWS for a true running sum.</tspan></text>
+<text x="24" y="552" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">PARTITION BY restarts the numbering per group (unlike GROUP BY, rows are kept); ORDER BY and the frame decide the rest.</tspan></text>
+</svg>

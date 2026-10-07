@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 712" width="900" height="712" role="img">
+<title>Parking Lot Class Diagram</title>
+<desc>UML class diagram of a parking lot: ParkingLot, Level and ParkingSpot hierarchy, Vehicle hierarchy, Ticket, Payment and a pricing strategy interface.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="711" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">Parking Lot Class Diagram</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Composition down the structure, inheritance for spot and vehicle types, Strategy for pricing.</text>
+<rect x="24" y="84" width="200" height="102" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<path d="M24,112 V90 Q24,84 30,84 H218 Q224,84 224,90 V112 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="124" y="104" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">ParkingLot</text>
+<line x1="24" y1="140" x2="224" y2="140" stroke="#2563eb" stroke-width="1.2"/>
+<text x="34" y="130" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- levels: List&lt;Level&gt;</text>
+<text x="34" y="158" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Park(Vehicle): Ticket</text>
+<text x="34" y="176" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Exit(Ticket): Payment</text>
+<rect x="350" y="84" width="200" height="102" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<path d="M350,112 V90 Q350,84 356,84 H544 Q550,84 550,90 V112 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450" y="104" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">Level</text>
+<line x1="350" y1="158" x2="550" y2="158" stroke="#2563eb" stroke-width="1.2"/>
+<text x="360" y="130" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- floor: int</text>
+<text x="360" y="148" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- spots: ParkingSpot[]</text>
+<text x="360" y="176" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ FindSpot(Vehicle)</text>
+<rect x="676" y="84" width="200" height="154" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<path d="M676,128 V90 Q676,84 682,84 H870 Q876,84 876,90 V128 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="776" y="101" font-size="13" fill="#134e4a" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+<text x="776" y="120" font-size="14" fill="#134e4a" text-anchor="middle" font-weight="bold" font-style="italic">ParkingSpot</text>
+<line x1="676" y1="174" x2="876" y2="174" stroke="#0d9488" stroke-width="1.2"/>
+<text x="686" y="146" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- id: string</text>
+<text x="686" y="164" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- vehicle: Vehicle</text>
+<text x="686" y="192" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ CanFit(Vehicle): bool</text>
+<text x="686" y="210" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Assign(Vehicle)</text>
+<text x="686" y="228" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Release()</text>
+<polyline points="242.0,136.0 350.0,136.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="224,136 233.0,142.5 242.0,136.0 233.0,129.5" fill="#475569" stroke="#475569" stroke-width="1.6"/>
+<text x="246" y="128" font-size="13" fill="#334155">1</text>
+<text x="344" y="128" font-size="13" fill="#334155" text-anchor="end">1..*</text>
+<polyline points="568.0,136.0 676.0,136.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round"/>
+<polygon points="550,136 559.0,142.5 568.0,136.0 559.0,129.5" fill="#475569" stroke="#475569" stroke-width="1.6"/>
+<text x="572" y="128" font-size="13" fill="#334155">1</text>
+<text x="670" y="128" font-size="13" fill="#334155" text-anchor="end">1..*</text>
+<rect x="24" y="244" width="200" height="138" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<path d="M24,272 V250 Q24,244 30,244 H218 Q224,244 224,250 V272 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="124" y="264" font-size="14" fill="#78350f" text-anchor="middle" font-weight="bold">Ticket</text>
+<line x1="24" y1="354" x2="224" y2="354" stroke="#d97706" stroke-width="1.2"/>
+<text x="34" y="290" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- id: Guid</text>
+<text x="34" y="308" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- vehicle: Vehicle</text>
+<text x="34" y="326" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- spot: ParkingSpot</text>
+<text x="34" y="344" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- entryTime: DateTime</text>
+<text x="34" y="372" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Duration(): TimeSpan</text>
+<polyline points="124.0,188.0 124.0,244.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="118.0,233.0 124,244 130.0,233.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<text x="136" y="220" font-size="13" fill="#334155">issues</text>
+<rect x="350" y="244" width="200" height="100" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<path d="M350,288 V250 Q350,244 356,244 H544 Q550,244 550,250 V288 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="450" y="261" font-size="13" fill="#4c1d95" text-anchor="middle">&lt;&lt;abstract&gt;&gt;</text>
+<text x="450" y="280" font-size="14" fill="#4c1d95" text-anchor="middle" font-weight="bold" font-style="italic">Vehicle</text>
+<line x1="350" y1="316" x2="550" y2="316" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="360" y="306" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- plate: string</text>
+<text x="360" y="334" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Type: VehicleType</text>
+<polyline points="224.0,292.0 350.0,292.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="339.0,298.0 350,292 339.0,286.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<text x="287" y="284" font-size="13" fill="#334155" text-anchor="middle">vehicle</text>
+<polyline points="194.0,244.0 194.0,214.0 676.0,214.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="665.0,220.0 676,214 665.0,208.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<rect x="537.65" y="197.95" width="30.7" height="15.6" rx="3" fill="#ffffff"/>
+<text x="553" y="209" font-size="13" fill="#334155" text-anchor="middle">spot</text>
+<polygon points="692,234 684,249 700,249" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<line x1="692" y1="249" x2="692" y2="413" stroke="#475569" stroke-width="1.6"/>
+<line x1="692" y1="293" x2="708" y2="293" stroke="#475569" stroke-width="1.6"/>
+<line x1="692" y1="353" x2="708" y2="353" stroke="#475569" stroke-width="1.6"/>
+<line x1="692" y1="413" x2="708" y2="413" stroke="#475569" stroke-width="1.6"/>
+<rect x="708" y="266" width="168" height="56" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<path d="M708,294 V272 Q708,266 714,266 H870 Q876,266 876,272 V294 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="792" y="286" font-size="14" fill="#134e4a" text-anchor="middle" font-weight="bold">CompactSpot</text>
+<text x="718" y="312" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ CanFit(Vehicle)</text>
+<rect x="708" y="326" width="168" height="56" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<path d="M708,354 V332 Q708,326 714,326 H870 Q876,326 876,332 V354 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="792" y="346" font-size="14" fill="#134e4a" text-anchor="middle" font-weight="bold">LargeSpot</text>
+<text x="718" y="372" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ CanFit(Vehicle)</text>
+<rect x="708" y="386" width="168" height="56" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<path d="M708,414 V392 Q708,386 714,386 H870 Q876,386 876,392 V414 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="792" y="406" font-size="14" fill="#134e4a" text-anchor="middle" font-weight="bold">HandicappedSpot</text>
+<text x="718" y="432" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ CanFit(Vehicle)</text>
+<polygon points="366,340 358,355 374,355" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<line x1="366" y1="355" x2="366" y2="519" stroke="#475569" stroke-width="1.6"/>
+<line x1="366" y1="399" x2="382" y2="399" stroke="#475569" stroke-width="1.6"/>
+<line x1="366" y1="459" x2="382" y2="459" stroke="#475569" stroke-width="1.6"/>
+<line x1="366" y1="519" x2="382" y2="519" stroke="#475569" stroke-width="1.6"/>
+<rect x="382" y="372" width="168" height="56" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<path d="M382,400 V378 Q382,372 388,372 H544 Q550,372 550,378 V400 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="466" y="392" font-size="14" fill="#4c1d95" text-anchor="middle" font-weight="bold">Car</text>
+<text x="392" y="418" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Type =&gt; Car</text>
+<rect x="382" y="432" width="168" height="56" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<path d="M382,460 V438 Q382,432 388,432 H544 Q550,432 550,438 V460 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="466" y="452" font-size="14" fill="#4c1d95" text-anchor="middle" font-weight="bold">Bike</text>
+<text x="392" y="478" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Type =&gt; Bike</text>
+<rect x="382" y="492" width="168" height="56" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<path d="M382,520 V498 Q382,492 388,492 H544 Q550,492 550,498 V520 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="466" y="512" font-size="14" fill="#4c1d95" text-anchor="middle" font-weight="bold">Truck</text>
+<text x="392" y="538" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Type =&gt; Truck</text>
+<rect x="584" y="460" width="292" height="86" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="598" y="482.18" font-size="13" fill="#1f2937"><tspan x="598" dy="0" font-weight="bold">Design notes</tspan><tspan x="598" dy="17">- Strategy: swap pricing freely</tspan><tspan x="598" dy="17">- CanFit() overridden per spot type</tspan><tspan x="598" dy="17">- Ticket binds one Vehicle to one Spot</tspan></text>
+<rect x="24" y="566" width="200" height="102" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<path d="M24,594 V572 Q24,566 30,566 H218 Q224,566 224,572 V594 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="124" y="586" font-size="14" fill="#78350f" text-anchor="middle" font-weight="bold">Payment</text>
+<line x1="24" y1="640" x2="224" y2="640" stroke="#d97706" stroke-width="1.2"/>
+<text x="34" y="612" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- ticket: Ticket</text>
+<text x="34" y="630" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">- amount: decimal</text>
+<text x="34" y="658" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Process(): bool</text>
+<rect x="350" y="566" width="200" height="98" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M350,610 V572 Q350,566 356,566 H544 Q550,566 550,572 V610 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="450" y="583" font-size="13" fill="#14532d" text-anchor="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="450" y="602" font-size="14" fill="#14532d" text-anchor="middle" font-weight="bold">IPricingStrategy</text>
+<line x1="350" y1="620" x2="550" y2="620" stroke="#16a34a" stroke-width="1.2"/>
+<text x="360" y="638" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Fee(Ticket): decimal</text>
+<rect x="676" y="566" width="200" height="98" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M676,594 V572 Q676,566 682,566 H870 Q876,566 876,572 V594 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="776" y="586" font-size="14" fill="#14532d" text-anchor="middle" font-weight="bold">HourlyPricing</text>
+<line x1="676" y1="604" x2="876" y2="604" stroke="#16a34a" stroke-width="1.2"/>
+<text x="686" y="622" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">+ Fee(Ticket): decimal</text>
+<polyline points="124.0,566.0 124.0,378.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round"/>
+<polyline points="130.0,389.0 124,378 118.0,389.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<text x="136" y="476" font-size="13" fill="#334155">pays for</text>
+<polyline points="224.0,615.0 350.0,615.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polyline points="339.0,621.0 350,615 339.0,609.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<text x="287" y="607" font-size="13" fill="#334155" text-anchor="middle">uses</text>
+<polyline points="676.0,615.0 565.0,615.0" fill="none" stroke="#475569" stroke-width="1.6" stroke-linejoin="round" stroke-dasharray="6 4"/>
+<polygon points="550,615 565.0,607.0 565.0,623.0" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<text x="613" y="607" font-size="13" fill="#334155" text-anchor="middle">implements</text>
+<text x="32" y="696" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: model variation with polymorphism (spots, vehicles) and Strategy (pricing); composition shows ownership.</text>
+</g>
+</svg>

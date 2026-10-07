@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 648" width="900" height="648" role="img">
+<title>Scalable Web Architecture Building Blocks</title>
+<desc>A generic scalable web architecture: DNS, CDN, load balancer, stateless app servers, cache, primary DB with replicas, queue with workers, object storage and monitoring.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="647" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">Scalable Web Architecture Building Blocks</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Numbers trace one request from the browser to the data tier; the queue path handles slow work asynchronously.</text>
+<rect x="24" y="92" width="120" height="56" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="84" y="116.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="84" dy="0" font-weight="bold">Client</tspan><tspan x="84" dy="17">browser / mobile</tspan></text>
+<rect x="192" y="92" width="120" height="56" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="252" y="116.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="252" dy="0" font-weight="bold">DNS</tspan><tspan x="252" dy="17">name to IP</tspan></text>
+<rect x="368" y="92" width="128" height="56" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="432" y="116.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="432" dy="0" font-weight="bold">CDN</tspan><tspan x="432" dy="17">static at the edge</tspan></text>
+<rect x="552" y="92" width="168" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="636" y="116.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="636" dy="0" font-weight="bold">Load balancer</tspan><tspan x="636" dy="17">TLS + health checks</tspan></text>
+<polyline points="144,120 192,120" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="168" cy="120" r="11" fill="#2563eb"/>
+<text x="168" y="124.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<polyline points="312,120 368,120" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="340" cy="120" r="11" fill="#2563eb"/>
+<text x="340" y="124.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<polyline points="496,120 552,120" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="524" cy="120" r="11" fill="#2563eb"/>
+<text x="524" y="124.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<rect x="412" y="188" width="448" height="100" rx="8" fill="#f5f9ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="428" y="210" font-size="13" fill="#1e3a8a" font-weight="bold">Stateless app servers (auto-scaled)</text>
+<rect x="428" y="224" width="128" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="492" y="246.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="492" dy="0" font-weight="bold">ASP.NET Core</tspan><tspan x="492" dy="17">instance 1</tspan></text>
+<rect x="572" y="224" width="128" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="636" y="246.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="636" dy="0" font-weight="bold">ASP.NET Core</tspan><tspan x="636" dy="17">instance 2</tspan></text>
+<rect x="716" y="224" width="128" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="780" y="246.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="780" dy="0" font-weight="bold">ASP.NET Core</tspan><tspan x="780" dy="17">instance 3</tspan></text>
+<polyline points="636,148 636,188" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="636" cy="168" r="11" fill="#2563eb"/>
+<text x="636" y="172.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="654" y="173" font-size="13" fill="#334155">least connections</text>
+<rect x="24" y="188" width="364" height="100" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="40" y="206.68" font-size="13" fill="#1f2937"><tspan x="40" dy="0" font-weight="bold">Design rules</tspan><tspan x="40" dy="18">- Stateless tier: scale out, not up</tspan><tspan x="40" dy="18">- Cache first, shard last</tspan><tspan x="40" dy="18">- Slow work goes through a queue</tspan><tspan x="40" dy="18">- No single point of failure (2+ of each)</tspan></text>
+<line x1="636" y1="288" x2="636" y2="320" stroke="#475569" stroke-width="1.5"/>
+<line x1="96" y1="320" x2="786" y2="320" stroke="#475569" stroke-width="1.5"/>
+<polyline points="96,320 96,360" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="96" cy="340" r="11" fill="#2563eb"/>
+<text x="96" y="344.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="112" y="345" font-size="13" fill="#334155">check first</text>
+<polyline points="260,320 260,360" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="260" cy="340" r="11" fill="#2563eb"/>
+<text x="260" y="344.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<text x="276" y="345" font-size="13" fill="#334155">writes</text>
+<polyline points="436,320 436,360" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="436" cy="340" r="11" fill="#2563eb"/>
+<text x="436" y="344.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<text x="452" y="345" font-size="13" fill="#334155">reads</text>
+<polyline points="596,320 596,360" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="596" cy="340" r="11" fill="#2563eb"/>
+<text x="596" y="344.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<text x="612" y="345" font-size="13" fill="#334155">enqueue</text>
+<polyline points="786,320 786,360" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="786" cy="340" r="11" fill="#2563eb"/>
+<text x="786" y="344.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">9</text>
+<text x="802" y="345" font-size="13" fill="#334155">files</text>
+<rect x="24" y="360" width="144" height="64" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="96" y="388.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="96" dy="0" font-weight="bold">Redis cache</tspan><tspan x="96" dy="17">hot data, sessions</tspan></text>
+<path d="M200,368 L200,416 A60,8 0 0 0 320,416 L320,368 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<ellipse cx="260" cy="368" rx="60" ry="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="260" y="391.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="260" dy="0" font-weight="bold">Primary DB</tspan><tspan x="260" dy="17">all writes</tspan></text>
+<path d="M376,368 L376,416 A60,8 0 0 0 496,416 L496,368 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<ellipse cx="436" cy="368" rx="60" ry="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="436" y="391.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="436" dy="0" font-weight="bold">Read replicas</tspan><tspan x="436" dy="17">scale reads</tspan></text>
+<polyline points="320,396 376,396" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<text x="348" y="386" font-size="13" fill="#334155" text-anchor="middle">async</text>
+<text x="348" y="444" font-size="13" fill="#334155" text-anchor="middle">replicas lag behind the primary</text>
+<rect x="536" y="360" width="120" height="64" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<rect x="548" y="370" width="24" height="24" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<rect x="572" y="370" width="24" height="24" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<rect x="596" y="370" width="24" height="24" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<rect x="620" y="370" width="24" height="24" rx="3" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="596" y="414" font-size="13" fill="#78350f" text-anchor="middle" font-weight="bold">Message queue</text>
+<path d="M712,368 L712,416 A74,8 0 0 0 860,416 L860,368 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="786" cy="368" rx="74" ry="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="786" y="391.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="786" dy="0" font-weight="bold">Object storage</tspan><tspan x="786" dy="17">images, uploads</tspan></text>
+<polyline points="596,424 596,464" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="596" cy="444" r="11" fill="#2563eb"/>
+<text x="596" y="448.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+<text x="612" y="449" font-size="13" fill="#334155">consume</text>
+<rect x="536" y="464" width="120" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="596" y="486.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="596" dy="0" font-weight="bold">Workers</tspan><tspan x="596" dy="17">background jobs</tspan></text>
+<rect x="24" y="544" width="852" height="44" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="450" y="572" font-size="14" fill="#4c1d95" text-anchor="middle" font-weight="bold">Monitoring and alerting: logs, metrics and traces collected from every tier</text>
+<text x="32" y="622" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: scale stateless tiers horizontally, put cache before DB scaling, and move slow work behind a queue.</text>
+</g>
+</svg>

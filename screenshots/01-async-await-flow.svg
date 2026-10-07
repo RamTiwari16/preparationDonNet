@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" role="img">
+<title>Async/Await Thread Flow</title>
+<desc>Thread timeline for await httpClient.GetAsync: the pool thread is released while I/O is in flight and a pool thread resumes the continuation, unlike a blocking .Result call.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="619" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">Async/Await Thread Flow</text>
+<text x="32" y="68" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569">Timeline of  var r = await httpClient.GetAsync(url);  inside an ASP.NET Core request</text>
+<rect x="32" y="84" width="836" height="262" rx="12" fill="#f8fffa" stroke="#16a34a" stroke-width="1.5"/>
+<text x="48" y="110" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#14532d" font-weight="700">A) await: the thread is released while the I/O is in flight</text>
+<text x="48" y="153.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Pool thread T1</text>
+<text x="48" y="207.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Network I/O (OS)</text>
+<text x="48" y="289.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Pool thread T7</text>
+<rect x="184" y="126" width="140" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="204" cy="148.0" r="11" fill="#2563eb"/>
+<text x="204" y="153.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="224" y="144.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a"><tspan x="224" dy="0">Request code</tspan><tspan x="224" dy="18">runs to await</tspan></text>
+<rect x="324" y="126" width="272" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="344" cy="148.0" r="11" fill="#15803d"/>
+<text x="344" y="153.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="364" y="144.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d"><tspan x="364" dy="0">await returns an incomplete Task;</tspan><tspan x="364" dy="18">T1 is released: serves other requests</tspan></text>
+<rect x="324" y="182" width="272" height="40" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<circle cx="344" cy="202.0" r="11" fill="#b45309"/>
+<text x="344" y="207.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="364" y="198.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="364" dy="0">HTTP call in flight</tspan><tspan x="364" dy="18">no thread is blocked</tspan></text>
+<path d="M604 222 L604 262" fill="none" stroke="#d97706" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrA)"/>
+<circle cx="634" cy="242" r="11" fill="#b45309"/>
+<text x="634" y="247" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="654" y="247" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600">I/O done: continuation queued</text>
+<rect x="596" y="262" width="136" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="616" cy="284.0" r="11" fill="#2563eb"/>
+<text x="616" y="289.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="636" y="280.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a"><tspan x="636" dy="0">continuation</tspan><tspan x="636" dy="18">resumes here</tspan></text>
+<rect x="740" y="262" width="112" height="44" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="796.0" y="280.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" text-anchor="middle"><tspan x="796.0" dy="0">response</tspan><tspan x="796.0" dy="18">returned</tspan></text>
+<text x="450" y="332" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">Same few threads now serve many more concurrent requests: scalability, not speed of one call.</text>
+<rect x="32" y="358" width="836" height="214" rx="12" fill="#fffafa" stroke="#dc2626" stroke-width="1.5"/>
+<text x="48" y="384" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#7f1d1d" font-weight="700">B) .Result / .Wait(): the thread is held hostage</text>
+<text x="48" y="427.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Pool thread T1</text>
+<text x="48" y="481.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Network I/O (OS)</text>
+<rect x="184" y="400" width="140" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="198" y="418.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a"><tspan x="198" dy="0">Request code</tspan><tspan x="198" dy="18">calls .Result</tspan></text>
+<rect x="324" y="400" width="272" height="44" rx="8" fill="#fecaca" stroke="#dc2626" stroke-width="1.5"/>
+<text x="338" y="418.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="338" dy="0">BLOCKED: thread parked,</tspan><tspan x="338" dy="18">idle, waiting synchronously</tspan></text>
+<rect x="324" y="456" width="272" height="40" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="338" y="481.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="338" dy="0">same HTTP call in flight</tspan></text>
+<rect x="596" y="400" width="136" height="44" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="610" y="418.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a"><tspan x="610" dy="0">continues</tspan><tspan x="610" dy="18">on the same thread</tspan></text>
+<text x="48" y="524" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="48" dy="0">Cost: every in-flight call pins one pool thread; under load the pool starves and latency explodes.</tspan><tspan x="48" dy="20">Deadlock: with a SynchronizationContext (UI, classic ASP.NET) the continuation cannot resume, so .Result hangs.</tspan></text>
+<text x="32" y="596" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: async frees the thread, not the clock - go async all the way and never block with .Result or .Wait().</text>
+</svg>

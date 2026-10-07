@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 532" width="900" height="532" role="img">
+<title>Closures and the Scope Chain</title>
+<desc>An inner function keeps a live reference to its outer function variables through the scope chain even after the outer function has returned.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="531" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">Closures and the Scope Chain</text>
+<rect x="24" y="56" width="432" height="340" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Global scope</text>
+<text x="40" y="100" font-family="Consolas, Menlo, monospace" font-size="13" fill="#334155" xml:space="preserve">makeCounter, next</text>
+<rect x="48" y="116" width="384" height="264" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="64" y="140" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" font-weight="bold" xml:space="preserve">makeCounter() scope</text>
+<rect x="64" y="154" width="132" height="30" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="130" y="174" font-family="Consolas, Menlo, monospace" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">count = 0</text>
+<text x="208" y="174" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">outer variable, kept alive</text>
+<rect x="72" y="236" width="336" height="128" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="88" y="260" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#15803d" font-weight="bold" xml:space="preserve">inner() scope</text>
+<rect x="306.0" y="241.0" width="92" height="26" rx="13.0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="352" y="258.9" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">closure</text>
+<text x="88" y="284" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="88" dy="0">count++ finds no local count,</tspan><tspan x="88" dy="18">so it walks UP the scope chain:</tspan><tspan x="88" dy="18">inner -&gt; makeCounter -&gt; global</tspan><tspan x="88" dy="18">closure = function + its scope</tspan></text>
+<line x1="130" y1="236" x2="130" y2="188" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arr-green)"/>
+<text x="142" y="216" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15803d" font-weight="bold" xml:space="preserve">live reference, not a copy</text>
+<rect x="480" y="56" width="396" height="240" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="496" y="78" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Code</text>
+<rect x="488" y="106" width="380" height="20" rx="4" fill="#bfdbfe" stroke="#bfdbfe" stroke-width="0"/>
+<rect x="488" y="146" width="380" height="20" rx="4" fill="#bbf7d0" stroke="#bbf7d0" stroke-width="0"/>
+<text x="496" y="100" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="496" dy="0">function makeCounter() {</tspan><tspan x="496" dy="20">  let count = 0;</tspan><tspan x="496" dy="20">  return function inner() {</tspan><tspan x="496" dy="20">    count++;</tspan><tspan x="496" dy="20">    return count;</tspan><tspan x="496" dy="20">  };</tspan><tspan x="496" dy="20">}</tspan><tspan x="496" dy="20">const next = makeCounter();</tspan><tspan x="496" dy="20">next();  // 1</tspan><tspan x="496" dy="20">next();  // 2  (count survived)</tspan></text>
+<rect x="480" y="312" width="396" height="84" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="496" y="336" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="496" dy="0">Gotcha: every makeCounter() call creates its</tspan><tspan x="496" dy="19">own count (a separate closure). In a loop,</tspan><tspan x="496" dy="19">"var i" is shared by all callbacks; "let i" is not.</tspan></text>
+<rect x="24" y="416" width="264" height="76" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="156.0" y="436.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">makeCounter() runs</text>
+<text x="156.0" y="459.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="156.0" dy="0">creates count = 0 and</tspan><tspan x="156.0" dy="18">returns the inner function</tspan></text>
+<circle cx="28" cy="420" r="11" fill="#2563eb"/>
+<text x="28" y="424.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<rect x="318" y="416" width="264" height="76" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="450.0" y="436.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">makeCounter() returns</text>
+<text x="450.0" y="459.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="450.0" dy="0">its call-stack frame is popped,</tspan><tspan x="450.0" dy="18">but count is NOT freed</tspan></text>
+<circle cx="322" cy="420" r="11" fill="#b45309"/>
+<text x="322" y="424.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<rect x="612" y="416" width="264" height="76" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="744.0" y="436.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">next() is called later</text>
+<text x="744.0" y="459.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="744.0" dy="0">inner still sees the same count:</tspan><tspan x="744.0" dy="18">returns 1, then 2, then 3</tspan></text>
+<circle cx="616" cy="420" r="11" fill="#15803d"/>
+<text x="616" y="424.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<line x1="288" y1="454" x2="318" y2="454" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<line x1="582" y1="454" x2="612" y2="454" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="24" y="512" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: a closure is a function plus the scope it was created in; it can read and update that scope later.</text>
+</svg>

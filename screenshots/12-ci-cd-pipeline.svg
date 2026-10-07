@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 528" width="900" height="528" role="img">
+<title>CI/CD Pipeline for a .NET App</title>
+<desc>A typical pipeline: push, build, test, quality checks, Docker image to a registry (CI), then the same artifact promoted through Dev, Staging and Prod with gates (CD).</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="527" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">CI/CD Pipeline for a .NET App</text>
+<rect x="24" y="100" width="108" height="76" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="78.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Developer</text>
+<text x="78.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="78.0" dy="0">commit,</tspan><tspan x="78.0" dy="18">open a PR</tspan></text>
+<circle cx="28" cy="104" r="11" fill="#475569"/>
+<text x="28" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<line x1="133" y1="138" x2="147" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="148" y="100" width="108" height="76" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="202.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Git push</text>
+<text x="202.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="202.0" dy="0">PR / merge</tspan><tspan x="202.0" dy="18">triggers run</tspan></text>
+<circle cx="152" cy="104" r="11" fill="#475569"/>
+<text x="152" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<line x1="257" y1="138" x2="271" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="272" y="100" width="108" height="76" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="326.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">Build</text>
+<text x="326.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="326.0" dy="0">dotnet restore</tspan><tspan x="326.0" dy="18">dotnet build</tspan></text>
+<circle cx="276" cy="104" r="11" fill="#2563eb"/>
+<text x="276" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<line x1="381" y1="138" x2="395" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="396" y="100" width="108" height="76" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">Unit tests</text>
+<text x="450.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="450.0" dy="0">dotnet test</tspan><tspan x="450.0" dy="18">+ coverage</tspan></text>
+<circle cx="400" cy="104" r="11" fill="#2563eb"/>
+<text x="400" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<line x1="505" y1="138" x2="519" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="520" y="100" width="108" height="76" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="574.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">Code quality</text>
+<text x="574.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="574.0" dy="0">analyzers,</tspan><tspan x="574.0" dy="18">Sonar, SAST</tspan></text>
+<circle cx="524" cy="104" r="11" fill="#7c3aed"/>
+<text x="524" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<line x1="629" y1="138" x2="643" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="644" y="100" width="108" height="76" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="698.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">Docker build</text>
+<text x="698.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="698.0" dy="0">docker build</tspan><tspan x="698.0" dy="18">tag with SHA</tspan></text>
+<circle cx="648" cy="104" r="11" fill="#0f766e"/>
+<text x="648" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<line x1="753" y1="138" x2="767" y2="138" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<rect x="768" y="100" width="108" height="76" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="822.0" y="119.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">Registry</text>
+<text x="822.0" y="142.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="822.0" dy="0">push image</tspan><tspan x="822.0" dy="18">to ACR</tspan></text>
+<circle cx="772" cy="104" r="11" fill="#0f766e"/>
+<text x="772" y="108.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<path d="M148,92 V80 H876 V92" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="275.7" y="69.5" width="472.5" height="21" rx="4" fill="#ffffff"/>
+<text x="512.0" y="84.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">CI: on every push / PR, fast feedback, a red test fails the build</text>
+<path d="M822.0,176 V212 H94 V250" fill="none" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)" stroke-linejoin="round"/>
+<rect x="336.8" y="201.5" width="266.4" height="21" rx="4" fill="#ffffff"/>
+<text x="470" y="216.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" xml:space="preserve">build once: the SAME image is promoted</text>
+<rect x="24" y="252" width="140" height="88" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="94.0" y="268.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Deploy job</text>
+<text x="94.0" y="291.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="94.0" dy="0">pull image,</tspan><tspan x="94.0" dy="18">apply config</tspan><tspan x="94.0" dy="18">per environment</tspan></text>
+<circle cx="28" cy="256" r="11" fill="#475569"/>
+<text x="28" y="260.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<rect x="216" y="252" width="140" height="88" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="286.0" y="278.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">Dev</text>
+<text x="286.0" y="301.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="286.0" dy="0">auto deploy</tspan><tspan x="286.0" dy="18">on merge</tspan></text>
+<circle cx="220" cy="256" r="11" fill="#15803d"/>
+<text x="220" y="260.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">9</text>
+<rect x="448" y="252" width="150" height="88" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="523.0" y="278.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Staging</text>
+<text x="523.0" y="301.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="523.0" dy="0">prod-like,</tspan><tspan x="523.0" dy="18">integration + E2E</tspan></text>
+<circle cx="452" cy="256" r="11" fill="#b45309"/>
+<text x="452" y="260.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">10</text>
+<rect x="700" y="252" width="176" height="88" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="788.0" y="277.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#b91c1c" text-anchor="middle" font-weight="bold" xml:space="preserve">Production (Azure)</text>
+<text x="788.0" y="300.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="788.0" dy="0">slot swap / blue-green</tspan><tspan x="788.0" dy="18">monitor + rollback</tspan></text>
+<circle cx="704" cy="256" r="11" fill="#dc2626"/>
+<text x="704" y="260.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">11</text>
+<line x1="164" y1="296" x2="214" y2="296" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+<line x1="356" y1="314" x2="446" y2="314" stroke="#d97706" stroke-width="2" marker-end="url(#arr-amber)"/>
+<text x="402.0" y="274" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve"><tspan x="402.0" dy="0">gate:</tspan><tspan x="402.0" dy="17">smoke tests</tspan></text>
+<rect x="395.0" y="307" width="14" height="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" transform="rotate(45 402.0 314)"/>
+<line x1="598" y1="314" x2="698" y2="314" stroke="#d97706" stroke-width="2" marker-end="url(#arr-amber)"/>
+<text x="649.0" y="274" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve"><tspan x="649.0" dy="0">gate: manual</tspan><tspan x="649.0" dy="17">approval</tspan></text>
+<rect x="642.0" y="307" width="14" height="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" transform="rotate(45 649.0 314)"/>
+<path d="M24,348 V360 H876 V348" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round"/>
+<rect x="174.8" y="349.5" width="550.5" height="21" rx="4" fill="#ffffff"/>
+<text x="450" y="364.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="bold" xml:space="preserve">CD: deploy the artifact through environments; only config and secrets differ</text>
+<rect x="24" y="388" width="420" height="96" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="412" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" font-weight="bold" xml:space="preserve">Pipeline as code</text>
+<text x="40" y="434" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="40" dy="0">azure-pipelines.yml or a GitHub Actions workflow,</tspan><tspan x="40" dy="18">versioned with the app; secrets come from</tspan><tspan x="40" dy="18">Key Vault / pipeline variables, never from git.</tspan></text>
+<rect x="456" y="388" width="420" height="96" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="472" y="412" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#92400e" font-weight="bold" xml:space="preserve">Gates and approvals</text>
+<text x="472" y="434" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="472" dy="0">Environments hold checks: approvers, business hours,</tspan><tspan x="472" dy="18">health queries. Failing gate = no promotion.</tspan><tspan x="472" dy="18">Rollback = redeploy the previous image tag.</tspan></text>
+<text x="24" y="508" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: CI proves the commit (build, test, image); CD promotes that one artifact through gated environments.</text>
+</svg>

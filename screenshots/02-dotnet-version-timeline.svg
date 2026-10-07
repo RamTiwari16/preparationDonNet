@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 546" width="900" height="546" role="img">
+<title>.NET Release Timeline (6 to 10)</title>
+<desc>Timeline of .NET 6 through .NET 10 with LTS or STS status, the paired C# version, two or three headline features each, and their support windows.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+<marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrSR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="545" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">.NET Release Timeline (6 to 10)</text>
+<path d="M40 92 L864 92" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<circle cx="110.0" cy="92" r="7" fill="#15803d" stroke="#ffffff" stroke-width="2"/>
+<rect x="32" y="112" width="156" height="146" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M32 122 a10 10 0 0 1 10 -10 h136 a10 10 0 0 1 10 10 v30 h-156 z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="46" y="139" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">.NET 6</text>
+<rect x="132" y="122" width="44" height="20" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="154.0" y="136.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700" text-anchor="middle">LTS</text>
+<text x="46" y="174" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700">Nov 2021  ·  C# 10</text>
+<text x="46" y="198" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937"><tspan x="46" dy="0">Minimal APIs</tspan><tspan x="46" dy="20">Hot Reload</tspan><tspan x="46" dy="20">global usings</tspan></text>
+<line x1="46" y1="182" x2="174" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="280.0" cy="92" r="7" fill="#b45309" stroke="#ffffff" stroke-width="2"/>
+<rect x="202" y="112" width="156" height="146" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<path d="M202 122 a10 10 0 0 1 10 -10 h136 a10 10 0 0 1 10 10 v30 h-156 z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="216" y="139" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">.NET 7</text>
+<rect x="302" y="122" width="44" height="20" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="324.0" y="136.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="700" text-anchor="middle">STS</text>
+<text x="216" y="174" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="700">Nov 2022  ·  C# 11</text>
+<text x="216" y="198" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937"><tspan x="216" dy="0">Rate limiting</tspan><tspan x="216" dy="20">Output caching</tspan><tspan x="216" dy="20">raw string literals</tspan></text>
+<line x1="216" y1="182" x2="344" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="450.0" cy="92" r="7" fill="#15803d" stroke="#ffffff" stroke-width="2"/>
+<rect x="372" y="112" width="156" height="146" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M372 122 a10 10 0 0 1 10 -10 h136 a10 10 0 0 1 10 10 v30 h-156 z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="386" y="139" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">.NET 8</text>
+<rect x="472" y="122" width="44" height="20" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="494.0" y="136.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700" text-anchor="middle">LTS</text>
+<text x="386" y="174" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700">Nov 2023  ·  C# 12</text>
+<text x="386" y="198" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937"><tspan x="386" dy="0">Native AOT for APIs</tspan><tspan x="386" dy="20">Blazor Web App</tspan><tspan x="386" dy="20">primary constructors</tspan></text>
+<line x1="386" y1="182" x2="514" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="620.0" cy="92" r="7" fill="#b45309" stroke="#ffffff" stroke-width="2"/>
+<rect x="542" y="112" width="156" height="146" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<path d="M542 122 a10 10 0 0 1 10 -10 h136 a10 10 0 0 1 10 10 v30 h-156 z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="556" y="139" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">.NET 9</text>
+<rect x="642" y="122" width="44" height="20" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="664.0" y="136.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="700" text-anchor="middle">STS</text>
+<text x="556" y="174" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="700">Nov 2024  ·  C# 13</text>
+<text x="556" y="198" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937"><tspan x="556" dy="0">HybridCache</tspan><tspan x="556" dy="20">built-in OpenAPI</tspan><tspan x="556" dy="20">params collections</tspan></text>
+<line x1="556" y1="182" x2="684" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+<circle cx="790.0" cy="92" r="7" fill="#15803d" stroke="#ffffff" stroke-width="2"/>
+<rect x="712" y="112" width="156" height="146" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M712 122 a10 10 0 0 1 10 -10 h136 a10 10 0 0 1 10 10 v30 h-156 z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="726" y="139" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="18" fill="#0f172a" font-weight="700">.NET 10</text>
+<rect x="812" y="122" width="44" height="20" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="834.0" y="136.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700" text-anchor="middle">LTS</text>
+<text x="726" y="174" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700">Nov 2025  ·  C# 14</text>
+<text x="726" y="198" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937"><tspan x="726" dy="0">extension members</tspan><tspan x="726" dy="20">field keyword</tspan><tspan x="726" dy="20">file-based apps</tspan></text>
+<line x1="726" y1="182" x2="854" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="32" y="284" width="836" height="214" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="48" y="310" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">Support windows:  LTS = 36 months,  STS = 24 months (since .NET 9; was 18)</text>
+<line x1="136" y1="324" x2="136" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2021</text>
+<line x1="232" y1="324" x2="232" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2022</text>
+<line x1="328" y1="324" x2="328" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="328" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2023</text>
+<line x1="424" y1="324" x2="424" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="424" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2024</text>
+<line x1="520" y1="324" x2="520" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="520" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2025</text>
+<line x1="616" y1="324" x2="616" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="616" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2026</text>
+<line x1="712" y1="324" x2="712" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="712" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2027</text>
+<line x1="808" y1="324" x2="808" y2="466" stroke="#e2e8f0" stroke-width="1"/>
+<text x="808" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569" text-anchor="middle">Nov 2028</text>
+<text x="48" y="344" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">.NET 6</text>
+<rect x="136" y="328" width="288" height="22" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="146" y="344" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600">LTS, ended Nov 2024</text>
+<text x="48" y="372" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">.NET 7</text>
+<rect x="232" y="356" width="144.0" height="22" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="242" y="372" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600">STS, ended May 2024</text>
+<text x="48" y="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">.NET 8</text>
+<rect x="328" y="384" width="288" height="22" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="338" y="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600">LTS, until Nov 2026</text>
+<text x="48" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">.NET 9</text>
+<rect x="424" y="412" width="192" height="22" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="434" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600">STS, until Nov 2026</text>
+<text x="48" y="456" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">.NET 10</text>
+<rect x="520" y="440" width="288" height="22" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="530" y="456" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600">LTS, until Nov 2028</text>
+<text x="32" y="522" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: a new major ships every November; even numbers are LTS - pick LTS for production unless you need new features.</text>
+</svg>

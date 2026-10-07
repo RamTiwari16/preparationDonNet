@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" role="img">
+<title>C# Exception Handling Flow</title>
+<desc>Three outcomes of a try/catch/finally block, how a when filter decides a catch, rethrow with throw versus throw ex, and the finally guarantee.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="619" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">C# Exception Handling Flow</text>
+<text x="32" y="68" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569">Order matters: specific catch clauses first, general catch (Exception) last</text>
+<circle cx="46" cy="98" r="11" fill="#475569"/>
+<text x="46" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="66" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">try</text>
+<circle cx="262" cy="98" r="11" fill="#475569"/>
+<text x="262" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="282" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">catch + when filter</text>
+<circle cx="478" cy="98" r="11" fill="#475569"/>
+<text x="478" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="498" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">finally</text>
+<circle cx="694" cy="98" r="11" fill="#475569"/>
+<text x="694" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="714" y="103" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">outcome</text>
+<text x="32" y="134" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#14532d" font-weight="700">A   No exception thrown</text>
+<rect x="32" y="142" width="188" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="126.0" y="166" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle"><tspan x="126.0" dy="0">runs to the end,</tspan><tspan x="126.0" dy="18">no exception</tspan></text>
+<path d="M220 170 L246 170" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="248" y="142" width="188" height="56" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="342.0" y="166" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e293b" text-anchor="middle"><tspan x="342.0" dy="0">skipped</tspan><tspan x="342.0" dy="18">(nothing to handle)</tspan></text>
+<path d="M436 170 L462 170" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="464" y="142" width="188" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="558.0" y="166" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4c1d95" text-anchor="middle"><tspan x="558.0" dy="0">finally { } runs</tspan><tspan x="558.0" dy="18">(cleanup)</tspan></text>
+<path d="M652 170 L678 170" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="680" y="142" width="188" height="56" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="774.0" y="166" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" text-anchor="middle"><tspan x="774.0" dy="0">execution continues</tspan><tspan x="774.0" dy="18">after the try</tspan></text>
+<text x="32" y="226" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">B   Exception thrown, a catch matches</text>
+<rect x="32" y="234" width="188" height="56" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="126.0" y="258" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" text-anchor="middle"><tspan x="126.0" dy="0">throws at some line;</tspan><tspan x="126.0" dy="18">rest of try is skipped</tspan></text>
+<path d="M220 262 L246 262" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="248" y="234" width="188" height="56" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="342.0" y="258" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" text-anchor="middle"><tspan x="342.0" dy="0">type matches and</tspan><tspan x="342.0" dy="18">when(...) is true: runs</tspan></text>
+<path d="M436 262 L462 262" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="464" y="234" width="188" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="558.0" y="258" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4c1d95" text-anchor="middle"><tspan x="558.0" dy="0">finally { } runs</tspan><tspan x="558.0" dy="18">after the catch body</tspan></text>
+<path d="M652 262 L678 262" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="680" y="234" width="188" height="56" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="774.0" y="258" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" text-anchor="middle"><tspan x="774.0" dy="0">handled: execution</tspan><tspan x="774.0" dy="18">continues after try</tspan></text>
+<text x="32" y="318" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700">C   Exception thrown, no catch matches</text>
+<rect x="32" y="326" width="188" height="56" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="126.0" y="350" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" text-anchor="middle"><tspan x="126.0" dy="0">throws at some line;</tspan><tspan x="126.0" dy="18">rest of try is skipped</tspan></text>
+<path d="M220 354 L246 354" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="248" y="326" width="188" height="56" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="342.0" y="350" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" text-anchor="middle"><tspan x="342.0" dy="0">no type match, or</tspan><tspan x="342.0" dy="18">when(...) is false</tspan></text>
+<path d="M436 354 L462 354" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="464" y="326" width="188" height="56" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="558.0" y="350" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4c1d95" text-anchor="middle"><tspan x="558.0" dy="0">finally { } still runs</tspan><tspan x="558.0" dy="18">on the way up</tspan></text>
+<path d="M652 354 L678 354" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="680" y="326" width="188" height="56" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="774.0" y="350" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" text-anchor="middle"><tspan x="774.0" dy="0">exception propagates</tspan><tspan x="774.0" dy="18">to the caller</tspan></text>
+<rect x="32" y="404" width="268" height="168" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="48" y="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700">Exception filter: when (...)</text>
+<rect x="48" y="442" width="236" height="46" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="60" y="462" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#334155"><tspan x="60" dy="0">catch (SqlException e)</tspan><tspan x="60" dy="18">  when (e.Number == 1205)</tspan></text>
+<text x="48" y="508" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a"><tspan x="48" dy="0">Evaluated BEFORE the stack unwinds:</tspan><tspan x="48" dy="18">locals and stack stay intact for logs.</tspan><tspan x="48" dy="18">False means: try the next handler,</tspan><tspan x="48" dy="18">no catch-and-rethrow needed.</tspan></text>
+<rect x="316" y="404" width="268" height="168" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="332" y="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#78350f" font-weight="700">Rethrow: throw; vs throw ex;</text>
+<rect x="332" y="452" width="84" height="24" rx="12" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="374.0" y="468.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700" text-anchor="middle">throw;</text>
+<text x="428" y="462" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="428" dy="0">keeps the original</tspan><tspan x="428" dy="17">stack trace</tspan></text>
+<rect x="332" y="492" width="84" height="24" rx="12" fill="#ffffff" stroke="#dc2626" stroke-width="1.2"/>
+<text x="374.0" y="508.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="700" text-anchor="middle">throw ex;</text>
+<text x="428" y="502" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="428" dy="0">resets the stack trace:</tspan><tspan x="428" dy="17">the origin is lost</tspan></text>
+<rect x="332" y="532" width="84" height="24" rx="12" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="374.0" y="548.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="700" text-anchor="middle">wrap</text>
+<text x="428" y="542" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="428" dy="0">throw new X(msg, ex)</tspan><tspan x="428" dy="17">keeps InnerException</tspan></text>
+<rect x="600" y="404" width="268" height="168" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="616" y="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#4c1d95" font-weight="700">finally { }: the guarantee</text>
+<text x="616" y="456" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4c1d95"><tspan x="616" dy="0">Runs on normal exit, return,</tspan><tspan x="616" dy="18">break / continue, and on any</tspan><tspan x="616" dy="18">exception, caught or not.</tspan><tspan x="616" dy="18">Skipped only if the process dies</tspan><tspan x="616" dy="18">(FailFast, crash, power loss).</tspan><tspan x="616" dy="18">Prefer using / await using.</tspan></text>
+<text x="32" y="596" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: use throw; to preserve the trace, when(...) to filter without unwinding, finally for cleanup.</text>
+</svg>

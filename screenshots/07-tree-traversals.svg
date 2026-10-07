@@ -1,0 +1,235 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 572" width="900" height="572" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>Binary Tree Traversals</title>
+<desc>The same binary search tree visited in inorder, preorder, postorder and level order, with each node numbered by when it is visited.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="571" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">Binary Tree Traversals</text>
+<rect x="24" y="52" width="204" height="398" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="38" y="76" font-size="15" fill="#1d4ed8" font-weight="700">Inorder</text>
+<text x="38" y="94" font-size="13" fill="#334155">Left, Root, Right</text>
+<line x1="126.0" y1="136" x2="78.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="126.0" y1="136" x2="174.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="78.0" y1="188" x2="54.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="78.0" y1="188" x2="102.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="174.0" y1="188" x2="150.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="174.0" y1="188" x2="198.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="126.0" cy="136" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="126.0" y="141" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<circle cx="126.0" cy="109" r="10" fill="#2563eb"/>
+<text x="126.0" y="113.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="78.0" cy="188" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="78.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<circle cx="51.0" cy="188" r="10" fill="#2563eb"/>
+<text x="51.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<circle cx="174.0" cy="188" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="174.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<circle cx="201.0" cy="188" r="10" fill="#2563eb"/>
+<text x="201.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<circle cx="54.0" cy="240" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="54.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<circle cx="54.0" cy="267" r="10" fill="#2563eb"/>
+<text x="54.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<circle cx="102.0" cy="240" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="102.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<circle cx="102.0" cy="267" r="10" fill="#2563eb"/>
+<text x="102.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<circle cx="150.0" cy="240" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="150.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<circle cx="150.0" cy="267" r="10" fill="#2563eb"/>
+<text x="150.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<circle cx="198.0" cy="240" r="15" fill="#ffffff" stroke="#2563eb" stroke-width="1.8"/>
+<text x="198.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<circle cx="198.0" cy="267" r="10" fill="#2563eb"/>
+<text x="198.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">7</text>
+<text x="38" y="294" font-size="13" fill="#475569" font-weight="700">Visit order</text>
+<rect x="38" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="49" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="63" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="74" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="88" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="99" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="113" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="124" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<rect x="138" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="149" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<rect x="163" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="174" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<rect x="188" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#2563eb" stroke-width="1.2"/>
+<text x="199" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<rect x="34" y="342" width="184" height="62" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="36" y="364" width="180" height="18" rx="3" fill="#dbeafe"/>
+<text x="42" y="359" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="42" dy="0">go(n.Left);</tspan><tspan x="42" dy="18">visit(n);</tspan><tspan x="42" dy="18">go(n.Right);</tspan></text>
+<text x="38" y="424" font-size="13" fill="#1f2937"><tspan x="38" dy="0">BST: values come out sorted</tspan><tspan x="38" dy="17">(validate a BST, k-th smallest)</tspan></text>
+<rect x="240" y="52" width="204" height="398" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="254" y="76" font-size="15" fill="#15803d" font-weight="700">Preorder</text>
+<text x="254" y="94" font-size="13" fill="#334155">Root, Left, Right</text>
+<line x1="342.0" y1="136" x2="294.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="342.0" y1="136" x2="390.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="294.0" y1="188" x2="270.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="294.0" y1="188" x2="318.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="390.0" y1="188" x2="366.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="390.0" y1="188" x2="414.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="342.0" cy="136" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="342.0" y="141" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<circle cx="342.0" cy="109" r="10" fill="#15803d"/>
+<text x="342.0" y="113.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<circle cx="294.0" cy="188" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="294.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<circle cx="267.0" cy="188" r="10" fill="#15803d"/>
+<text x="267.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<circle cx="390.0" cy="188" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="390.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<circle cx="417.0" cy="188" r="10" fill="#15803d"/>
+<text x="417.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<circle cx="270.0" cy="240" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="270.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<circle cx="270.0" cy="267" r="10" fill="#15803d"/>
+<text x="270.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<circle cx="318.0" cy="240" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="318.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<circle cx="318.0" cy="267" r="10" fill="#15803d"/>
+<text x="318.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="366.0" cy="240" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="366.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<circle cx="366.0" cy="267" r="10" fill="#15803d"/>
+<text x="366.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<circle cx="414.0" cy="240" r="15" fill="#ffffff" stroke="#16a34a" stroke-width="1.8"/>
+<text x="414.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<circle cx="414.0" cy="267" r="10" fill="#15803d"/>
+<text x="414.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">7</text>
+<text x="254" y="294" font-size="13" fill="#475569" font-weight="700">Visit order</text>
+<rect x="254" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="265" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<rect x="279" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="290" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="304" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="315" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="329" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="340" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="354" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="365" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<rect x="379" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="390" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<rect x="404" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>
+<text x="415" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<rect x="250" y="342" width="184" height="62" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="252" y="346" width="180" height="18" rx="3" fill="#dcfce7"/>
+<text x="258" y="359" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="258" dy="0">visit(n);</tspan><tspan x="258" dy="18">go(n.Left);</tspan><tspan x="258" dy="18">go(n.Right);</tspan></text>
+<text x="254" y="424" font-size="13" fill="#1f2937"><tspan x="254" dy="0">copy or serialize a tree</tspan><tspan x="254" dy="17">(parent before children)</tspan></text>
+<rect x="456" y="52" width="204" height="398" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="470" y="76" font-size="15" fill="#6d28d9" font-weight="700">Postorder</text>
+<text x="470" y="94" font-size="13" fill="#334155">Left, Right, Root</text>
+<line x1="558.0" y1="136" x2="510.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="558.0" y1="136" x2="606.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="510.0" y1="188" x2="486.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="510.0" y1="188" x2="534.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="606.0" y1="188" x2="582.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="606.0" y1="188" x2="630.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="558.0" cy="136" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="558.0" y="141" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<circle cx="558.0" cy="109" r="10" fill="#7c3aed"/>
+<text x="558.0" y="113.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">7</text>
+<circle cx="510.0" cy="188" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="510.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<circle cx="483.0" cy="188" r="10" fill="#7c3aed"/>
+<text x="483.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<circle cx="606.0" cy="188" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="606.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<circle cx="633.0" cy="188" r="10" fill="#7c3aed"/>
+<text x="633.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<circle cx="486.0" cy="240" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="486.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<circle cx="486.0" cy="267" r="10" fill="#7c3aed"/>
+<text x="486.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<circle cx="534.0" cy="240" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="534.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<circle cx="534.0" cy="267" r="10" fill="#7c3aed"/>
+<text x="534.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<circle cx="582.0" cy="240" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="582.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<circle cx="582.0" cy="267" r="10" fill="#7c3aed"/>
+<text x="582.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="630.0" cy="240" r="15" fill="#ffffff" stroke="#7c3aed" stroke-width="1.8"/>
+<text x="630.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<circle cx="630.0" cy="267" r="10" fill="#7c3aed"/>
+<text x="630.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<text x="470" y="294" font-size="13" fill="#475569" font-weight="700">Visit order</text>
+<rect x="470" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="481" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="495" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="506" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="520" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="531" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="545" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="556" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<rect x="570" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="581" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<rect x="595" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="606" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<rect x="620" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="631" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<rect x="466" y="342" width="184" height="62" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="468" y="382" width="180" height="18" rx="3" fill="#ede9fe"/>
+<text x="474" y="359" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="474" dy="0">go(n.Left);</tspan><tspan x="474" dy="18">go(n.Right);</tspan><tspan x="474" dy="18">visit(n);</tspan></text>
+<text x="470" y="424" font-size="13" fill="#1f2937"><tspan x="470" dy="0">delete a tree, compute sizes,</tspan><tspan x="470" dy="17">evaluate expressions</tspan></text>
+<rect x="672" y="52" width="204" height="398" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="686" y="76" font-size="15" fill="#b45309" font-weight="700">Level order</text>
+<text x="686" y="94" font-size="13" fill="#334155">level by level (BFS)</text>
+<line x1="774.0" y1="136" x2="726.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="774.0" y1="136" x2="822.0" y2="188" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="726.0" y1="188" x2="702.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="726.0" y1="188" x2="750.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="822.0" y1="188" x2="798.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="822.0" y1="188" x2="846.0" y2="240" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="774.0" cy="136" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="774.0" y="141" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<circle cx="774.0" cy="109" r="10" fill="#b45309"/>
+<text x="774.0" y="113.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<circle cx="726.0" cy="188" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="726.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<circle cx="699.0" cy="188" r="10" fill="#b45309"/>
+<text x="699.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<circle cx="822.0" cy="188" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="822.0" y="193" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<circle cx="849.0" cy="188" r="10" fill="#b45309"/>
+<text x="849.0" y="192.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<circle cx="702.0" cy="240" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="702.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<circle cx="702.0" cy="267" r="10" fill="#b45309"/>
+<text x="702.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="750.0" cy="240" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="750.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<circle cx="750.0" cy="267" r="10" fill="#b45309"/>
+<text x="750.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<circle cx="798.0" cy="240" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="798.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<circle cx="798.0" cy="267" r="10" fill="#b45309"/>
+<text x="798.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<circle cx="846.0" cy="240" r="15" fill="#ffffff" stroke="#d97706" stroke-width="1.8"/>
+<text x="846.0" y="245" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<circle cx="846.0" cy="267" r="10" fill="#b45309"/>
+<text x="846.0" y="271.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">7</text>
+<text x="686" y="294" font-size="13" fill="#475569" font-weight="700">Visit order</text>
+<rect x="686" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="697" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">4</text>
+<rect x="711" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="722" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="736" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="747" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">6</text>
+<rect x="761" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="772" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="786" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="797" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="811" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="822" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">5</text>
+<rect x="836" y="302" width="22" height="24" rx="4" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>
+<text x="847" y="319" font-size="14" fill="#0f172a" text-anchor="middle" font-weight="700">7</text>
+<rect x="682" y="342" width="184" height="62" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<rect x="684" y="364" width="180" height="18" rx="3" fill="#fef3c7"/>
+<text x="690" y="359" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="690" dy="0">q.Enqueue(root);</tspan><tspan x="690" dy="18">visit(n = q.Dequeue());</tspan><tspan x="690" dy="18">enqueue n.Left, n.Right</tspan></text>
+<text x="686" y="424" font-size="13" fill="#1f2937"><tspan x="686" dy="0">print by level, min depth,</tspan><tspan x="686" dy="17">needs a Queue, not recursion</tspan></text>
+<rect x="24" y="462" width="852" height="58" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="40" y="486" font-size="13" fill="#1f2937"><tspan fill="#15803d" font-weight="700">Inorder of a BST = sorted </tspan><tspan>(1 2 3 4 5 6 7). The first three are DFS (recursion / explicit stack, O(h) space);</tspan></text>
+<text x="40" y="506" font-size="13" fill="#1f2937">level order is BFS with a queue (O(width) space). All four are O(n) time: every node is visited once.</text>
+<text x="24" y="552" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">the only difference between pre-, in- and postorder is where visit(n) sits relative to the two recursive calls.</tspan></text>
+</svg>

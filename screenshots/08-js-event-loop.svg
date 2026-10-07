@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 644" width="900" height="644" role="img">
+<title>JavaScript Event Loop</title>
+<desc>The call stack, Web APIs, microtask queue and macrotask queue, and how the event loop orders 1 4 3 2 for the classic example.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="643" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">JavaScript Event Loop</text>
+<rect x="24" y="56" width="400" height="112" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="78" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Example code</text>
+<text x="40" y="100" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="40" dy="0">console.log(1);</tspan><tspan x="40" dy="18">setTimeout(() =&gt; console.log(2), 0);</tspan><tspan x="40" dy="18">Promise.resolve().then(() =&gt; console.log(3));</tspan><tspan x="40" dy="18">console.log(4);</tspan></text>
+<rect x="448" y="56" width="428" height="112" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="464" y="78" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Console output</text>
+<text x="502" y="126" font-family="Consolas, Menlo, monospace" font-size="32" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">1</text>
+<text x="502" y="152" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">sync</text>
+<text x="609" y="126" font-family="Consolas, Menlo, monospace" font-size="32" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">4</text>
+<text x="609" y="152" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">sync</text>
+<text x="715" y="126" font-family="Consolas, Menlo, monospace" font-size="32" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">3</text>
+<text x="715" y="152" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">microtask</text>
+<text x="822" y="126" font-family="Consolas, Menlo, monospace" font-size="32" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">2</text>
+<text x="822" y="152" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">macrotask</text>
+<rect x="24" y="184" width="180" height="240" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="114" y="210" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">Call Stack</text>
+<text x="40" y="234" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve"><tspan x="40" dy="0">Sync code runs first:</tspan><tspan x="40" dy="18">prints 1, then 4</tspan></text>
+<rect x="40" y="324" width="148" height="36" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="114" y="347" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">console.log(...)</text>
+<rect x="40" y="368" width="148" height="40" rx="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="114" y="393" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">global script</text>
+<rect x="252" y="184" width="220" height="104" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="362.0" y="207.8" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">Web APIs (browser/Node)</text>
+<text x="362.0" y="230.8" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="362.0" dy="0">timer: setTimeout(cb2, 0)</tspan><tspan x="362.0" dy="19">fires -&gt; cb2 handed back</tspan><tspan x="362.0" dy="19">also fetch, DOM events</tspan></text>
+<rect x="252" y="320" width="220" height="104" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="362.0" y="343.8" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">Event Loop</text>
+<text x="362.0" y="366.8" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="362.0" dy="0">stack empty? then:</tspan><tspan x="362.0" dy="19">1st: ALL microtasks</tspan><tspan x="362.0" dy="19">2nd: ONE macrotask</tspan></text>
+<rect x="504" y="184" width="372" height="104" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="520" y="210" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#92400e" font-weight="bold" xml:space="preserve">Macrotask queue (task queue)</text>
+<rect x="520" y="224" width="56" height="28" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="548" y="243" font-family="Consolas, Menlo, monospace" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">cb2</text>
+<rect x="584" y="224" width="56" height="28" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="648" y="224" width="56" height="28" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="720" y="243" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">oldest first (FIFO)</text>
+<text x="520" y="276" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">setTimeout, setInterval, UI events, I/O</text>
+<rect x="504" y="320" width="372" height="104" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="520" y="346" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#15803d" font-weight="bold" xml:space="preserve">Microtask queue (higher priority)</text>
+<rect x="520" y="360" width="56" height="28" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="548" y="379" font-family="Consolas, Menlo, monospace" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">cb3</text>
+<rect x="584" y="360" width="56" height="28" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1" stroke-dasharray="4 3"/>
+<rect x="648" y="360" width="56" height="28" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="720" y="379" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">oldest first (FIFO)</text>
+<text x="520" y="412" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">Promise.then/catch/finally, queueMicrotask</text>
+<line x1="204" y1="224" x2="252" y2="224" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+<circle cx="228" cy="206" r="11" fill="#0f766e"/>
+<text x="228" y="210.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<line x1="472" y1="224" x2="504" y2="224" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+<circle cx="488" cy="206" r="11" fill="#b45309"/>
+<text x="488" y="210.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<path d="M504,270 H488 V346 H472" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr-purple)" stroke-linejoin="round"/>
+<circle cx="488" cy="308" r="11" fill="#7c3aed"/>
+<text x="488" y="312.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<line x1="504" y1="396" x2="472" y2="396" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr-purple)"/>
+<circle cx="488" cy="378" r="11" fill="#15803d"/>
+<text x="488" y="382.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<line x1="252" y1="374" x2="204" y2="374" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr-purple)"/>
+<path d="M114,424 V444 H690 V424" fill="none" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-green)" stroke-linejoin="round"/>
+<circle cx="150" cy="444" r="11" fill="#15803d"/>
+<text x="150" y="448.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<rect x="276.7" y="433.5" width="306.6" height="21" rx="4" fill="#ffffff"/>
+<text x="430" y="448.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">promise already resolved: cb3 queued at once</text>
+<text x="24" y="484" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#0f172a" font-weight="bold" xml:space="preserve">Why 1, 4, 3, 2?  Sync code first, then ALL microtasks, then ONE macrotask.</text>
+<circle cx="36" cy="504" r="11" fill="#0f766e"/>
+<text x="36" y="508.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="56" y="508" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">setTimeout(cb2, 0) hands cb2 to the timer; 0 ms is a minimum delay, not "run now".</text>
+<circle cx="36" cy="526" r="11" fill="#b45309"/>
+<text x="36" y="530.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="56" y="530" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">The timer fires and cb2 is queued as a macrotask; it still waits for the stack to empty.</text>
+<circle cx="36" cy="548" r="11" fill="#15803d"/>
+<text x="36" y="552.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="56" y="552" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">.then(cb3) on an already-resolved promise queues cb3 as a microtask immediately.</text>
+<circle cx="36" cy="570" r="11" fill="#15803d"/>
+<text x="36" y="574.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="56" y="574" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">Stack empty (1 and 4 already printed): the event loop drains ALL microtasks, cb3 prints 3.</text>
+<circle cx="36" cy="592" r="11" fill="#7c3aed"/>
+<text x="36" y="596.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="56" y="596" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">Only then it takes ONE macrotask: cb2 prints 2. A long microtask chain can starve macrotasks.</text>
+<text x="24" y="624" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: microtasks (promises) always run before macrotasks (setTimeout), even at 0 ms.</text>
+</svg>

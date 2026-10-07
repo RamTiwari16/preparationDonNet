@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 634" width="900" height="634" role="img">
+<title>HTTP Methods and Status Codes</title>
+<desc>Cheat sheet of HTTP methods with safe and idempotent flags, and the most important 2xx, 3xx, 4xx and 5xx status codes in one phrase each.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+<marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrSR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="633" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">HTTP Methods and Status Codes</text>
+<text x="32" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Methods</text>
+<rect x="32" y="92" width="392" height="32" rx="8" fill="#e2e8f0" stroke="#475569" stroke-width="1.5"/>
+<text x="44" y="113" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Method</text>
+<text x="132" y="113" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Typical use</text>
+<text x="316" y="113" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Safe</text>
+<text x="366" y="113" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="700">Idem.</text>
+<rect x="32" y="128" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="135" width="80" height="22" rx="11" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="80.0" y="150.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a" font-weight="700" text-anchor="middle">GET</text>
+<text x="132" y="151" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">read a resource</text>
+<rect x="316" y="136" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="336.0" y="150.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="366" y="136" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="386.0" y="150.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="32" y="168" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="175" width="80" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="80.0" y="190.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="700" text-anchor="middle">POST</text>
+<text x="132" y="191" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">create / run an action</text>
+<rect x="316" y="176" width="40" height="20" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="336.0" y="190.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="600" text-anchor="middle">no</text>
+<rect x="366" y="176" width="40" height="20" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="386.0" y="190.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="600" text-anchor="middle">no</text>
+<rect x="32" y="208" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="215" width="80" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="80.0" y="230.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="700" text-anchor="middle">PUT</text>
+<text x="132" y="231" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">replace whole resource</text>
+<rect x="316" y="216" width="40" height="20" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="336.0" y="230.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="600" text-anchor="middle">no</text>
+<rect x="366" y="216" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="386.0" y="230.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="32" y="248" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="255" width="80" height="22" rx="11" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="80.0" y="270.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#4c1d95" font-weight="700" text-anchor="middle">PATCH</text>
+<text x="132" y="271" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">partial update</text>
+<rect x="316" y="256" width="40" height="20" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="336.0" y="270.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="600" text-anchor="middle">no</text>
+<rect x="366" y="256" width="40" height="20" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="386.0" y="270.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="600" text-anchor="middle">no</text>
+<rect x="32" y="288" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="295" width="80" height="22" rx="11" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="80.0" y="310.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="700" text-anchor="middle">DELETE</text>
+<text x="132" y="311" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">remove a resource</text>
+<rect x="316" y="296" width="40" height="20" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="336.0" y="310.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="600" text-anchor="middle">no</text>
+<rect x="366" y="296" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="386.0" y="310.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="32" y="328" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="335" width="80" height="22" rx="11" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="80.0" y="350.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="700" text-anchor="middle">HEAD</text>
+<text x="132" y="351" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">headers only, no body</text>
+<rect x="316" y="336" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="336.0" y="350.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="366" y="336" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="386.0" y="350.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="32" y="368" width="392" height="36" rx="8" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+<rect x="40" y="375" width="80" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.2"/>
+<text x="80.0" y="390.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a" font-weight="700" text-anchor="middle">OPTIONS</text>
+<text x="132" y="391" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">allowed verbs, CORS preflight</text>
+<rect x="316" y="376" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="336.0" y="390.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<rect x="366" y="376" width="40" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="386.0" y="390.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">yes</text>
+<text x="32" y="424" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155"><tspan x="32" dy="0">Safe = no state change on the server.</tspan><tspan x="32" dy="18">Idempotent = repeating it leaves the same state,</tspan><tspan x="32" dy="18">so retries are harmless. PATCH is not guaranteed to be.</tspan></text>
+<rect x="32" y="484" width="392" height="92" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="48" y="508" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="48" dy="0" font-weight="700">Classic confusions</tspan><tspan x="48" dy="18">401 = not authenticated (who are you?)</tspan><tspan x="48" dy="18">403 = authenticated, but not allowed</tspan><tspan x="48" dy="18">400 = malformed; 422 = valid JSON, fails rules</tspan></text>
+<text x="448" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Status codes</text>
+<rect x="448" y="92" width="420" height="100" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="464" y="114" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#14532d" font-weight="700">2xx  Success</text>
+<text x="464" y="136" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#14532d" font-weight="700">200</text>
+<text x="504" y="136" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">OK: success, body has the result</text>
+<text x="464" y="156" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#14532d" font-weight="700">201</text>
+<text x="504" y="156" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Created: new resource, Location header</text>
+<text x="464" y="176" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#14532d" font-weight="700">204</text>
+<text x="504" y="176" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">No Content: success, empty body</text>
+<rect x="448" y="202" width="420" height="80" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="464" y="224" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">3xx  Redirection</text>
+<text x="464" y="246" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#1e3a8a" font-weight="700">301</text>
+<text x="504" y="246" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Moved Permanently / 302 Found: go elsewhere</text>
+<text x="464" y="266" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#1e3a8a" font-weight="700">304</text>
+<text x="504" y="266" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Not Modified: use your cached copy</text>
+<rect x="448" y="292" width="420" height="180" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="464" y="314" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#78350f" font-weight="700">4xx  Client error (fix the request)</text>
+<text x="464" y="336" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">400</text>
+<text x="504" y="336" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Bad Request: malformed or invalid input</text>
+<text x="464" y="356" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">401</text>
+<text x="504" y="356" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Unauthorized: missing / invalid credentials</text>
+<text x="464" y="376" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">403</text>
+<text x="504" y="376" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Forbidden: known user, no permission</text>
+<text x="464" y="396" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">404</text>
+<text x="504" y="396" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Not Found: no such resource</text>
+<text x="464" y="416" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">409</text>
+<text x="504" y="416" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Conflict: state clash, e.g. duplicate / version</text>
+<text x="464" y="436" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">422</text>
+<text x="504" y="436" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Unprocessable Entity: business rule failed</text>
+<text x="464" y="456" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#78350f" font-weight="700">429</text>
+<text x="504" y="456" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Too Many Requests: rate limited, Retry-After</text>
+<rect x="448" y="482" width="420" height="100" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="464" y="504" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700">5xx  Server error (not the client's fault)</text>
+<text x="464" y="526" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#7f1d1d" font-weight="700">500</text>
+<text x="504" y="526" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Internal Server Error: unhandled exception</text>
+<text x="464" y="546" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#7f1d1d" font-weight="700">502</text>
+<text x="504" y="546" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Bad Gateway: upstream sent a bad reply</text>
+<text x="464" y="566" font-family="Consolas, Menlo, 'Courier New', monospace" font-size="13" fill="#7f1d1d" font-weight="700">503</text>
+<text x="504" y="566" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937">Service Unavailable: overloaded / down</text>
+<text x="32" y="610" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: pick the most specific code - 201 + Location for creates, 401 vs 403 for auth, 5xx only for server faults.</text>
+</svg>

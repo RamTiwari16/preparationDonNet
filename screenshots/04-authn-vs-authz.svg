@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 590" width="900" height="590" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>Authentication vs Authorization</title>
+<desc>Authentication answers who the caller is and fails with 401, authorization answers what that caller may do and fails with 403, and ASP.NET Core runs UseAuthentication before UseAuthorization.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="589" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">Authentication vs Authorization</text>
+<rect x="24" y="56" width="384" height="256" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="50" cy="84" r="11" fill="#2563eb"/>
+<text x="50" y="88.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="70" y="90" font-size="17" fill="#1d4ed8" font-weight="700">Authentication (AuthN)</text>
+<text x="70" y="114" font-size="15" fill="#334155" font-style="italic">“Who are you?”</text>
+<circle cx="94" cy="156" r="14" fill="#fcd9b6" stroke="#475569" stroke-width="1.5"/>
+<path d="M78,152 a16,13 0 0 1 32,0 z" fill="#1d4ed8" stroke="#1d4ed8" stroke-width="1.2"/>
+<rect x="74" y="174" width="40" height="62" rx="8" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5"/>
+<line x1="114" y1="192" x2="134" y2="200" stroke="#2563eb" stroke-width="8" stroke-linecap="round"/>
+<rect x="128" y="188" width="46" height="32" rx="4" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<circle cx="140" cy="199" r="5" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<line x1="150" y1="197" x2="168" y2="197" stroke="#475569" stroke-width="2"/>
+<line x1="150" y1="205" x2="164" y2="205" stroke="#475569" stroke-width="2"/>
+<line x1="134" y1="212" x2="168" y2="212" stroke="#94a3b8" stroke-width="2"/>
+<rect x="78" y="236" width="14" height="26" rx="3" fill="#334155"/>
+<rect x="96" y="236" width="14" height="26" rx="3" fill="#334155"/>
+<text x="109" y="282" font-size="13" fill="#334155" text-anchor="middle">Guard checks ID</text>
+<text x="192" y="152" font-size="14" fill="#1f2937"><tspan x="192" dy="0">Proves who the caller is:</tspan><tspan x="192" dy="20">cookie, JWT, API key,</tspan><tspan x="192" dy="20">client certificate</tspan></text>
+<text x="192" y="220" font-size="14" fill="#1f2937"><tspan x="192" dy="0">Success: HttpContext.User</tspan><tspan x="192" dy="20">is a ClaimsPrincipal</tspan></text>
+<rect x="192" y="262" width="202" height="44" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="293.0" y="285" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="700">401 Unauthorized</text>
+<text x="293.0" y="303" font-size="13" fill="#1f2937" text-anchor="middle">bad or missing credentials</text>
+<rect x="492" y="56" width="384" height="256" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<circle cx="518" cy="84" r="11" fill="#7c3aed"/>
+<text x="518" y="88.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="538" y="90" font-size="17" fill="#6d28d9" font-weight="700">Authorization (AuthZ)</text>
+<text x="538" y="114" font-size="15" fill="#334155" font-style="italic">“What are you allowed to do?”</text>
+<rect x="524" y="134" width="84" height="22" rx="4" fill="#334155"/>
+<text x="566" y="150" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">ADMIN ONLY</text>
+<rect x="528" y="162" width="76" height="100" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<rect x="538" y="172" width="56" height="90" rx="2" fill="#fde68a" stroke="#d97706" stroke-width="1.2"/>
+<circle cx="586" cy="220" r="4" fill="#b45309"/>
+<rect x="610" y="196" width="22" height="36" rx="4" fill="#334155"/>
+<circle cx="621" cy="206" r="4" fill="#dc2626"/>
+<line x1="614" y1="220" x2="628" y2="220" stroke="#94a3b8" stroke-width="2"/>
+<rect x="614" y="224" width="14" height="5" rx="1" fill="#94a3b8"/>
+<text x="574" y="282" font-size="13" fill="#334155" text-anchor="middle">Keycard door</text>
+<text x="660" y="152" font-size="14" fill="#1f2937"><tspan x="660" dy="0">Is this user allowed to do</tspan><tspan x="660" dy="20">this? Roles, claims and</tspan><tspan x="660" dy="20">policies decide:</tspan></text>
+<text x="660" y="226" font-size="13" fill="#6d28d9" font-family="Consolas, Menlo, monospace">[Authorize(Roles=&quot;Admin&quot;)]</text>
+<text x="660" y="244" font-size="14" fill="#1f2937">Needs a known user first</text>
+<rect x="660" y="262" width="202" height="44" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="761.0" y="285" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="700">403 Forbidden</text>
+<text x="761.0" y="303" font-size="13" fill="#1f2937" text-anchor="middle">known user, no permission</text>
+<line x1="412" y1="184" x2="486" y2="184" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+<text x="450.0" y="162" font-size="13" fill="#334155" text-anchor="middle"><tspan x="450.0" dy="0">HttpContext</tspan><tspan x="450.0" dy="16">.User</tspan></text>
+<rect x="24" y="332" width="496" height="140" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="44" y="360" font-size="14" fill="#0f172a" font-weight="700">Program.cs middleware order</text>
+<text x="70" y="390" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace">app.UseRouting();</text>
+<rect x="36" y="396" width="472" height="22" rx="4" fill="#dbeafe"/>
+<circle cx="52" cy="407" r="9" fill="#2563eb"/>
+<text x="52" y="411.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="70" y="412" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace">app.UseAuthentication();  // sets HttpContext.User</text>
+<rect x="36" y="418" width="472" height="22" rx="4" fill="#ede9fe"/>
+<circle cx="52" cy="429" r="9" fill="#7c3aed"/>
+<text x="52" y="433.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="70" y="434" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace">app.UseAuthorization();   // enforces [Authorize]</text>
+<text x="70" y="456" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace">app.MapControllers();</text>
+<rect x="536" y="332" width="340" height="140" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="556" y="360" font-size="14" fill="#0f172a" font-weight="700">Door analogy</text>
+<text x="556" y="386" font-size="14" fill="#1f2937"><tspan x="556" dy="0">The guard at the entrance checks your</tspan><tspan x="556" dy="20">ID: no valid ID means 401.</tspan><tspan x="556" dy="20">The keycard reader on each door decides</tspan><tspan x="556" dy="20">which rooms you may enter: 403.</tspan></text>
+<rect x="24" y="488" width="852" height="52" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="44" y="510" font-size="14" fill="#b91c1c" font-weight="700">Gotcha:</text>
+<text x="104" y="510" font-size="14" fill="#1f2937">UseAuthorization before UseAuthentication runs against an anonymous user, so every [Authorize]</text>
+<text x="44" y="530" font-size="14" fill="#1f2937">endpoint fails. Both go after UseRouting and before the endpoints (ASP0001 analyzer warns).</text>
+<text x="24" y="568" font-size="14" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">401 = I do not know who you are; 403 = I know you, and the answer is no.</tspan></text>
+</svg>

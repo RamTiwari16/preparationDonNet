@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580" role="img">
+<title>DbContext Is Scoped per Request</title>
+<desc>One HTTP request creates one DI scope and one DbContext shared by both repositories as a unit of work, contrasted with the singleton and transient mistakes.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+<marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrSR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="579" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">DbContext Is Scoped per Request</text>
+<rect x="32" y="80" width="836" height="236" rx="12" fill="#f8fffa" stroke="#16a34a" stroke-width="1.5"/>
+<text x="48" y="104" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#14532d" font-weight="700">Correct: AddDbContext registers it Scoped - one request = one scope = one DbContext</text>
+<rect x="48" y="140" width="148" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="66" cy="140" r="11" fill="#2563eb"/>
+<text x="66" y="145" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="122.0" y="168.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700" text-anchor="middle">POST /orders</text>
+<text x="122.0" y="187.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle"><tspan x="122.0" dy="0">request starts,</tspan><tspan x="122.0" dy="18">DI scope created</tspan></text>
+<rect x="228" y="140" width="168" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="246" cy="140" r="11" fill="#2563eb"/>
+<text x="246" y="145" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="312.0" y="168.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700" text-anchor="middle">OrderService</text>
+<text x="312.0" y="187.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle"><tspan x="312.0" dy="0">PlaceOrder()</tspan><tspan x="312.0" dy="18">uses both repos</tspan></text>
+<rect x="432" y="124" width="188" height="48" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="526.0" y="153.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700" text-anchor="middle">OrderRepository</text>
+<rect x="432" y="192" width="188" height="48" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="526.0" y="221.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700" text-anchor="middle">CustomerRepository</text>
+<rect x="656" y="124" width="196" height="116" rx="10" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+<circle cx="674" cy="124" r="11" fill="#15803d"/>
+<text x="674" y="129" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="754.0" y="159.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#14532d" font-weight="700" text-anchor="middle">AppDbContext #1</text>
+<text x="754.0" y="178.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle"><tspan x="754.0" dy="0">one change tracker,</tspan><tspan x="754.0" dy="18">one connection,</tspan><tspan x="754.0" dy="18">same instance twice</tspan></text>
+<path d="M196 182 L226 182" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M396 168 L412 168 L412 148 L430 148" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M396 196 L412 196 L412 216 L430 216" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M620 148 L654 148" fill="none" stroke="#16a34a" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrG)"/>
+<path d="M620 216 L654 216" fill="none" stroke="#16a34a" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrG)"/>
+<circle cx="60" cy="280" r="11" fill="#15803d"/>
+<text x="60" y="285" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="80" y="285" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600">SaveChanges() once: one transaction commits order + customer</text>
+<circle cx="520" cy="280" r="11" fill="#475569"/>
+<text x="520" y="285" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="540" y="285" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="600">request ends: scope and DbContext disposed</text>
+<rect x="32" y="332" width="408" height="184" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="48" y="356" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700">Wrong: Singleton DbContext</text>
+<rect x="48" y="372" width="160" height="36" rx="10" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="128.0" y="395.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700" text-anchor="middle">Request 1 (thread A)</text>
+<rect x="48" y="420" width="160" height="36" rx="10" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="128.0" y="443.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700" text-anchor="middle">Request 2 (thread B)</text>
+<rect x="264" y="376" width="160" height="76" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="344.0" y="409.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700" text-anchor="middle">one DbContext</text>
+<text x="344.0" y="428.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle"><tspan x="344.0" dy="0">for the whole app</tspan></text>
+<path d="M208 390 L262 404" fill="none" stroke="#dc2626" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrR)"/>
+<path d="M208 438 L262 424" fill="none" stroke="#dc2626" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrR)"/>
+<text x="48" y="480" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="48" dy="0">Shared change tracker across concurrent requests:</tspan><tspan x="48" dy="18">not thread-safe, stale data, memory keeps growing.</tspan></text>
+<rect x="460" y="332" width="408" height="184" rx="12" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="476" y="356" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700">Wrong: Transient DbContext</text>
+<rect x="476" y="372" width="168" height="36" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="560.0" y="395.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700" text-anchor="middle">OrderRepository</text>
+<rect x="476" y="420" width="168" height="36" rx="10" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="560.0" y="443.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700" text-anchor="middle">CustomerRepository</text>
+<rect x="700" y="372" width="152" height="36" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="776.0" y="395.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700" text-anchor="middle">DbContext #1</text>
+<rect x="700" y="420" width="152" height="36" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="776.0" y="443.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#7f1d1d" font-weight="700" text-anchor="middle">DbContext #2</text>
+<path d="M644 390 L698 390" fill="none" stroke="#dc2626" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrR)"/>
+<path d="M644 438 L698 438" fill="none" stroke="#dc2626" stroke-width="2" stroke-linejoin="round" marker-end="url(#arrR)"/>
+<text x="476" y="480" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="476" dy="0">Repositories get different contexts: two trackers,</tspan><tspan x="476" dy="18">two SaveChanges, no shared transaction.</tspan></text>
+<text x="32" y="552" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: keep DbContext scoped - it is a short-lived, non-thread-safe unit of work, one per request.</text>
+</svg>

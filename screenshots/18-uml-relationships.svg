@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 604" width="900" height="604" role="img">
+<title>UML Class Relationship Cheat Sheet</title>
+<desc>Six UML relationships (association, aggregation, composition, inheritance, realization, dependency) with notation, meaning and a C# one-liner each.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="603" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">UML Class Relationship Cheat Sheet</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Weakest to strongest coupling: dependency &lt; association &lt; aggregation &lt; composition &lt; inheritance.</text>
+<rect x="24" y="84" width="420" height="150" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="112" font-size="15" fill="#1e3a8a" font-weight="bold">Association</text>
+<text x="132.18" y="112" font-size="13" fill="#334155">knows / uses</text>
+<rect x="44" y="144" width="80" height="36" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="84" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="84" dy="0" font-weight="bold">Order</tspan></text>
+<rect x="192" y="144" width="80" height="36" rx="6" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="232" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232" dy="0" font-weight="bold">Customer</tspan></text>
+<line x1="124" y1="162.0" x2="192" y2="162.0" stroke="#475569" stroke-width="1.6"/>
+<polyline points="182,156.0 192,162.0 182,168.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<text x="130" y="155" font-size="13" fill="#334155">1</text>
+<text x="184" y="155" font-size="13" fill="#334155" text-anchor="end">*</text>
+<text x="294" y="150" font-size="13" fill="#1f2937"><tspan x="294" dy="0">Long-lived reference;</tspan><tspan x="294" dy="18">both objects exist</tspan><tspan x="294" dy="18">independently.</tspan></text>
+<rect x="40" y="192" width="388" height="30" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="52" y="212" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">class Order { Customer Customer; }</text>
+<rect x="456" y="84" width="420" height="150" rx="8" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="472" y="112" font-size="15" fill="#134e4a" font-weight="bold">Aggregation</text>
+<text x="565.46" y="112" font-size="13" fill="#334155">has-a, shared (hollow diamond)</text>
+<rect x="476" y="144" width="80" height="36" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="516" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="516" dy="0" font-weight="bold">Team</tspan></text>
+<rect x="624" y="144" width="80" height="36" rx="6" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="664" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="664" dy="0" font-weight="bold">Player</tspan></text>
+<line x1="574" y1="162.0" x2="624" y2="162.0" stroke="#475569" stroke-width="1.6"/>
+<polygon points="556,162.0 565,155.5 574,162.0 565,168.5" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<text x="578" y="155" font-size="13" fill="#334155">1</text>
+<text x="618" y="155" font-size="13" fill="#334155" text-anchor="end">*</text>
+<text x="726" y="150" font-size="13" fill="#1f2937"><tspan x="726" dy="0">Part can outlive the</tspan><tspan x="726" dy="18">whole: Players survive</tspan><tspan x="726" dy="18">if the Team is deleted.</tspan></text>
+<rect x="472" y="192" width="388" height="30" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="484" y="212" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">public Team(List&lt;Player&gt; p) =&gt; Players = p;</text>
+<rect x="24" y="244" width="420" height="150" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="40" y="272" font-size="15" fill="#14532d" font-weight="bold">Composition</text>
+<text x="136.99" y="272" font-size="13" fill="#334155">has-a, owned (filled diamond)</text>
+<rect x="44" y="304" width="80" height="36" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="84" y="326.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="84" dy="0" font-weight="bold">Order</tspan></text>
+<rect x="192" y="304" width="80" height="36" rx="6" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+<text x="232" y="326.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232" dy="0" font-weight="bold">OrderLine</tspan></text>
+<line x1="142" y1="322.0" x2="192" y2="322.0" stroke="#475569" stroke-width="1.6"/>
+<polygon points="124,322.0 133,315.5 142,322.0 133,328.5" fill="#475569" stroke="#475569" stroke-width="1.6"/>
+<text x="146" y="315" font-size="13" fill="#334155">1</text>
+<text x="186" y="315" font-size="13" fill="#334155" text-anchor="end">*</text>
+<text x="294" y="310" font-size="13" fill="#1f2937"><tspan x="294" dy="0">Part dies with the</tspan><tspan x="294" dy="18">whole; it is created</tspan><tspan x="294" dy="18">and owned inside it.</tspan></text>
+<rect x="40" y="352" width="388" height="30" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="52" y="372" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">class Order { List&lt;OrderLine&gt; Lines = new(); }</text>
+<rect x="456" y="244" width="420" height="150" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="472" y="272" font-size="15" fill="#4c1d95" font-weight="bold">Inheritance</text>
+<text x="560.97" y="272" font-size="13" fill="#334155">is-a (hollow triangle)</text>
+<rect x="476" y="304" width="80" height="36" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="516" y="326.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="516" dy="0" font-weight="bold">Car</tspan></text>
+<rect x="624" y="304" width="80" height="36" rx="6" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="664" y="326.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="664" dy="0" font-weight="bold">Vehicle</tspan></text>
+<line x1="556" y1="322.0" x2="610" y2="322.0" stroke="#475569" stroke-width="1.6"/>
+<polygon points="624,322.0 610,314.0 610,330.0" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<text x="726" y="310" font-size="13" fill="#1f2937"><tspan x="726" dy="0">Child reuses and</tspan><tspan x="726" dy="18">specialises the</tspan><tspan x="726" dy="18">parent type.</tspan></text>
+<rect x="472" y="352" width="388" height="30" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="484" y="372" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">class Car : Vehicle { }</text>
+<rect x="24" y="404" width="420" height="150" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="40" y="432" font-size="15" fill="#78350f" font-weight="bold">Realization</text>
+<text x="128" y="432" font-size="13" fill="#334155">implements (dashed + triangle)</text>
+<rect x="44" y="464" width="80" height="36" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="84" y="486.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="84" dy="0" font-weight="bold">StripePay</tspan></text>
+<rect x="192" y="464" width="80" height="36" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="232" y="486.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232" dy="0" font-weight="bold">IPayment</tspan></text>
+<line x1="124" y1="482.0" x2="178" y2="482.0" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+<polygon points="192,482.0 178,474.0 178,490.0" fill="#ffffff" stroke="#475569" stroke-width="1.6"/>
+<text x="294" y="470" font-size="13" fill="#1f2937"><tspan x="294" dy="0">Class fulfils the</tspan><tspan x="294" dy="18">contract declared by</tspan><tspan x="294" dy="18">an interface.</tspan></text>
+<rect x="40" y="512" width="388" height="30" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="52" y="532" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">class StripePay : IPayment { }</text>
+<rect x="456" y="404" width="420" height="150" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="472" y="432" font-size="15" fill="#1e293b" font-weight="bold">Dependency</text>
+<text x="567.06" y="432" font-size="13" fill="#334155">uses briefly (dashed arrow)</text>
+<rect x="476" y="464" width="80" height="36" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="516" y="486.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="516" dy="0" font-weight="bold">Report</tspan></text>
+<rect x="624" y="464" width="80" height="36" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="664" y="486.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="664" dy="0" font-weight="bold">Printer</tspan></text>
+<line x1="556" y1="482.0" x2="624" y2="482.0" stroke="#475569" stroke-width="1.6" stroke-dasharray="5 4"/>
+<polyline points="614,476.0 624,482.0 614,488.0" fill="none" stroke="#475569" stroke-width="1.6"/>
+<text x="726" y="470" font-size="13" fill="#1f2937"><tspan x="726" dy="0">Parameter, local or</tspan><tspan x="726" dy="18">return type; weakest</tspan><tspan x="726" dy="18">coupling.</tspan></text>
+<rect x="472" y="512" width="388" height="30" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+<text x="484" y="532" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve">void Print(Report r) { /* uses r */ }</text>
+<text x="32" y="580" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: say "is-a" for inheritance, "has-a" for aggregation/composition, and prefer composition over inheritance.</text>
+</g>
+</svg>

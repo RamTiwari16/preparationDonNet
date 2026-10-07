@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 668" width="900" height="668" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>Microservices Reference Architecture</title>
+<desc>Web and mobile clients call an API gateway that routes to independent services, each owning its own database, with a message broker carrying events and shared platform blocks for discovery, observability and CI/CD.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="667" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">Microservices Reference Architecture</text>
+<rect x="250" y="52" width="160" height="40" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="330" y="77" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">Web SPA (Angular)</text>
+<rect x="490" y="52" width="160" height="40" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="570" y="77" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">Mobile app</text>
+<line x1="330" y1="92" x2="330" y2="126" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<line x1="570" y1="92" x2="570" y2="126" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="450" cy="108" r="11" fill="#2563eb"/>
+<text x="450" y="112.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="466" y="113" font-size="13" fill="#334155">HTTPS + JWT</text>
+<rect x="24" y="128" width="852" height="62" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450" y="153" font-size="15" fill="#1d4ed8" text-anchor="middle" font-weight="700">API Gateway  (YARP / Ocelot / Azure API Management)</text>
+<text x="450" y="176" font-size="13" fill="#1f2937" text-anchor="middle">auth offload (validate JWT)  ·  routing  ·  rate limiting  ·  TLS termination  ·  response aggregation</text>
+<line x1="102.0" y1="190" x2="102.0" y2="230" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="24" y="232" width="156" height="52" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="102.0" y="254" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="700">Identity / Auth</text>
+<text x="102.0" y="272" font-size="13" fill="#334155" text-anchor="middle">users, tokens, JWKS</text>
+<line x1="102.0" y1="284" x2="102.0" y2="306" stroke="#7c3aed" stroke-width="1.5"/>
+<path d="M47,313 a55.0,7 0 0 1 110,0 V355 a55.0,7 0 0 1 -110,0 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="102.0" cy="313" rx="55.0" ry="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="102.0" y="336" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="700">SQL Server</text>
+<text x="102.0" y="352" font-size="13" fill="#334155" text-anchor="middle">users, roles</text>
+<line x1="276.0" y1="190" x2="276.0" y2="230" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="198" y="232" width="156" height="52" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="276.0" y="254" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="700">Product</text>
+<text x="276.0" y="272" font-size="13" fill="#334155" text-anchor="middle">catalog, search</text>
+<line x1="276.0" y1="284" x2="276.0" y2="306" stroke="#0d9488" stroke-width="1.5"/>
+<path d="M221,313 a55.0,7 0 0 1 110,0 V355 a55.0,7 0 0 1 -110,0 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="276.0" cy="313" rx="55.0" ry="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="276.0" y="336" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="700">Cosmos DB</text>
+<text x="276.0" y="352" font-size="13" fill="#334155" text-anchor="middle">product docs</text>
+<line x1="450.0" y1="190" x2="450.0" y2="230" stroke="#2563eb" stroke-width="2.4" marker-end="url(#arrB)"/>
+<rect x="372" y="232" width="156" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="450.0" y="254" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="700">Order</text>
+<text x="450.0" y="272" font-size="13" fill="#334155" text-anchor="middle">cart, orders</text>
+<line x1="450.0" y1="284" x2="450.0" y2="306" stroke="#2563eb" stroke-width="1.5"/>
+<path d="M395,313 a55.0,7 0 0 1 110,0 V355 a55.0,7 0 0 1 -110,0 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="450.0" cy="313" rx="55.0" ry="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="450.0" y="336" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="700">SQL Server</text>
+<text x="450.0" y="352" font-size="13" fill="#334155" text-anchor="middle">orders</text>
+<line x1="624.0" y1="190" x2="624.0" y2="230" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="546" y="232" width="156" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="624.0" y="254" font-size="14" fill="#b45309" text-anchor="middle" font-weight="700">Payment</text>
+<text x="624.0" y="272" font-size="13" fill="#334155" text-anchor="middle">charges, refunds</text>
+<line x1="624.0" y1="284" x2="624.0" y2="306" stroke="#d97706" stroke-width="1.5"/>
+<path d="M569,313 a55.0,7 0 0 1 110,0 V355 a55.0,7 0 0 1 -110,0 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="624.0" cy="313" rx="55.0" ry="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="624.0" y="336" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="700">PostgreSQL</text>
+<text x="624.0" y="352" font-size="13" fill="#334155" text-anchor="middle">payments, ledger</text>
+<line x1="798.0" y1="190" x2="798.0" y2="230" stroke="#475569" stroke-width="1.4" marker-end="url(#arr)"/>
+<rect x="720" y="232" width="156" height="52" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="798.0" y="254" font-size="14" fill="#15803d" text-anchor="middle" font-weight="700">Notification</text>
+<text x="798.0" y="272" font-size="13" fill="#334155" text-anchor="middle">email, SMS, push</text>
+<line x1="798.0" y1="284" x2="798.0" y2="306" stroke="#16a34a" stroke-width="1.5"/>
+<path d="M743,313 a55.0,7 0 0 1 110,0 V355 a55.0,7 0 0 1 -110,0 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="798.0" cy="313" rx="55.0" ry="7" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="798.0" y="336" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="700">Redis</text>
+<text x="798.0" y="352" font-size="13" fill="#334155" text-anchor="middle">dedupe keys</text>
+<circle cx="472" cy="211" r="11" fill="#2563eb"/>
+<text x="472" y="215.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="494" y="216" font-size="13" fill="#334155">route</text>
+<circle cx="472" cy="293" r="11" fill="#2563eb"/>
+<text x="472" y="297.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<rect x="372" y="396" width="504" height="62" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="624" y="418" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="700">Message broker  (Service Bus / RabbitMQ / Kafka)</text>
+<text x="624" y="440" font-size="13" fill="#1f2937" text-anchor="middle">events: OrderPlaced → Payment  ·  PaymentSucceeded → Notification</text>
+<line x1="382" y1="284" x2="382" y2="394" stroke="#0d9488" stroke-width="2" marker-end="url(#arrT)"/>
+<circle cx="382" cy="378" r="11" fill="#0f766e"/>
+<text x="382" y="382.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<line x1="556" y1="396" x2="556" y2="286" stroke="#0d9488" stroke-width="2" marker-end="url(#arrT)"/>
+<line x1="692" y1="284" x2="692" y2="394" stroke="#0d9488" stroke-width="2" marker-end="url(#arrT)"/>
+<circle cx="692" cy="378" r="11" fill="#0f766e"/>
+<text x="692" y="382.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<line x1="730" y1="396" x2="730" y2="286" stroke="#0d9488" stroke-width="2" marker-end="url(#arrT)"/>
+<circle cx="730" cy="378" r="11" fill="#0f766e"/>
+<text x="730" y="382.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<rect x="24" y="396" width="330" height="62" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="418" font-size="14" fill="#0f172a" font-weight="700">Database per service</text>
+<text x="40" y="438" font-size="13" fill="#1f2937"><tspan x="40" dy="0">no shared tables: others use the API or events</tspan></text>
+<rect x="24" y="476" width="276" height="104" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="38" y="500" font-size="14" fill="#6d28d9" font-weight="700">Service discovery &amp; config</text>
+<text x="38" y="522" font-size="13" fill="#1f2937"><tspan x="38" dy="0">Kubernetes DNS / Consul,</tspan><tspan x="38" dy="18">Azure App Configuration,</tspan><tspan x="38" dy="18">secrets in Key Vault</tspan></text>
+<rect x="312" y="476" width="276" height="104" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="326" y="500" font-size="14" fill="#b45309" font-weight="700">Observability</text>
+<text x="326" y="522" font-size="13" fill="#1f2937"><tspan x="326" dy="0">OpenTelemetry tracing with a</tspan><tspan x="326" dy="18">correlation id per request,</tspan><tspan x="326" dy="18">central logs + metrics, health checks</tspan></text>
+<rect x="600" y="476" width="276" height="104" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="614" y="500" font-size="14" fill="#15803d" font-weight="700">CI/CD per service</text>
+<text x="614" y="522" font-size="13" fill="#1f2937"><tspan x="614" dy="0">own repo / pipeline / image,</tspan><tspan x="614" dy="18">deploy independently</tspan><tspan x="614" dy="18">(rolling, blue-green, canary)</tspan></text>
+<text x="24" y="604" font-size="13" fill="#334155"><tspan x="24" dy="0">Flow: (1) client calls the gateway; (2) gateway validates the JWT and routes to Order; (3) Order commits to its own DB;</tspan><tspan x="24" dy="18">(4) OrderPlaced is published; (5) Payment consumes it, charges, publishes PaymentSucceeded; (6) Notification sends the email.</tspan></text>
+<text x="24" y="650" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">each service owns its data and deploys alone; sync calls via the gateway, side effects via events.</tspan></text>
+</svg>

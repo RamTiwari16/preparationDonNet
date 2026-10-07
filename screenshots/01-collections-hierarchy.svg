@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" role="img">
+<title>C# Collections Interface Hierarchy</title>
+<desc>Interface hierarchy from IEnumerable of T down to IList, ISet and IDictionary, with the common concrete collections and their typical Big-O costs.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="619" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">C# Collections Interface Hierarchy</text>
+<rect x="320" y="84" width="260" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="110" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="700" text-anchor="middle">IEnumerable&lt;T&gt;</text>
+<text x="450.0" y="130" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle">foreach, deferred LINQ</text>
+<rect x="320" y="172" width="260" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="198" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="700" text-anchor="middle">ICollection&lt;T&gt;</text>
+<text x="450.0" y="218" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle">Count, Add, Remove, Contains</text>
+<path d="M450 172 L450 140" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="462" y="162" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">extends</text>
+<rect x="32" y="84" width="224" height="56" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="48" y="108" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">Queue&lt;T&gt;</text>
+<text x="48" y="128" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">FIFO: Enqueue / Dequeue O(1)</text>
+<rect x="32" y="152" width="224" height="56" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="48" y="176" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">Stack&lt;T&gt;</text>
+<text x="48" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">LIFO: Push / Pop O(1)</text>
+<path d="M256 112 L318 112" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M256 180 L288 180 L288 112" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round"/>
+<text x="32" y="236" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="32" dy="0">Queue / Stack implement only</tspan><tspan x="32" dy="18">IEnumerable&lt;T&gt;: no Add / Remove</tspan></text>
+<rect x="624" y="172" width="220" height="56" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="640" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">LinkedList&lt;T&gt;</text>
+<text x="640" y="216" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">insert at node O(1), no index</text>
+<path d="M624 200 L582 200" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M160 300 L160 276 L740 276 M450 276 L450 232" fill="none" stroke="#475569" stroke-width="2"/>
+<path d="M740 276 L740 300" fill="none" stroke="#475569" stroke-width="2"/>
+<path d="M450 276 L450 230" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="462" y="262" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">extends</text>
+<rect x="48" y="300" width="224" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="160.0" y="326" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="700" text-anchor="middle">IList&lt;T&gt;</text>
+<text x="160.0" y="346" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle">index access, Insert, RemoveAt</text>
+<rect x="338" y="300" width="224" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="326" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="700" text-anchor="middle">ISet&lt;T&gt;</text>
+<text x="450.0" y="346" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle">unique items, Union / Intersect</text>
+<rect x="628" y="300" width="224" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="740.0" y="326" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1e3a8a" font-weight="700" text-anchor="middle">IDictionary&lt;K,V&gt;</text>
+<text x="740.0" y="346" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle">key to value lookup</text>
+<rect x="32" y="404" width="124" height="124" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="44" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">List&lt;T&gt;</text>
+<rect x="40" y="440" width="108" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="94.0" y="455.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">[i] O(1)</text>
+<rect x="40" y="466" width="108" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="94.0" y="481.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600" text-anchor="middle">find O(n)</text>
+<rect x="40" y="492" width="108" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="94.0" y="507.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600" text-anchor="middle">insert O(n)</text>
+<rect x="164" y="404" width="124" height="124" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="176" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">T[] (array)</text>
+<rect x="172" y="440" width="108" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="226.0" y="455.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">[i] O(1)</text>
+<rect x="172" y="466" width="108" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="226.0" y="481.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600" text-anchor="middle">find O(n)</text>
+<rect x="172" y="492" width="108" height="22" rx="11" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="226.0" y="507.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="600" text-anchor="middle">fixed size</text>
+<rect x="322" y="404" width="124" height="124" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="334" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">HashSet&lt;T&gt;</text>
+<rect x="330" y="440" width="108" height="22" rx="11" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="384.0" y="455.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="600" text-anchor="middle">no index</text>
+<rect x="330" y="466" width="108" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="384.0" y="481.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">find O(1)</text>
+<rect x="330" y="492" width="108" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="384.0" y="507.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">add O(1)</text>
+<rect x="454" y="404" width="124" height="124" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="466" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">SortedSet&lt;T&gt;</text>
+<rect x="462" y="440" width="108" height="22" rx="11" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="516.0" y="455.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="600" text-anchor="middle">no index</text>
+<rect x="462" y="466" width="108" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.2"/>
+<text x="516.0" y="481.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a" font-weight="600" text-anchor="middle">find O(log n)</text>
+<rect x="462" y="492" width="108" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.2"/>
+<text x="516.0" y="507.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a" font-weight="600" text-anchor="middle">add O(log n)</text>
+<rect x="612" y="404" width="124" height="124" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="624" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">Dictionary</text>
+<rect x="620" y="440" width="108" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="674.0" y="455.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">[key] O(1)</text>
+<rect x="620" y="466" width="108" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="674.0" y="481.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">add O(1)</text>
+<rect x="620" y="492" width="108" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="674.0" y="507.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600" text-anchor="middle">by value O(n)</text>
+<rect x="744" y="404" width="124" height="124" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="756" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f172a" font-weight="700">SortedList</text>
+<rect x="752" y="440" width="108" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.2"/>
+<text x="806.0" y="455.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a" font-weight="600" text-anchor="middle">[key] O(log n)</text>
+<rect x="752" y="466" width="108" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="806.0" y="481.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600" text-anchor="middle">add O(n)</text>
+<rect x="752" y="492" width="108" height="22" rx="11" fill="#f1f5f9" stroke="#475569" stroke-width="1.2"/>
+<text x="806.0" y="507.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e293b" font-weight="600" text-anchor="middle">sorted by key</text>
+<path d="M94 404 L94 384 L226 384 M226 384 L226 404" fill="none" stroke="#475569" stroke-width="2"/>
+<path d="M160 384 L160 366" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="172" y="377" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">implements</text>
+<path d="M384 404 L384 384 L516 384 M516 384 L516 404" fill="none" stroke="#475569" stroke-width="2"/>
+<path d="M450 384 L450 366" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="462" y="377" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">implements</text>
+<path d="M674 404 L674 384 L806 384 M806 384 L806 404" fill="none" stroke="#475569" stroke-width="2"/>
+<path d="M740 384 L740 366" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="752" y="377" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#475569">implements</text>
+<text x="32" y="556" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="600">Typical cost:</text>
+<rect x="120" y="541" width="48" height="22" rx="11" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="144.0" y="556.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d" font-weight="600" text-anchor="middle">O(1)</text>
+<rect x="176" y="541" width="76" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.2"/>
+<text x="214.0" y="556.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a" font-weight="600" text-anchor="middle">O(log n)</text>
+<rect x="260" y="541" width="52" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="286.0" y="556.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f" font-weight="600" text-anchor="middle">O(n)</text>
+<text x="328" y="556" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">List.Add at the end is amortized O(1); arrows point child to parent.</text>
+<text x="32" y="596" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: declare the narrowest interface you need (IEnumerable&lt;T&gt; in, List&lt;T&gt; internally) and know each Big-O.</text>
+</svg>

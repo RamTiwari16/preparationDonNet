@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 672" width="900" height="672" role="img">
+<title>ASP.NET Core Middleware Pipeline</title>
+<desc>A request travels down the ordered middleware chain to the endpoint and the response travels back up the same chain, with short-circuit paths.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+<marker id="arrS" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrSR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="671" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">ASP.NET Core Middleware Pipeline</text>
+<text x="32" y="78" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1e3a8a" font-weight="700">REQUEST goes in  (code before next())</text>
+<text x="504" y="78" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#134e4a" font-weight="700">RESPONSE comes back  (code after next())</text>
+<rect x="32" y="98" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="121.0" r="11" fill="#2563eb"/>
+<text x="54" y="126.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+<text x="76" y="117" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseExceptionHandler</text>
+<text x="76" y="135" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">wraps the rest of the pipeline in try/catch</text>
+<rect x="504" y="98" width="364" height="46" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<circle cx="526" cy="121.0" r="11" fill="#0f766e"/>
+<text x="526" y="126.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">15</text>
+<text x="548" y="117" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700">ExceptionHandler</text>
+<text x="548" y="135" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">catches exceptions, returns a 500 response</text>
+<path d="M214.0 144 L214.0 155" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 156 L686.0 145" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<rect x="32" y="156" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="179.0" r="11" fill="#2563eb"/>
+<text x="54" y="184.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+<text x="76" y="175" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseHttpsRedirection</text>
+<text x="76" y="193" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">http request -&gt; 307 redirect to https</text>
+<rect x="504" y="156" width="364" height="46" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="526" cy="179.0" r="11" fill="#475569"/>
+<text x="526" y="184.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">14</text>
+<text x="548" y="175" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700">HttpsRedirection</text>
+<text x="548" y="193" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">pass-through (acts only on the way in)</text>
+<path d="M214.0 202 L214.0 213" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 214 L686.0 203" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M398 188 L500 188" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#arrSR)"/>
+<text x="450.0" y="178" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="700" text-anchor="middle">307</text>
+<rect x="32" y="214" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="237.0" r="11" fill="#2563eb"/>
+<text x="54" y="242.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+<text x="76" y="233" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseStaticFiles</text>
+<text x="76" y="251" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">wwwroot file found? serve it, stop here</text>
+<rect x="504" y="214" width="364" height="46" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="526" cy="237.0" r="11" fill="#475569"/>
+<text x="526" y="242.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">13</text>
+<text x="548" y="233" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700">StaticFiles</text>
+<text x="548" y="251" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">pass-through (nothing to add)</text>
+<path d="M214.0 260 L214.0 271" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 272 L686.0 261" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M398 246 L500 246" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#arrSR)"/>
+<text x="450.0" y="236" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="700" text-anchor="middle">file hit</text>
+<rect x="32" y="272" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="295.0" r="11" fill="#2563eb"/>
+<text x="54" y="300.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+<text x="76" y="291" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseRouting</text>
+<text x="76" y="309" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">matches the URL to an endpoint (not run yet)</text>
+<rect x="504" y="272" width="364" height="46" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="526" cy="295.0" r="11" fill="#475569"/>
+<text x="526" y="300.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">12</text>
+<text x="548" y="291" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700">Routing</text>
+<text x="548" y="309" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">pass-through</text>
+<path d="M214.0 318 L214.0 329" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 330 L686.0 319" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<rect x="32" y="330" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="353.0" r="11" fill="#2563eb"/>
+<text x="54" y="358.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+<text x="76" y="349" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseCors</text>
+<text x="76" y="367" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">answers preflight, checks allowed origins</text>
+<rect x="504" y="330" width="364" height="46" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<circle cx="526" cy="353.0" r="11" fill="#0f766e"/>
+<text x="526" y="358.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">11</text>
+<text x="548" y="349" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#134e4a" font-weight="700">Cors</text>
+<text x="548" y="367" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">adds Access-Control-Allow-* headers</text>
+<path d="M214.0 376 L214.0 387" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 388 L686.0 377" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M398 362 L500 362" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#arrSR)"/>
+<text x="450.0" y="352" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="700" text-anchor="middle">preflight</text>
+<rect x="32" y="388" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="411.0" r="11" fill="#2563eb"/>
+<text x="54" y="416.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+<text x="76" y="407" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseAuthentication</text>
+<text x="76" y="425" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">reads cookie / JWT, sets HttpContext.User</text>
+<rect x="504" y="388" width="364" height="46" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="526" cy="411.0" r="11" fill="#475569"/>
+<text x="526" y="416.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">10</text>
+<text x="548" y="407" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700">Authentication</text>
+<text x="548" y="425" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">pass-through (401 challenge if required)</text>
+<path d="M214.0 434 L214.0 445" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 446 L686.0 435" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<rect x="32" y="446" width="364" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<circle cx="54" cy="469.0" r="11" fill="#2563eb"/>
+<text x="54" y="474.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">7</text>
+<text x="76" y="465" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e3a8a" font-weight="700">UseAuthorization</text>
+<text x="76" y="483" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">policy check: fail = 401 / 403, no endpoint</text>
+<rect x="504" y="446" width="364" height="46" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="526" cy="469.0" r="11" fill="#475569"/>
+<text x="526" y="474.0" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">9</text>
+<text x="548" y="465" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1e293b" font-weight="700">Authorization</text>
+<text x="548" y="483" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">pass-through</text>
+<path d="M398 478 L500 478" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5 4" stroke-linejoin="round" marker-end="url(#arrSR)"/>
+<text x="450.0" y="468" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d" font-weight="700" text-anchor="middle">401 / 403</text>
+<rect x="188" y="512" width="524" height="44" rx="10" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+<circle cx="212" cy="534" r="11" fill="#15803d"/>
+<text x="212" y="539" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+<text x="236" y="531" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#14532d" font-weight="700">Endpoint</text>
+<text x="236" y="548" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155">controller action / minimal API / Razor Page produces the response</text>
+<path d="M214.0 492 L214.0 511" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<path d="M686.0 512 L686.0 493" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arrS)"/>
+<rect x="32" y="572" width="836" height="52" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="48" y="594" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#78350f"><tspan x="48" dy="0">Order is the contract: ExceptionHandler first, UseRouting before UseCors, UseAuthentication before UseAuthorization.</tspan><tspan x="48" dy="20">Each middleware either calls await next(context) or ends the request itself (red dashed = short-circuit).</tspan></text>
+<text x="32" y="648" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: middleware order is execution order in, reverse order out; forgetting next() short-circuits the pipeline.</text>
+</svg>

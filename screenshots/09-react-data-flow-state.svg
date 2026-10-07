@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 568" width="900" height="568" role="img">
+<title>React Data Flow and State</title>
+<desc>One-way data flow with props down and callbacks up, Context for deep trees, and the Redux store, action and reducer loop.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="567" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">React Data Flow and State</text>
+<line x1="520" y1="56" x2="520" y2="516" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="24" y="64" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Local state: props down, events up</text>
+<rect x="72" y="76" width="360" height="92" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="88" y="100" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" font-weight="bold" xml:space="preserve">Parent (owns the state)</text>
+<text x="88" y="122" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve">const [name, setName] = useState('')</text>
+<circle cx="96" cy="143" r="11" fill="#2563eb"/>
+<text x="96" y="147.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="112" y="148" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve">setName(v) -&gt; re-render -&gt; new props</text>
+<rect x="72" y="236" width="360" height="76" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="88" y="260" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#15803d" font-weight="bold" xml:space="preserve">Child (receives props)</text>
+<text x="88" y="282" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve">function Child({ name, onChange })</text>
+<line x1="170" y1="168" x2="170" y2="236" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+<circle cx="170" cy="184" r="11" fill="#2563eb"/>
+<text x="170" y="188.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<rect x="103.7" y="205.5" width="132.5" height="21" rx="4" fill="#ffffff"/>
+<text x="170" y="220.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">props: name={name}</text>
+<line x1="346" y1="236" x2="346" y2="168" stroke="#d97706" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr-amber)"/>
+<circle cx="346" cy="184" r="11" fill="#b45309"/>
+<text x="346" y="188.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<rect x="289.8" y="205.5" width="112.4" height="21" rx="4" fill="#ffffff"/>
+<text x="346" y="220.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" xml:space="preserve">onChange(value)</text>
+<text x="24" y="338" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve"><tspan x="24" dy="0">Data flows one way: down. A child never mutates props;</tspan><tspan x="24" dy="18">it calls a callback so the owner of the state updates it.</tspan></text>
+<text x="24" y="388" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Context: skip prop drilling in deep trees</text>
+<path d="M82,436 V414 H432 V436" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-purple)" stroke-linejoin="round"/>
+<rect x="153.9" y="403.5" width="206.2" height="21" rx="4" fill="#ffffff"/>
+<text x="257" y="418.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#6d28d9" text-anchor="middle" xml:space="preserve">value skips the middle layers</text>
+<rect x="24" y="436" width="116" height="52" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="82.0" y="452.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">Provider</text>
+<text x="82.0" y="475.5" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">value={theme}</text>
+<rect x="156" y="436" width="88" height="52" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="200.0" y="463.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Layout</text>
+<rect x="256" y="436" width="88" height="52" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="300.0" y="463.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Sidebar</text>
+<rect x="356" y="436" width="152" height="52" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="432.0" y="452.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">Consumer</text>
+<text x="432.0" y="475.5" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">useContext(Ctx)</text>
+<text x="24" y="510" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">Every consumer re-renders when value changes: memoize the value.</text>
+<text x="532" y="64" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Redux: one global store</text>
+<rect x="548" y="76" width="220" height="76" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="658.0" y="95.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">Component (UI)</text>
+<text x="658.0" y="118.5" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="658.0" dy="0">dispatch(addItem(p))</tspan><tspan x="658.0" dy="18">useSelector(s =&gt; s.cart)</tspan></text>
+<rect x="548" y="192" width="220" height="60" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="658.0" y="212.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Action (plain object)</text>
+<text x="658.0" y="235.5" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">{ type, payload }</text>
+<rect x="548" y="292" width="220" height="92" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="658.0" y="318.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">Store + reducer</text>
+<text x="658.0" y="341.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="658.0" dy="0">(state, action) =&gt; newState</tspan><tspan x="658.0" dy="19">pure: returns a new state</tspan></text>
+<line x1="658" y1="152" x2="658" y2="192" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+<circle cx="682" cy="172" r="11" fill="#2563eb"/>
+<text x="682" y="176.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="698" y="177" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">dispatch</text>
+<line x1="658" y1="252" x2="658" y2="292" stroke="#d97706" stroke-width="2" marker-end="url(#arr-amber)"/>
+<circle cx="682" cy="272" r="11" fill="#b45309"/>
+<text x="682" y="276.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="698" y="277" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">reducer runs</text>
+<path d="M768,338 H800 V114 H770" fill="none" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-purple)" stroke-linejoin="round"/>
+<circle cx="800" cy="226" r="11" fill="#7c3aed"/>
+<text x="800" y="230.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="814" y="231" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">re-render</text>
+<rect x="532" y="404" width="344" height="112" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="548" y="428" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Pick the simplest tool that works</text>
+<text x="548" y="452" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="548" dy="0">One component: useState / useReducer</tspan><tspan x="548" dy="19">Siblings: lift state up to the parent</tspan><tspan x="548" dy="19">Deep tree, rarely changes: Context</tspan><tspan x="548" dy="19">Large app, devtools: Redux Toolkit</tspan></text>
+<text x="24" y="548" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: props down, events up; lift state first, Context for theme/auth, Redux for large shared state.</text>
+</svg>

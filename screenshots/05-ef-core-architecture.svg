@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 652" width="900" height="652" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>EF Core Architecture: Query and SaveChanges</title>
+<desc>LINQ and SaveChanges calls flow through DbContext, the provider and ADO.NET to SQL Server, with separate query-translation and change-detection paths.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="651" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">EF Core Architecture: Query and SaveChanges</text>
+<rect x="24" y="52" width="426" height="58" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="72" font-size="13" fill="#0f172a" font-weight="700">Read: a LINQ query</text>
+<text x="40" y="97" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace">db.Orders.Where(o =&gt; o.Total &gt; 100).ToList()</text>
+<rect x="474" y="52" width="402" height="58" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="490" y="72" font-size="13" fill="#0f172a" font-weight="700">Write: change entities, then save</text>
+<text x="490" y="97" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace">order.Status = &quot;Paid&quot;; db.SaveChanges();</text>
+<line x1="237" y1="110" x2="237" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="217" cy="130" r="11" fill="#2563eb"/>
+<text x="217" y="134.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<line x1="675" y1="110" x2="675" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="655" cy="130" r="11" fill="#2563eb"/>
+<text x="655" y="134.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<rect x="24" y="150" width="852" height="86" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="172" font-size="15" fill="#1d4ed8" font-weight="700">DbContext</text>
+<text x="126" y="172" font-size="13" fill="#334155">unit of work: one instance per request (scoped)</text>
+<rect x="40" y="184" width="262" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="171" y="201" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">DbSet&lt;T&gt;</text>
+<text x="171" y="217" font-size="13" fill="#334155" text-anchor="middle">entry point for LINQ queries</text>
+<rect x="319" y="184" width="262" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450" y="201" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">Model (IModel)</text>
+<text x="450" y="217" font-size="13" fill="#334155" text-anchor="middle">entities, keys, relationships, mappings</text>
+<rect x="598" y="184" width="262" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="729" y="201" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">ChangeTracker</text>
+<text x="729" y="217" font-size="13" fill="#334155" text-anchor="middle">identity map + snapshots + states</text>
+<line x1="231" y1="236" x2="231" y2="276" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="211" cy="256" r="11" fill="#2563eb"/>
+<text x="211" y="260.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<line x1="669" y1="236" x2="669" y2="276" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="649" cy="256" r="11" fill="#2563eb"/>
+<text x="649" y="260.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<rect x="24" y="276" width="414" height="150" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="40" y="298" font-size="15" fill="#0f766e" font-weight="700">Query path</text>
+<circle cx="50" cy="318" r="9" fill="#0d9488"/>
+<text x="50" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">a</text>
+<text x="68" y="322" font-size="13" fill="#1f2937">LINQ becomes an expression tree (deferred)</text>
+<circle cx="50" cy="344" r="9" fill="#0d9488"/>
+<text x="50" y="348" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">b</text>
+<text x="68" y="348" font-size="13" fill="#1f2937">Provider translates it to parameterized SQL</text>
+<circle cx="50" cy="370" r="9" fill="#0d9488"/>
+<text x="50" y="374" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">c</text>
+<text x="68" y="374" font-size="13" fill="#1f2937">Execute, read rows, materialize entities</text>
+<circle cx="50" cy="396" r="9" fill="#0d9488"/>
+<text x="50" y="400" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">d</text>
+<text x="68" y="400" font-size="13" fill="#1f2937">Track them in the ChangeTracker (unless AsNoTracking)</text>
+<rect x="462" y="276" width="414" height="150" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="478" y="298" font-size="15" fill="#6d28d9" font-weight="700">SaveChanges path</text>
+<circle cx="488" cy="318" r="9" fill="#7c3aed"/>
+<text x="488" y="322" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">a</text>
+<text x="506" y="322" font-size="13" fill="#1f2937">DetectChanges: snapshot vs current values</text>
+<circle cx="488" cy="344" r="9" fill="#7c3aed"/>
+<text x="488" y="348" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">b</text>
+<text x="506" y="348" font-size="13" fill="#1f2937">Order by FK dependency, build INSERT/UPDATE/DELETE</text>
+<circle cx="488" cy="370" r="9" fill="#7c3aed"/>
+<text x="488" y="374" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">c</text>
+<text x="506" y="374" font-size="13" fill="#1f2937">Batch commands into few round-trips</text>
+<circle cx="488" cy="396" r="9" fill="#7c3aed"/>
+<text x="488" y="400" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">d</text>
+<text x="506" y="400" font-size="13" fill="#1f2937">One transaction; commit, then states reset to Unchanged</text>
+<line x1="231" y1="426" x2="231" y2="466" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="211" cy="446" r="11" fill="#2563eb"/>
+<text x="211" y="450.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<line x1="669" y1="426" x2="669" y2="466" stroke="#2563eb" stroke-width="2" marker-end="url(#arrB)"/>
+<circle cx="649" cy="446" r="11" fill="#2563eb"/>
+<text x="649" y="450.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<rect x="24" y="466" width="406" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="227" y="487" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">Database provider (SqlServer)</text>
+<text x="227" y="505" font-size="13" fill="#334155" text-anchor="middle">SQL dialect, type mapping, command batching</text>
+<rect x="460" y="466" width="416" height="50" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="668" y="487" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">ADO.NET</text>
+<text x="668" y="505" font-size="13" fill="#334155" text-anchor="middle">SqlConnection, SqlCommand, SqlDataReader</text>
+<line x1="430" y1="491" x2="458" y2="491" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+<line x1="668" y1="516" x2="668" y2="560" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+<circle cx="648" cy="538" r="11" fill="#15803d"/>
+<text x="648" y="542.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<rect x="460" y="560" width="416" height="44" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="668" y="580" font-size="15" fill="#1f2937" text-anchor="middle" font-weight="700">SQL Server</text>
+<text x="668" y="596" font-size="13" fill="#334155" text-anchor="middle">executes the SQL inside the transaction</text>
+<path d="M460,582 H227 V520" fill="none" stroke="#475569" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+<text x="236" y="574" font-size="13" fill="#334155" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">rows come back via DataReader</text>
+<text x="24" y="636" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">EF builds SQL from expression trees and writes only what the ChangeTracker found changed, all inside one transaction.</tspan></text>
+</svg>

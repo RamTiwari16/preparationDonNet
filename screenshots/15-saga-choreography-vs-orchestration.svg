@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 646" width="900" height="646" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>Saga: Choreography vs Orchestration</title>
+<desc>An Order, Payment, Inventory, Shipping saga with compensating actions when shipping fails, implemented with event choreography over a broker and with a central orchestrator sending commands.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="645" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">Saga: Choreography vs Orchestration</text>
+<rect x="24" y="52" width="852" height="254" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<circle cx="44" cy="75" r="11" fill="#0f766e"/>
+<text x="44" y="79.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<text x="62" y="80" font-size="15" fill="#0f172a" font-weight="700">Choreography: services react to each other's events</text>
+<rect x="44" y="120" width="150" height="66" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="119.0" y="141" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="700">Order</text>
+<text x="119.0" y="160" font-size="13" fill="#1f2937" text-anchor="middle">create order (Pending)</text>
+<text x="119.0" y="177" font-size="13" fill="#b91c1c" text-anchor="middle">undo: cancel order</text>
+<line x1="119.0" y1="186" x2="119.0" y2="224" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="264" y="120" width="150" height="66" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="339.0" y="141" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="700">Payment</text>
+<text x="339.0" y="160" font-size="13" fill="#1f2937" text-anchor="middle">charge the card</text>
+<text x="339.0" y="177" font-size="13" fill="#b91c1c" text-anchor="middle">undo: refund payment</text>
+<line x1="339.0" y1="186" x2="339.0" y2="224" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="484" y="120" width="150" height="66" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="559.0" y="141" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="700">Inventory</text>
+<text x="559.0" y="160" font-size="13" fill="#1f2937" text-anchor="middle">reserve stock</text>
+<text x="559.0" y="177" font-size="13" fill="#b91c1c" text-anchor="middle">undo: release stock</text>
+<line x1="559.0" y1="186" x2="559.0" y2="224" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<rect x="704" y="120" width="150" height="66" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="779.0" y="141" font-size="14" fill="#b45309" text-anchor="middle" font-weight="700">Shipping</text>
+<text x="779.0" y="160" font-size="13" fill="#1f2937" text-anchor="middle">schedule shipment</text>
+<text x="779.0" y="177" font-size="13" fill="#b91c1c" text-anchor="middle">fails in this example</text>
+<line x1="779.0" y1="186" x2="779.0" y2="224" stroke="#94a3b8" stroke-width="1.4" stroke-dasharray="3 3"/>
+<line x1="196" y1="138" x2="261" y2="138" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+<text x="229.0" y="112" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">OrderCreated</text>
+<line x1="262" y1="170" x2="197" y2="170" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrR)"/>
+<text x="229.0" y="206" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="700">PaymentRefunded</text>
+<line x1="416" y1="138" x2="481" y2="138" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+<text x="449.0" y="112" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">PaymentCompleted</text>
+<line x1="482" y1="170" x2="417" y2="170" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrR)"/>
+<text x="449.0" y="206" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="700">StockReleased</text>
+<line x1="636" y1="138" x2="701" y2="138" stroke="#16a34a" stroke-width="2" marker-end="url(#arrG)"/>
+<text x="669.0" y="112" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">StockReserved</text>
+<line x1="702" y1="170" x2="637" y2="170" stroke="#dc2626" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrR)"/>
+<text x="669.0" y="206" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="700">ShippingFailed</text>
+<rect x="44" y="224" width="810" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="449" y="244" font-size="13" fill="#1f2937" text-anchor="middle">Message broker (Service Bus / Kafka / RabbitMQ): every event is published here; each service subscribes</text>
+<text x="44" y="276" font-size="13" fill="#1f2937"><tspan fill="#15803d" font-weight="700">Pros: </tspan><tspan>loosely coupled, no central coordinator to fail or scale, easy to add a new subscriber.</tspan></text>
+<text x="44" y="295" font-size="13" fill="#1f2937"><tspan fill="#b91c1c" font-weight="700">Cons: </tspan><tspan>the flow is implicit and spread across services: hard to trace, test and debug; cyclic events.</tspan></text>
+<rect x="24" y="318" width="852" height="280" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<circle cx="44" cy="341" r="11" fill="#7c3aed"/>
+<text x="44" y="345.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<text x="62" y="346" font-size="15" fill="#0f172a" font-weight="700">Orchestration: a central saga sends commands and waits for replies</text>
+<rect x="44" y="360" width="810" height="48" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="449" y="380" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="700">Order Saga orchestrator: a persisted state machine (e.g. MassTransit saga, Durable Functions)</text>
+<text x="449" y="398" font-size="13" fill="#334155" text-anchor="middle">knows every step and which compensation to run, in reverse order, when a step fails</text>
+<line x1="70" y1="410" x2="70" y2="484" stroke="#7c3aed" stroke-width="1.8" marker-start="url(#arrP)" marker-end="url(#arrP)"/>
+<text x="82" y="432" font-size="13" fill="#1f2937" font-weight="700"><tspan x="82" dy="0" fill="#15803d">start: OrderPlaced</tspan><tspan x="82" dy="19" fill="#b91c1c">6 CancelOrder</tspan></text>
+<rect x="44" y="486" width="150" height="50" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="119.0" y="507" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="700">Order</text>
+<text x="119.0" y="525" font-size="13" fill="#334155" text-anchor="middle">local transaction</text>
+<line x1="290" y1="410" x2="290" y2="484" stroke="#7c3aed" stroke-width="1.8" marker-start="url(#arrP)" marker-end="url(#arrP)"/>
+<text x="302" y="432" font-size="13" fill="#1f2937" font-weight="700"><tspan x="302" dy="0" fill="#1f2937">1 ChargeCard</tspan><tspan x="302" dy="19" fill="#b91c1c">5 RefundPayment</tspan></text>
+<rect x="264" y="486" width="150" height="50" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="339.0" y="507" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="700">Payment</text>
+<text x="339.0" y="525" font-size="13" fill="#334155" text-anchor="middle">local transaction</text>
+<line x1="510" y1="410" x2="510" y2="484" stroke="#7c3aed" stroke-width="1.8" marker-start="url(#arrP)" marker-end="url(#arrP)"/>
+<text x="522" y="432" font-size="13" fill="#1f2937" font-weight="700"><tspan x="522" dy="0" fill="#1f2937">2 ReserveStock</tspan><tspan x="522" dy="19" fill="#b91c1c">4 ReleaseStock</tspan></text>
+<rect x="484" y="486" width="150" height="50" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="559.0" y="507" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="700">Inventory</text>
+<text x="559.0" y="525" font-size="13" fill="#334155" text-anchor="middle">local transaction</text>
+<line x1="730" y1="410" x2="730" y2="484" stroke="#7c3aed" stroke-width="1.8" marker-start="url(#arrP)" marker-end="url(#arrP)"/>
+<text x="742" y="432" font-size="13" fill="#1f2937" font-weight="700"><tspan x="742" dy="0" fill="#1f2937">3 ScheduleShipment</tspan><tspan x="742" dy="19" fill="#b91c1c">reply: Failed</tspan></text>
+<rect x="704" y="486" width="150" height="50" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="779.0" y="507" font-size="14" fill="#b45309" text-anchor="middle" font-weight="700">Shipping</text>
+<text x="779.0" y="525" font-size="13" fill="#334155" text-anchor="middle">local transaction</text>
+<text x="44" y="570" font-size="13" fill="#1f2937"><tspan fill="#15803d" font-weight="700">Pros: </tspan><tspan>the whole flow lives in one place: easy to follow, monitor, time out and change.</tspan></text>
+<text x="44" y="589" font-size="13" fill="#1f2937"><tspan fill="#b91c1c" font-weight="700">Cons: </tspan><tspan>an extra component that must be highly available; risk of putting business logic in it.</tspan></text>
+<text x="24" y="628" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">a saga trades one ACID transaction for local steps plus compensations; events suit few steps, an orchestrator many.</tspan></text>
+</svg>

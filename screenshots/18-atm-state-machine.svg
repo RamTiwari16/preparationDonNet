@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 628" width="900" height="628" role="img">
+<title>ATM State Pattern Machine</title>
+<desc>ATM state machine for the State pattern: Idle, CardInserted, Authenticated, Transaction, Dispensing, plus wrong-PIN and insufficient-funds failure paths.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="627" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">ATM State Pattern Machine</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Each state is a class that decides which actions are legal and which state comes next.</text>
+<rect x="32" y="230" width="140" height="56" rx="28" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="102" y="253.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="102" dy="0" font-weight="bold">Idle</tspan><tspan x="102" dy="18">waiting for card</tspan></text>
+<rect x="300" y="110" width="180" height="56" rx="28" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="390" y="133.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="390" dy="0" font-weight="bold">CardInserted</tspan><tspan x="390" dy="18">PIN prompt</tspan></text>
+<rect x="640" y="110" width="220" height="56" rx="28" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="750" y="133.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="750" dy="0" font-weight="bold">Authenticated</tspan><tspan x="750" dy="18">PIN entered and valid</tspan></text>
+<rect x="640" y="350" width="220" height="56" rx="28" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="750" y="373.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="750" dy="0" font-weight="bold">Transaction</tspan><tspan x="750" dy="18">amount selected</tspan></text>
+<rect x="300" y="350" width="180" height="56" rx="28" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="390" y="373.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="390" dy="0" font-weight="bold">Dispensing</tspan><tspan x="390" dy="18">cash out, card back</tspan></text>
+<rect x="300" y="230" width="180" height="56" rx="28" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="390" y="253.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="390" dy="0" font-weight="bold">CardRetained</tspan><tspan x="390" dy="18">card kept, bank alerted</tspan></text>
+<polyline points="102,230 102,138 300,138" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="200" cy="138" r="11" fill="#2563eb"/>
+<text x="200" y="142.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="200" y="124" font-size="13" fill="#334155" text-anchor="middle">insertCard()</text>
+<polyline points="480,138 640,138" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="510" cy="138" r="11" fill="#2563eb"/>
+<text x="510" y="142.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="578" y="130" font-size="13" fill="#334155" text-anchor="middle">valid PIN</text>
+<polyline points="350,110 350,88 420,88 420,110" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<text x="430" y="94" font-size="13" fill="#78350f">wrong PIN, tries &lt; 3 (stay)</text>
+<polyline points="700,166 700,350" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="700" cy="214" r="11" fill="#2563eb"/>
+<text x="700" y="218.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="686" y="219" font-size="13" fill="#334155" text-anchor="end">withdraw(amount)</text>
+<polyline points="760,350 760,166" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_red)"/>
+<text x="776" y="290" font-size="13" fill="#7f1d1d">insufficient funds</text>
+<text x="776" y="308" font-size="13" fill="#7f1d1d">(back, retry)</text>
+<polyline points="640,378 480,378" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<circle cx="610" cy="378" r="11" fill="#15803d"/>
+<text x="610" y="382.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="546" y="370" font-size="13" fill="#334155" text-anchor="middle">debit ok</text>
+<polyline points="300,378 102,378 102,286" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<circle cx="270" cy="378" r="11" fill="#15803d"/>
+<text x="270" y="382.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<text x="176" y="370" font-size="13" fill="#334155" text-anchor="middle">cash + card taken</text>
+<polyline points="390,166 390,230" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<text x="402" y="203" font-size="13" fill="#7f1d1d">3rd wrong PIN</text>
+<polyline points="300,258 172,258" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<text x="236" y="250" font-size="13" fill="#7f1d1d" text-anchor="middle">reset</text>
+<rect x="24" y="436" width="400" height="140" rx="8" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="462" font-size="13" fill="#1e293b" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="40" dy="0">interface IAtmState {</tspan><tspan x="40" dy="18">  void InsertCard(Atm atm);</tspan><tspan x="40" dy="18">  void EnterPin(Atm atm, string pin);</tspan><tspan x="40" dy="18">  void Withdraw(Atm atm, decimal amt);</tspan><tspan x="40" dy="18">  void Cancel(Atm atm);</tspan><tspan x="40" dy="18">}  // each state sets atm.State = next</tspan></text>
+<rect x="440" y="436" width="436" height="140" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="456" y="463.18" font-size="13" fill="#1f2937"><tspan x="456" dy="0" font-weight="bold">Rules and gotchas</tspan><tspan x="456" dy="19">- Illegal action for a state is rejected (Withdraw while Idle)</tspan><tspan x="456" dy="19">- Cancel from any state: eject card and go to Idle</tspan><tspan x="456" dy="19">- One class per state replaces a giant switch statement</tspan><tspan x="456" dy="19">- Count PIN attempts per card and lock after 3</tspan><tspan x="456" dy="19">- Debit and dispense must be atomic (reverse on jam)</tspan></text>
+<text x="32" y="608" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: State pattern = behaviour depends on current state; transitions live in the state classes, not in if/else.</text>
+</g>
+</svg>

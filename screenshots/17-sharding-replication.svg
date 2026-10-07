@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 616" width="900" height="616" role="img">
+<title>Database Replication versus Sharding</title>
+<desc>Left: leader/follower replication with read replicas and lag. Right: hash-based sharding with a shard router and a consistent-hash ring.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="615" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">Database Replication versus Sharding</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Replication copies the same data to scale reads; sharding splits different data to scale writes and size.</text>
+<rect x="24" y="84" width="412" height="474" rx="8" fill="#f5f9ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="112" font-size="15" fill="#1e3a8a" font-weight="bold">Leader / follower replication</text>
+<rect x="150" y="136" width="160" height="40" rx="8" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="230" y="160.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="230" dy="0" font-weight="bold">App servers</tspan></text>
+<path d="M160,240 L160,288 A70,8 0 0 0 300,288 L300,240 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<ellipse cx="230" cy="240" rx="70" ry="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="230" y="263.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="230" dy="0" font-weight="bold">Leader (primary)</tspan><tspan x="230" dy="17">accepts all writes</tspan></text>
+<path d="M48,384 L48,432 A64,8 0 0 0 176,432 L176,384 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<ellipse cx="112" cy="384" rx="64" ry="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="112" y="407.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="112" dy="0" font-weight="bold">Follower 1</tspan><tspan x="112" dy="17">read replica</tspan></text>
+<path d="M284,384 L284,432 A64,8 0 0 0 412,432 L412,384 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<ellipse cx="348" cy="384" rx="64" ry="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="348" y="407.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="348" dy="0" font-weight="bold">Follower 2</tspan><tspan x="348" dy="17">read replica</tspan></text>
+<polyline points="230,176 230,232" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="230" cy="204" r="11" fill="#2563eb"/>
+<text x="230" y="208.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="246" y="209" font-size="13" fill="#334155">writes</text>
+<polyline points="200,298 136,378" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<polyline points="260,298 324,378" fill="none" stroke="#16a34a" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_green)"/>
+<circle cx="230" cy="324" r="11" fill="#15803d"/>
+<text x="230" y="328.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="230" y="360" font-size="13" fill="#334155" text-anchor="middle">async replication</text>
+<polyline points="150,156 64,156 64,378" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_teal)"/>
+<polyline points="310,156 396,156 396,378" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_teal)"/>
+<circle cx="64" cy="274" r="11" fill="#0f766e"/>
+<text x="64" y="278.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<circle cx="396" cy="274" r="11" fill="#0f766e"/>
+<text x="396" y="278.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="80" y="279" font-size="13" fill="#334155">reads</text>
+<text x="380" y="279" font-size="13" fill="#334155" text-anchor="end">reads</text>
+<rect x="40" y="456" width="380" height="90" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="54" y="471.68" font-size="13" fill="#1f2937"><tspan x="54" dy="0" font-weight="bold">Gotchas</tspan><tspan x="54" dy="17">- Lag: read-after-write may see stale data;</tspan><tspan x="54" dy="17">  read your own writes from the leader</tspan><tspan x="54" dy="17">- Leader dies: promote a follower (failover)</tspan><tspan x="54" dy="17">- Scales reads only; writes hit one leader</tspan></text>
+<rect x="448" y="84" width="428" height="474" rx="8" fill="#faf8ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="464" y="112" font-size="15" fill="#4c1d95" font-weight="bold">Hash-based sharding</text>
+<rect x="582" y="132" width="160" height="38" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="662" y="155.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="662" dy="0" font-weight="bold">App servers</tspan></text>
+<polyline points="662,170 662,208" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_purple)"/>
+<circle cx="662" cy="189" r="11" fill="#7c3aed"/>
+<text x="662" y="193.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<rect x="504" y="208" width="316" height="44" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="662" y="226.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="662" dy="0" font-weight="bold">Shard router</tspan><tspan x="662" dy="17" font-family="Consolas, Menlo, monospace">shard = hash(userId) % 3</tspan></text>
+<polyline points="520,252 520,286" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_purple)"/>
+<path d="M462,294 L462,340 A58,8 0 0 0 578,340 L578,294 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<ellipse cx="520" cy="294" rx="58" ry="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="520" y="316.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="520" dy="0" font-weight="bold">Shard 0</tspan><tspan x="520" dy="17">hash % 3 = 0</tspan></text>
+<polyline points="662,252 662,286" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_purple)"/>
+<path d="M604,294 L604,340 A58,8 0 0 0 720,340 L720,294 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<ellipse cx="662" cy="294" rx="58" ry="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="662" y="316.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="662" dy="0" font-weight="bold">Shard 1</tspan><tspan x="662" dy="17">hash % 3 = 1</tspan></text>
+<polyline points="804,252 804,286" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_purple)"/>
+<path d="M746,294 L746,340 A58,8 0 0 0 862,340 L862,294 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<ellipse cx="804" cy="294" rx="58" ry="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="804" y="316.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="804" dy="0" font-weight="bold">Shard 2</tspan><tspan x="804" dy="17">hash % 3 = 2</tspan></text>
+<circle cx="520" cy="269" r="11" fill="#7c3aed"/>
+<text x="520" y="273.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="536" y="274" font-size="13" fill="#334155">route by hash</text>
+<text x="464" y="376" font-size="13" fill="#334155">Gotchas: hot shards, cross-shard joins and</text>
+<text x="464" y="394" font-size="13" fill="#334155">transactions, and painful resharding with hash % N.</text>
+<circle cx="556" cy="476" r="52" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<circle cx="556.0" cy="528.0" r="12" fill="#ffffff" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="3 2"/>
+<text x="556" y="532.5" font-size="13" fill="#7f1d1d" text-anchor="middle" font-weight="bold">D</text>
+<circle cx="556.0" cy="424.0" r="12" fill="#2563eb"/>
+<text x="556" y="428.5" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">A</text>
+<circle cx="601.0" cy="502.0" r="12" fill="#0f766e"/>
+<text x="601.03" y="506.5" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">B</text>
+<circle cx="511.0" cy="502.0" r="12" fill="#15803d"/>
+<text x="510.97" y="506.5" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="bold">C</text>
+<circle cx="598.6" cy="446.2" r="5" fill="#d97706" stroke="#ffffff" stroke-width="1.5"/>
+<text x="616.62" y="438.06" font-size="13" fill="#334155" text-anchor="middle">k1</text>
+<circle cx="582.0" cy="521.0" r="5" fill="#dc2626" stroke="#ffffff" stroke-width="1.5"/>
+<text x="593" y="544.59" font-size="13" fill="#334155" text-anchor="middle">k2</text>
+<circle cx="508.9" cy="454.0" r="5" fill="#d97706" stroke="#ffffff" stroke-width="1.5"/>
+<text x="488.93" y="449.23" font-size="13" fill="#334155" text-anchor="middle">k3</text>
+<text x="556" y="481" font-size="13" fill="#475569" text-anchor="middle">ring</text>
+<text x="668" y="442" font-size="14" fill="#4c1d95" font-weight="bold">Consistent hashing</text>
+<text x="668" y="464" font-size="13" fill="#1f2937"><tspan x="668" dy="0">A key goes to the next node</tspan><tspan x="668" dy="18">clockwise. Add node D: only keys</tspan><tspan x="668" dy="18">between C and D move (k2, ~1/N).</tspan><tspan x="668" dy="18">hash % N would remap almost</tspan><tspan x="668" dy="18">every key when N changes.</tspan></text>
+<text x="32" y="596" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: replicas scale reads (watch lag); shards scale writes and size; use a consistent-hash ring to reshard cheaply.</text>
+</g>
+</svg>

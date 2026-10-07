@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 684" width="900" height="684" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>Reversing a Linked List In Place</title>
+<desc>Four snapshots of reversing 1 to 2 to 3 to null with prev, curr and next pointers, flipping one link per loop iteration.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="683" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">Reversing a Linked List In Place</text>
+<rect x="24" y="52" width="852" height="120" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<rect x="36" y="96" width="420" height="54" rx="4" fill="#fef3c7"/>
+<text x="48" y="72" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="48" dy="0">ListNode prev = null, curr = head;</tspan><tspan x="48" dy="18">while (curr != null) {</tspan><tspan x="48" dy="18">    var next = curr.next;      // 1 save</tspan><tspan x="48" dy="18">    curr.next = prev;          // 2 flip</tspan><tspan x="48" dy="18">    prev = curr; curr = next;  // 3 advance</tspan><tspan x="48" dy="18">}  return prev;  // new head</tspan></text>
+<text x="490" y="76" font-size="14" fill="#0f172a" font-weight="700">Three pointers, one pass</text>
+<text x="490" y="98" font-size="13" fill="#1f2937"><tspan x="490" dy="0">O(n) time, O(1) extra space (recursion: O(n) stack).</tspan><tspan x="490" dy="19">Gotcha: save next BEFORE flipping, otherwise the</tspan><tspan x="490" dy="19">rest of the list becomes unreachable.</tspan></text>
+<rect x="24" y="186" width="852" height="98" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="40" y="212" font-size="15" fill="#0f172a" font-weight="700">Start</text>
+<text x="40" y="234" font-size="13" fill="#334155"><tspan x="40" dy="0">prev = null</tspan><tspan x="40" dy="17">curr = head (1)</tspan></text>
+<rect x="300" y="206" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="328.0" y="225" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<rect x="420" y="200" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="226" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="544" y="200" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="574.0" y="226" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="668" y="200" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="698.0" y="226" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="792" y="206" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="820.0" y="225" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<line x1="482" y1="220" x2="541" y2="220" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="606" y1="220" x2="665" y2="220" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="730" y1="220" x2="789" y2="220" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="328.0" y1="256" x2="328.0" y2="244" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrB)"/>
+<rect x="303.0" y="256" width="50" height="20" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="328.0" y="271" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="700">prev</text>
+<line x1="450.0" y1="256" x2="450.0" y2="244" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrG)"/>
+<rect x="425.0" y="256" width="50" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="450.0" y="271" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">curr</text>
+<rect x="24" y="292" width="852" height="98" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="40" y="318" font-size="15" fill="#0f172a" font-weight="700">Iteration 1</text>
+<text x="40" y="340" font-size="13" fill="#334155"><tspan x="40" dy="0">1 save next = 2</tspan><tspan x="40" dy="17">2 flip 1.next = null</tspan><tspan x="40" dy="17">3 then prev = 1, curr = 2</tspan></text>
+<rect x="300" y="312" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="328.0" y="331" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<rect x="420" y="306" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="332" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="544" y="306" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="574.0" y="332" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="668" y="306" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="698.0" y="332" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="792" y="312" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="820.0" y="331" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<line x1="418" y1="326" x2="359" y2="326" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arrR)"/>
+<line x1="606" y1="326" x2="665" y2="326" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="730" y1="326" x2="789" y2="326" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="328.0" y1="362" x2="328.0" y2="350" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrB)"/>
+<rect x="303.0" y="362" width="50" height="20" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="328.0" y="377" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="700">prev</text>
+<line x1="450.0" y1="362" x2="450.0" y2="350" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrG)"/>
+<rect x="425.0" y="362" width="50" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="450.0" y="377" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">curr</text>
+<line x1="574.0" y1="362" x2="574.0" y2="350" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrP)"/>
+<rect x="549.0" y="362" width="50" height="20" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="574.0" y="377" font-size="13" fill="#6d28d9" text-anchor="middle" font-weight="700">next</text>
+<rect x="24" y="398" width="852" height="98" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="40" y="424" font-size="15" fill="#0f172a" font-weight="700">Iteration 2</text>
+<text x="40" y="446" font-size="13" fill="#334155"><tspan x="40" dy="0">1 save next = 3</tspan><tspan x="40" dy="17">2 flip 2.next = 1</tspan><tspan x="40" dy="17">3 then prev = 2, curr = 3</tspan></text>
+<rect x="300" y="418" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="328.0" y="437" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<rect x="420" y="412" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="438" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="544" y="412" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="574.0" y="438" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="668" y="412" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="698.0" y="438" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="792" y="418" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="820.0" y="437" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<line x1="418" y1="432" x2="359" y2="432" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="542" y1="432" x2="483" y2="432" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arrR)"/>
+<line x1="730" y1="432" x2="789" y2="432" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="450.0" y1="468" x2="450.0" y2="456" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrB)"/>
+<rect x="425.0" y="468" width="50" height="20" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="450.0" y="483" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="700">prev</text>
+<line x1="574.0" y1="468" x2="574.0" y2="456" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrG)"/>
+<rect x="549.0" y="468" width="50" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="574.0" y="483" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">curr</text>
+<line x1="698.0" y1="468" x2="698.0" y2="456" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrP)"/>
+<rect x="673.0" y="468" width="50" height="20" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="698.0" y="483" font-size="13" fill="#6d28d9" text-anchor="middle" font-weight="700">next</text>
+<rect x="24" y="504" width="852" height="98" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+<text x="40" y="530" font-size="15" fill="#0f172a" font-weight="700">Iteration 3</text>
+<text x="40" y="552" font-size="13" fill="#334155"><tspan x="40" dy="0">1 save next = null</tspan><tspan x="40" dy="17">2 flip 3.next = 2</tspan><tspan x="40" dy="17">3 then prev = 3, curr = null</tspan></text>
+<rect x="300" y="524" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="328.0" y="543" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<rect x="420" y="518" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="544" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">1</text>
+<rect x="544" y="518" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="574.0" y="544" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">2</text>
+<rect x="668" y="518" width="60" height="40" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="698.0" y="544" font-size="17" fill="#0f172a" text-anchor="middle" font-weight="700">3</text>
+<rect x="792" y="524" width="56" height="28" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<text x="820.0" y="543" font-size="13" fill="#475569" text-anchor="middle" font-family="Consolas, Menlo, monospace" xml:space="preserve">null</text>
+<line x1="418" y1="538" x2="359" y2="538" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="542" y1="538" x2="483" y2="538" stroke="#475569" stroke-width="1.8" marker-end="url(#arr)"/>
+<line x1="666" y1="538" x2="607" y2="538" stroke="#dc2626" stroke-width="2.6" marker-end="url(#arrR)"/>
+<line x1="574.0" y1="574" x2="574.0" y2="562" stroke="#2563eb" stroke-width="1.6" marker-end="url(#arrB)"/>
+<rect x="549.0" y="574" width="50" height="20" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="574.0" y="589" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="700">prev</text>
+<line x1="698.0" y1="574" x2="698.0" y2="562" stroke="#16a34a" stroke-width="1.6" marker-end="url(#arrG)"/>
+<rect x="673.0" y="574" width="50" height="20" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="698.0" y="589" font-size="13" fill="#15803d" text-anchor="middle" font-weight="700">curr</text>
+<line x1="820.0" y1="574" x2="820.0" y2="562" stroke="#7c3aed" stroke-width="1.6" marker-end="url(#arrP)"/>
+<rect x="795.0" y="574" width="50" height="20" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.2"/>
+<text x="820.0" y="589" font-size="13" fill="#6d28d9" text-anchor="middle" font-weight="700">next</text>
+<rect x="24" y="612" width="852" height="32" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="40" y="633" font-size="13" fill="#1f2937"><tspan fill="#15803d" font-weight="700">Loop ends (curr = null). </tspan><tspan font-family="Consolas, Menlo, monospace">return prev:  3 → 2 → 1 → null</tspan></text>
+<text x="860" y="633" font-size="13" fill="#475569" text-anchor="end" font-style="italic">red arrow = link flipped in that iteration (pointers shown before step 3)</text>
+<text x="24" y="670" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">each iteration saves next, flips one link backwards, then moves prev and curr one step right.</tspan></text>
+</svg>

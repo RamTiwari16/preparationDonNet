@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 604" width="900" height="604" role="img">
+<title>Choosing Azure Compute</title>
+<desc>A decision flow for picking Virtual Machines, Functions, App Service, AKS or Container Apps, and the control versus management trade-off between them.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="603" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">Choosing Azure Compute</text>
+<rect x="24" y="64" width="420" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="48" cy="90" r="11" fill="#475569"/>
+<text x="48" y="94.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="68" y="95" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">Need full OS control or VM-only software?</text>
+<rect x="24" y="136" width="420" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="48" cy="162" r="11" fill="#475569"/>
+<text x="48" y="166.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="68" y="167" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">Event-driven, short-lived work (queue, timer)?</text>
+<rect x="24" y="208" width="420" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="48" cy="234" r="11" fill="#475569"/>
+<text x="48" y="238.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="68" y="239" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">Shipping the app as containers?</text>
+<rect x="24" y="280" width="420" height="52" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<circle cx="48" cy="306" r="11" fill="#475569"/>
+<text x="48" y="310.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<text x="68" y="311" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2937" xml:space="preserve">Need the full Kubernetes API and ecosystem?</text>
+<rect x="520" y="64" width="356" height="52" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="698.0" y="80.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Virtual Machines (IaaS)</text>
+<text x="698.0" y="103.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">lift-and-shift, custom OS or software</text>
+<line x1="444" y1="90" x2="518" y2="90" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="465.4" y="79.5" width="33.3" height="21" rx="4" fill="#ffffff"/>
+<text x="482.0" y="94.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">yes</text>
+<rect x="520" y="136" width="356" height="52" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="698.0" y="152.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Azure Functions (serverless)</text>
+<text x="698.0" y="175.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">HTTP, queue, timer triggers; scale to zero</text>
+<line x1="444" y1="162" x2="518" y2="162" stroke="#d97706" stroke-width="2" marker-end="url(#arr-amber)"/>
+<rect x="465.4" y="151.5" width="33.3" height="21" rx="4" fill="#ffffff"/>
+<text x="482.0" y="166.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">yes</text>
+<rect x="520" y="208" width="356" height="52" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="698.0" y="224.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">App Service (PaaS)</text>
+<text x="698.0" y="247.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">web apps and APIs, slots, easy autoscale</text>
+<line x1="444" y1="234" x2="518" y2="234" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+<rect x="468.9" y="223.5" width="26.2" height="21" rx="4" fill="#ffffff"/>
+<text x="482.0" y="238.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">no</text>
+<rect x="520" y="280" width="356" height="52" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="698.0" y="296.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">AKS (managed Kubernetes)</text>
+<text x="698.0" y="319.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">many services, full K8s API and ecosystem</text>
+<line x1="444" y1="306" x2="518" y2="306" stroke="#7c3aed" stroke-width="2" marker-end="url(#arr-purple)"/>
+<rect x="465.4" y="295.5" width="33.3" height="21" rx="4" fill="#ffffff"/>
+<text x="482.0" y="310.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">yes</text>
+<line x1="234.0" y1="116" x2="234.0" y2="134" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+<text x="244.0" y="130" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="bold" xml:space="preserve">no</text>
+<line x1="234.0" y1="188" x2="234.0" y2="206" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+<text x="244.0" y="202" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="bold" xml:space="preserve">no</text>
+<line x1="234.0" y1="260" x2="234.0" y2="278" stroke="#475569" stroke-width="2" marker-end="url(#arr)"/>
+<text x="244.0" y="274" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="bold" xml:space="preserve">yes</text>
+<line x1="234.0" y1="332" x2="234.0" y2="350" stroke="#0d9488" stroke-width="2" marker-end="url(#arr-teal)"/>
+<text x="244.0" y="346" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" font-weight="bold" xml:space="preserve">no</text>
+<rect x="24" y="352" width="420" height="52" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="234.0" y="368.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">Azure Container Apps</text>
+<text x="234.0" y="391.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">microservices without K8s ops: KEDA scaling, Dapr, scale to 0</text>
+<text x="24" y="444" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#334155" font-weight="bold" xml:space="preserve">Control vs management trade-off</text>
+<line x1="300" y1="438" x2="872" y2="438" stroke="#475569" stroke-width="2" marker-end="url(#arr)" marker-start="url(#arr)"/>
+<text x="318" y="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">more control (you run more)</text>
+<text x="860" y="430" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="end" xml:space="preserve">more managed (less ops)</text>
+<rect x="24.0" y="460" width="160" height="92" rx="10" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="104.0" y="478.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">Virtual Machine</text>
+<text x="104.0" y="501.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="104.0" dy="0">You manage:</tspan><tspan x="104.0" dy="18">OS, patches,</tspan><tspan x="104.0" dy="18">runtime, scaling</tspan></text>
+<rect x="197.0" y="460" width="160" height="92" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="277.0" y="478.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">AKS</text>
+<text x="277.0" y="501.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="277.0" dy="0">You manage:</tspan><tspan x="277.0" dy="18">nodes, upgrades,</tspan><tspan x="277.0" dy="18">YAML, networking</tspan></text>
+<rect x="370.0" y="460" width="160" height="92" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="450.0" y="478.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">Container Apps</text>
+<text x="450.0" y="501.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="450.0" dy="0">You manage:</tspan><tspan x="450.0" dy="18">image + scale</tspan><tspan x="450.0" dy="18">rules (KEDA)</tspan></text>
+<rect x="543.0" y="460" width="160" height="92" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="623.0" y="478.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">App Service</text>
+<text x="623.0" y="501.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="623.0" dy="0">You manage:</tspan><tspan x="623.0" dy="18">code + config;</tspan><tspan x="623.0" dy="18">platform patches</tspan></text>
+<rect x="716.0" y="460" width="160" height="92" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="796.0" y="478.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Functions</text>
+<text x="796.0" y="501.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="796.0" dy="0">You manage:</tspan><tspan x="796.0" dy="18">just the code;</tspan><tspan x="796.0" dy="18">pay per execution</tspan></text>
+<text x="24" y="584" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: default to App Service for a .NET API, Functions for events, Container Apps before AKS, VMs last.</text>
+</svg>

@@ -1,0 +1,6 @@
+# Normalise line endings for text; keep Windows batch files as CRLF
+* text=auto
+*.bat text eol=crlf
+*.svg text
+*.png binary
+*.jpg binary

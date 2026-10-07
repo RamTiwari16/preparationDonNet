@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 598" width="900" height="598" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>SQL Joins as Venn Diagrams</title>
+<desc>Six join types (inner, left, right, full outer, left anti-join and cross join) with the shaded rows each one returns and its SQL.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><clipPath id="ca0"><circle cx="134" cy="138" r="40"/></clipPath><clipPath id="cb0"><circle cx="190" cy="138" r="40"/></clipPath><clipPath id="ca1"><circle cx="422" cy="138" r="40"/></clipPath><clipPath id="cb1"><circle cx="478" cy="138" r="40"/></clipPath><clipPath id="ca2"><circle cx="710" cy="138" r="40"/></clipPath><clipPath id="cb2"><circle cx="766" cy="138" r="40"/></clipPath><clipPath id="ca3"><circle cx="134" cy="360" r="40"/></clipPath><clipPath id="cb3"><circle cx="190" cy="360" r="40"/></clipPath><clipPath id="ca4"><circle cx="422" cy="360" r="40"/></clipPath><clipPath id="cb4"><circle cx="478" cy="360" r="40"/></clipPath></defs>
+<rect x="0.5" y="0.5" width="899" height="597" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">SQL Joins as Venn Diagrams</text>
+<rect x="24" y="56" width="276" height="210" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="82" font-size="15" fill="#0f172a" font-weight="700">INNER JOIN</text>
+<circle cx="190" cy="138" r="40" fill="#93c5fd" clip-path="url(#ca0)"/>
+<circle cx="134" cy="138" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="190" cy="138" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="116" y="143" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<text x="208" y="143" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<text x="40" y="206" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="40" dy="0">A INNER JOIN B</tspan><tspan x="40" dy="18">  ON A.id = B.a_id</tspan></text>
+<text x="40" y="250" font-size="13" fill="#1f2937">only rows that match in both</text>
+<rect x="312" y="56" width="276" height="210" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="328" y="82" font-size="15" fill="#0f172a" font-weight="700">LEFT JOIN</text>
+<circle cx="422" cy="138" r="40" fill="#93c5fd"/>
+<circle cx="422" cy="138" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="478" cy="138" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="404" y="143" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<text x="496" y="143" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<text x="328" y="206" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="328" dy="0">A LEFT JOIN B</tspan><tspan x="328" dy="18">  ON A.id = B.a_id</tspan></text>
+<text x="328" y="250" font-size="13" fill="#1f2937">all A rows; B columns NULL if no match</text>
+<rect x="600" y="56" width="276" height="210" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="616" y="82" font-size="15" fill="#0f172a" font-weight="700">RIGHT JOIN</text>
+<circle cx="766" cy="138" r="40" fill="#93c5fd"/>
+<circle cx="710" cy="138" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="766" cy="138" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="692" y="143" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<text x="784" y="143" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<text x="616" y="206" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="616" dy="0">A RIGHT JOIN B</tspan><tspan x="616" dy="18">  ON A.id = B.a_id</tspan></text>
+<text x="616" y="250" font-size="13" fill="#1f2937">all B rows; A columns NULL if no match</text>
+<rect x="24" y="278" width="276" height="210" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="40" y="304" font-size="15" fill="#0f172a" font-weight="700">FULL OUTER JOIN</text>
+<circle cx="134" cy="360" r="40" fill="#93c5fd"/>
+<circle cx="190" cy="360" r="40" fill="#93c5fd"/>
+<circle cx="134" cy="360" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="190" cy="360" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="116" y="365" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<text x="208" y="365" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<text x="40" y="428" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="40" dy="0">A FULL OUTER JOIN B</tspan><tspan x="40" dy="18">  ON A.id = B.a_id</tspan></text>
+<text x="40" y="472" font-size="13" fill="#1f2937">every row from both, NULLs in the gaps</text>
+<rect x="312" y="278" width="276" height="210" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="328" y="304" font-size="15" fill="#0f172a" font-weight="700">LEFT ANTI-JOIN</text>
+<circle cx="422" cy="360" r="40" fill="#93c5fd"/>
+<circle cx="478" cy="360" r="40" fill="#f8fafc" clip-path="url(#ca4)"/>
+<circle cx="422" cy="360" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<circle cx="478" cy="360" r="40" fill="none" stroke="#2563eb" stroke-width="1.8"/>
+<text x="404" y="365" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<text x="496" y="365" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<text x="328" y="428" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="328" dy="0">A LEFT JOIN B ON A.id = B.a_id</tspan><tspan x="328" dy="18">WHERE B.id IS NULL</tspan></text>
+<text x="328" y="472" font-size="13" fill="#1f2937">A rows with NO match in B</text>
+<rect x="600" y="278" width="276" height="210" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="616" y="304" font-size="15" fill="#0f172a" font-weight="700">CROSS JOIN</text>
+<text x="726.0" y="329.0" font-size="13" fill="#334155" text-anchor="middle">b1</text>
+<text x="707.0" y="351.0" font-size="13" fill="#334155" text-anchor="end">a1</text>
+<rect x="715.0" y="335.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<rect x="715.0" y="357.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<rect x="715.0" y="379.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<text x="748.0" y="329.0" font-size="13" fill="#334155" text-anchor="middle">b2</text>
+<text x="707.0" y="373.0" font-size="13" fill="#334155" text-anchor="end">a2</text>
+<rect x="737.0" y="335.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<rect x="737.0" y="357.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<rect x="737.0" y="379.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<text x="770.0" y="329.0" font-size="13" fill="#334155" text-anchor="middle">b3</text>
+<text x="707.0" y="395.0" font-size="13" fill="#334155" text-anchor="end">a3</text>
+<rect x="759.0" y="335.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<rect x="759.0" y="357.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<rect x="759.0" y="379.0" width="22" height="22" rx="0" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+<text x="616" y="428" font-size="13" fill="#1d4ed8" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="616" dy="0">A CROSS JOIN B</tspan><tspan x="616" dy="18">-- no ON clause</tspan></text>
+<text x="616" y="472" font-size="13" fill="#1f2937">every A row with every B row: 3 x 3 = 9</text>
+<rect x="24" y="504" width="852" height="58" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="40" y="528" font-size="13" fill="#1f2937">Gotcha: a WHERE filter on B in a LEFT JOIN (anything but IS NULL) silently turns it into an INNER JOIN; put it in ON.</text>
+<text x="40" y="548" font-size="13" fill="#1f2937">NOT EXISTS (SELECT 1 FROM B WHERE B.a_id = A.id) is the usual, often clearer, anti-join.</text>
+<text x="24" y="584" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">the join type decides which unmatched rows survive; unmatched columns come back as NULL.</tspan></text>
+</svg>

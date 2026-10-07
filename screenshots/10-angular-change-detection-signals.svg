@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 628" width="900" height="628" role="img">
+<title>Angular Change Detection and Signals</title>
+<desc>Which components Angular checks after a click with Default versus OnPush change detection, and how signals update only the views that read them.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="627" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">Angular Change Detection and Signals</text>
+<rect x="24" y="56" width="276" height="400" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="40" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#92400e" font-weight="bold" xml:space="preserve">Default strategy</text>
+<text x="40" y="100" font-family="Consolas, Menlo, monospace" font-size="13" fill="#334155" xml:space="preserve">ChangeDetectionStrategy.Default</text>
+<line x1="162" y1="150" x2="72" y2="178" stroke="#475569" stroke-width="1.2"/>
+<line x1="162" y1="150" x2="162" y2="178" stroke="#475569" stroke-width="1.2"/>
+<line x1="162" y1="150" x2="252" y2="178" stroke="#475569" stroke-width="1.2"/>
+<line x1="162" y1="204" x2="124" y2="232" stroke="#475569" stroke-width="1.2"/>
+<line x1="162" y1="204" x2="214" y2="232" stroke="#475569" stroke-width="1.2"/>
+<line x1="124" y1="258" x2="88" y2="286" stroke="#475569" stroke-width="1.2"/>
+<line x1="124" y1="258" x2="170" y2="286" stroke="#475569" stroke-width="1.2"/>
+<rect x="126" y="124" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="162" y="142" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">App</text>
+<rect x="36" y="178" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="72" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Header</text>
+<rect x="126" y="178" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="162" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Main</text>
+<rect x="216" y="178" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="252" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Footer</text>
+<rect x="88" y="232" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="124" y="250" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">List</text>
+<rect x="178" y="232" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="214" y="250" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Chart</text>
+<rect x="52" y="286" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="88" y="304" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Item1</text>
+<rect x="134" y="286" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="170" y="304" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Item2</text>
+<line x1="88" y1="336" x2="88" y2="314" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+<rect x="56.0" y="335.0" width="64" height="22" rx="11.0" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="88" y="350.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="bold" xml:space="preserve">click</text>
+<rect x="36" y="372" width="252" height="72" rx="10" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="162.0" y="389.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">8 of 8 components checked</text>
+<text x="162.0" y="412.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="162.0" dy="0">Zone.js sees the click and Angular</tspan><tspan x="162.0" dy="18">checks the whole tree, top-down</tspan></text>
+<rect x="312" y="56" width="276" height="400" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="328" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" font-weight="bold" xml:space="preserve">OnPush strategy</text>
+<text x="328" y="100" font-family="Consolas, Menlo, monospace" font-size="13" fill="#334155" xml:space="preserve">ChangeDetectionStrategy.OnPush</text>
+<line x1="450" y1="150" x2="360" y2="178" stroke="#475569" stroke-width="1.2"/>
+<line x1="450" y1="150" x2="450" y2="178" stroke="#475569" stroke-width="1.2"/>
+<line x1="450" y1="150" x2="540" y2="178" stroke="#475569" stroke-width="1.2"/>
+<line x1="450" y1="204" x2="412" y2="232" stroke="#475569" stroke-width="1.2"/>
+<line x1="450" y1="204" x2="502" y2="232" stroke="#475569" stroke-width="1.2"/>
+<line x1="412" y1="258" x2="376" y2="286" stroke="#475569" stroke-width="1.2"/>
+<line x1="412" y1="258" x2="458" y2="286" stroke="#475569" stroke-width="1.2"/>
+<rect x="414" y="124" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="450" y="142" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">App</text>
+<rect x="324" y="178" width="72" height="26" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="360" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle" xml:space="preserve">Header</text>
+<rect x="414" y="178" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="450" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Main</text>
+<rect x="504" y="178" width="72" height="26" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="540" y="196" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle" xml:space="preserve">Footer</text>
+<rect x="376" y="232" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="412" y="250" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">List</text>
+<rect x="466" y="232" width="72" height="26" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="502" y="250" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle" xml:space="preserve">Chart</text>
+<rect x="340" y="286" width="72" height="26" rx="7" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="376" y="304" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Item1</text>
+<rect x="422" y="286" width="72" height="26" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="458" y="304" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle" xml:space="preserve">Item2</text>
+<line x1="376" y1="336" x2="376" y2="314" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-red)"/>
+<rect x="344.0" y="335.0" width="64" height="22" rx="11.0" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="376" y="350.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#b91c1c" text-anchor="middle" font-weight="bold" xml:space="preserve">click</text>
+<rect x="324" y="372" width="252" height="72" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="450.0" y="389.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">4 of 8 checked</text>
+<text x="450.0" y="412.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="450.0" dy="0">click marks Item1 + parents dirty;</tspan><tspan x="450.0" dy="18">clean subtrees are skipped</tspan></text>
+<rect x="600" y="56" width="276" height="400" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="616" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#6d28d9" font-weight="bold" xml:space="preserve">Signals</text>
+<text x="616" y="100" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">fine-grained: dependents only</text>
+<rect x="612" y="112" width="252" height="72" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="620" y="134" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve"><tspan>count = </tspan><tspan fill="#6d28d9" font-weight="bold">signal</tspan><tspan>(0);</tspan></text>
+<text x="620" y="154" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve"><tspan>dbl = </tspan><tspan fill="#0f766e" font-weight="bold">computed</tspan><tspan>(()=&gt;count()*2);</tspan></text>
+<text x="620" y="174" font-family="Consolas, Menlo, monospace" font-size="13" fill="#1f2937" xml:space="preserve"><tspan>count.</tspan><tspan fill="#b91c1c" font-weight="bold">set</tspan><tspan>(1); // notifies</tspan></text>
+<rect x="666" y="204" width="144" height="30" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="738.0" y="220.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold" xml:space="preserve">count (signal)</text>
+<rect x="612" y="262" width="120" height="30" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="672.0" y="278.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">dbl (computed)</text>
+<rect x="744" y="262" width="120" height="30" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="804.0" y="278.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Item1 view</text>
+<rect x="612" y="318" width="120" height="30" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="672.0" y="334.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Chart view</text>
+<line x1="720" y1="234" x2="672" y2="262" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+<line x1="756" y1="234" x2="804" y2="262" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr-purple)"/>
+<line x1="672" y1="292" x2="672" y2="318" stroke="#0d9488" stroke-width="1.5" marker-end="url(#arr-teal)"/>
+<rect x="744" y="318" width="120" height="30" rx="7" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="4 3"/>
+<text x="804" y="338" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#64748b" text-anchor="middle" xml:space="preserve">Header, Item2 ...</text>
+<rect x="612" y="372" width="252" height="72" rx="10" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="738.0" y="389.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" text-anchor="middle" font-weight="bold" xml:space="preserve">Only 2 views refresh</text>
+<text x="738.0" y="412.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve"><tspan x="738.0" dy="0">views that read count() are marked;</tspan><tspan x="738.0" dy="18">no full tree walk needed</tspan></text>
+<rect x="24" y="472" width="420" height="112" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="496" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1d4ed8" font-weight="bold" xml:space="preserve">OnPush re-checks a component only when:</text>
+<text x="40" y="518" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="40" dy="0">1) an @Input gets a new reference (update immutably)</tspan><tspan x="40" dy="18">2) an event fires in it or in a child</tspan><tspan x="40" dy="18">3) an async pipe or a signal in its template changes,</tspan><tspan x="40" dy="18">    or you call markForCheck()</tspan></text>
+<rect x="456" y="472" width="420" height="112" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="472" y="496" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#6d28d9" font-weight="bold" xml:space="preserve">Why signals matter</text>
+<text x="472" y="518" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="472" dy="0">Default CD walks the tree after every Zone.js task.</tspan><tspan x="472" dy="18">A signal knows exactly which views read it, so</tspan><tspan x="472" dy="18">Angular updates just those views, which enables</tspan><tspan x="472" dy="18">zoneless apps (no Zone.js) in modern Angular.</tspan></text>
+<text x="24" y="608" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: use OnPush + immutable inputs, and signals for fine-grained updates instead of whole-tree checks.</text>
+</svg>

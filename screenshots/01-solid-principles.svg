@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 612" width="900" height="612" role="img">
+<title>SOLID Principles at a Glance</title>
+<desc>Five cards, one per SOLID principle, each with a one-line meaning, a typical code smell in red and the fix in green.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#475569"/></marker>
+<marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+<marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+<marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#dc2626"/></marker>
+<marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#d97706"/></marker>
+<marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#7c3aed"/></marker>
+<marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0d9488"/></marker>
+</defs>
+<rect x="0.5" y="0.5" width="899" height="611" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="32" y="44" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="700" fill="#0f172a">SOLID Principles at a Glance</text>
+<text x="32" y="68" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569">Five design guidelines for code that is easy to change and test</text>
+<rect x="32" y="84" width="836" height="88" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<rect x="48" y="104" width="48" height="48" rx="10" fill="#2563eb" stroke="#2563eb" stroke-width="1.5"/>
+<text x="72" y="138" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" fill="#ffffff" font-weight="700" text-anchor="middle">S</text>
+<text x="112" y="114" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Single Responsibility</text>
+<text x="112" y="136" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155"><tspan x="112" dy="0">A class should have exactly one</tspan><tspan x="112" dy="18">reason to change.</tspan></text>
+<rect x="372" y="100" width="236" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="384" y="90" width="60" height="20" rx="10" fill="#dc2626" stroke="#dc2626" stroke-width="1.2"/>
+<text x="414.0" y="104.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">SMELL</text>
+<text x="384" y="132" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="384" dy="0">OrderService validates, saves,</tspan><tspan x="384" dy="18">e-mails and logs everything</tspan></text>
+<rect x="632" y="100" width="220" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="644" y="90" width="44" height="20" rx="10" fill="#15803d" stroke="#16a34a" stroke-width="1.2"/>
+<text x="666.0" y="104.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">FIX</text>
+<text x="644" y="132" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d"><tspan x="644" dy="0">Small classes: Validator,</tspan><tspan x="644" dy="18">Repository, EmailNotifier</tspan></text>
+<path d="M610 132 L630 132" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="32" y="180" width="836" height="88" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<rect x="48" y="200" width="48" height="48" rx="10" fill="#0f766e" stroke="#0f766e" stroke-width="1.5"/>
+<text x="72" y="234" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" fill="#ffffff" font-weight="700" text-anchor="middle">O</text>
+<text x="112" y="210" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Open / Closed</text>
+<text x="112" y="232" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155"><tspan x="112" dy="0">Extend behaviour by adding code,</tspan><tspan x="112" dy="18">not by editing tested code.</tspan></text>
+<rect x="372" y="196" width="236" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="384" y="186" width="60" height="20" rx="10" fill="#dc2626" stroke="#dc2626" stroke-width="1.2"/>
+<text x="414.0" y="200.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">SMELL</text>
+<text x="384" y="228" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="384" dy="0">switch(type) grows with every</tspan><tspan x="384" dy="18">new discount rule</tspan></text>
+<rect x="632" y="196" width="220" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="644" y="186" width="44" height="20" rx="10" fill="#15803d" stroke="#16a34a" stroke-width="1.2"/>
+<text x="666.0" y="200.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">FIX</text>
+<text x="644" y="228" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d"><tspan x="644" dy="0">IDiscountRule per rule; add a</tspan><tspan x="644" dy="18">class, never edit old code</tspan></text>
+<path d="M610 228 L630 228" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="32" y="276" width="836" height="88" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<rect x="48" y="296" width="48" height="48" rx="10" fill="#7c3aed" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="72" y="330" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" fill="#ffffff" font-weight="700" text-anchor="middle">L</text>
+<text x="112" y="306" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Liskov Substitution</text>
+<text x="112" y="328" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155"><tspan x="112" dy="0">A subtype must be usable wherever</tspan><tspan x="112" dy="18">its base type is expected.</tspan></text>
+<rect x="372" y="292" width="236" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="384" y="282" width="60" height="20" rx="10" fill="#dc2626" stroke="#dc2626" stroke-width="1.2"/>
+<text x="414.0" y="296.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">SMELL</text>
+<text x="384" y="324" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="384" dy="0">Square : Rectangle - setting</tspan><tspan x="384" dy="18">Width also changes Height</tspan></text>
+<rect x="632" y="292" width="220" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="644" y="282" width="44" height="20" rx="10" fill="#15803d" stroke="#16a34a" stroke-width="1.2"/>
+<text x="666.0" y="296.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">FIX</text>
+<text x="644" y="324" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d"><tspan x="644" dy="0">Prefer composition or a shared</tspan><tspan x="644" dy="18">IShape; keep contracts intact</tspan></text>
+<path d="M610 324 L630 324" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="32" y="372" width="836" height="88" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<rect x="48" y="392" width="48" height="48" rx="10" fill="#b45309" stroke="#b45309" stroke-width="1.5"/>
+<text x="72" y="426" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" fill="#ffffff" font-weight="700" text-anchor="middle">I</text>
+<text x="112" y="402" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Interface Segregation</text>
+<text x="112" y="424" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155"><tspan x="112" dy="0">Many small, focused interfaces</tspan><tspan x="112" dy="18">beat one fat interface.</tspan></text>
+<rect x="372" y="388" width="236" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="384" y="378" width="60" height="20" rx="10" fill="#dc2626" stroke="#dc2626" stroke-width="1.2"/>
+<text x="414.0" y="392.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">SMELL</text>
+<text x="384" y="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="384" dy="0">Fat IWorker forces Robot to</tspan><tspan x="384" dy="18">throw NotImplementedException</tspan></text>
+<rect x="632" y="388" width="220" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="644" y="378" width="44" height="20" rx="10" fill="#15803d" stroke="#16a34a" stroke-width="1.2"/>
+<text x="666.0" y="392.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">FIX</text>
+<text x="644" y="420" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d"><tspan x="644" dy="0">Split: IWorkable, IFeedable;</tspan><tspan x="644" dy="18">implement only what you use</tspan></text>
+<path d="M610 420 L630 420" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<rect x="32" y="468" width="836" height="88" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<rect x="48" y="488" width="48" height="48" rx="10" fill="#15803d" stroke="#15803d" stroke-width="1.5"/>
+<text x="72" y="522" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="28" fill="#ffffff" font-weight="700" text-anchor="middle">D</text>
+<text x="112" y="498" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#0f172a" font-weight="700">Dependency Inversion</text>
+<text x="112" y="520" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155"><tspan x="112" dy="0">Depend on abstractions, not on</tspan><tspan x="112" dy="18">concrete classes.</tspan></text>
+<rect x="372" y="484" width="236" height="64" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<rect x="384" y="474" width="60" height="20" rx="10" fill="#dc2626" stroke="#dc2626" stroke-width="1.2"/>
+<text x="414.0" y="488.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">SMELL</text>
+<text x="384" y="516" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#7f1d1d"><tspan x="384" dy="0">new SqlRepo() inside service:</tspan><tspan x="384" dy="18">hard to test, hard to swap</tspan></text>
+<rect x="632" y="484" width="220" height="64" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<rect x="644" y="474" width="44" height="20" rx="10" fill="#15803d" stroke="#16a34a" stroke-width="1.2"/>
+<text x="666.0" y="488.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#ffffff" font-weight="700" text-anchor="middle">FIX</text>
+<text x="644" y="516" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#14532d"><tspan x="644" dy="0">Inject IOrderRepository through</tspan><tspan x="644" dy="18">the constructor (DI container)</tspan></text>
+<path d="M610 516 L630 516" fill="none" stroke="#475569" stroke-width="2" stroke-linejoin="round" marker-end="url(#arr)"/>
+<text x="32" y="588" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: treat SOLID as a smell checklist - back each letter with one real refactor you have done.</text>
+</svg>

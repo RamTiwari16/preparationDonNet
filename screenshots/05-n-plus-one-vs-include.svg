@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 606" width="900" height="606" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>N+1 Queries vs Include and Projection</title>
+<desc>Lazy loading inside a loop sends one query per parent row (101 round-trips for 100 orders), while Include or a projection fetches the same data in one or two queries.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="605" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">N+1 Queries vs Include and Projection</text>
+<rect x="24" y="52" width="414" height="428" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="40" y="76" font-size="15" fill="#b91c1c" font-weight="700">N+1: lazy loading inside a loop</text>
+<rect x="36" y="88" width="390" height="70" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1"/>
+<text x="46" y="106" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="46" dy="0">var orders = db.Orders.ToList(); // 1 query</tspan><tspan x="46" dy="18">foreach (var o in orders)</tspan><tspan x="46" dy="18">    n += o.Items.Count;  // +1 query each!</tspan></text>
+<text x="40" y="182" font-size="13" fill="#475569" font-weight="700">SQL sent (100 orders)</text>
+<rect x="36" y="190" width="390" height="102" rx="6" fill="#f1f5f9"/>
+<text x="46" y="208" font-size="13" fill="#334155" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="46" dy="0">SELECT * FROM Orders;</tspan><tspan x="46" dy="18">SELECT * FROM OrderItems WHERE OrderId = 1;</tspan><tspan x="46" dy="18">SELECT * FROM OrderItems WHERE OrderId = 2;</tspan><tspan x="46" dy="18">...  98 more, one per order  ...</tspan><tspan x="46" dy="18">SELECT * FROM OrderItems WHERE OrderId = 100;</tspan></text>
+<rect x="40" y="318" width="84" height="96" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="82" y="371" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">App</text>
+<rect x="338" y="318" width="84" height="96" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="380" y="371" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">SQL</text>
+<line x1="128" y1="328.0" x2="334" y2="328.0" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="337.5" x2="334" y2="337.5" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="347.0" x2="334" y2="347.0" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="356.5" x2="334" y2="356.5" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="366.0" x2="334" y2="366.0" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="375.5" x2="334" y2="375.5" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="385.0" x2="334" y2="385.0" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="394.5" x2="334" y2="394.5" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<line x1="128" y1="404.0" x2="334" y2="404.0" stroke="#dc2626" stroke-width="1.4" marker-end="url(#arrR)"/>
+<rect x="119" y="428" width="224" height="34" rx="17.0" fill="#fee2e2" stroke="#dc2626" stroke-width="1.2"/>
+<text x="231.0" y="450.1" font-size="15" fill="#b91c1c" text-anchor="middle" font-weight="700">101 round-trips</text>
+<text x="231" y="308" font-size="14" fill="#b91c1c" text-anchor="middle" font-weight="700" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">1 + 100 queries</text>
+<rect x="462" y="52" width="414" height="428" rx="10" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="478" y="76" font-size="15" fill="#15803d" font-weight="700">Include or projection: 1-2 queries</text>
+<rect x="474" y="88" width="390" height="70" rx="6" fill="#ffffff" stroke="#475569" stroke-width="1"/>
+<text x="484" y="106" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="484" dy="0">var orders = db.Orders</tspan><tspan x="484" dy="18">    .Include(o =&gt; o.Items)   // eager load</tspan><tspan x="484" dy="18">    .ToList();</tspan></text>
+<text x="478" y="182" font-size="13" fill="#475569" font-weight="700">SQL sent (single query)</text>
+<rect x="474" y="190" width="390" height="102" rx="6" fill="#f1f5f9"/>
+<text x="484" y="208" font-size="13" fill="#334155" font-family="Consolas, Menlo, monospace" xml:space="preserve"><tspan x="484" dy="0">SELECT o.*, i.*</tspan><tspan x="484" dy="18">FROM Orders o</tspan><tspan x="484" dy="18">LEFT JOIN OrderItems i ON i.OrderId = o.Id</tspan><tspan x="484" dy="18">ORDER BY o.Id;</tspan><tspan x="484" dy="18">-- or .Select(o =&gt; new { o.Id, o.Items.Count })</tspan></text>
+<rect x="478" y="318" width="84" height="96" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="520" y="371" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">App</text>
+<rect x="776" y="318" width="84" height="96" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="818" y="371" font-size="14" fill="#1f2937" text-anchor="middle" font-weight="700">SQL</text>
+<line x1="566" y1="366" x2="772" y2="366" stroke="#16a34a" stroke-width="1.4" marker-end="url(#arrG)"/>
+<rect x="557" y="428" width="224" height="34" rx="17.0" fill="#dcfce7" stroke="#16a34a" stroke-width="1.2"/>
+<text x="669.0" y="450.1" font-size="15" fill="#15803d" text-anchor="middle" font-weight="700">1 round-trip</text>
+<text x="669" y="357" font-size="14" fill="#15803d" text-anchor="middle" font-weight="700" stroke="#ffffff" stroke-width="4" stroke-linejoin="round" paint-order="stroke">everything in one go</text>
+<rect x="24" y="494" width="852" height="64" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="40" y="518" font-size="13" fill="#1f2937">Gotchas: several collection Includes multiply rows (cartesian explosion): use AsSplitQuery() for 2+ small queries.</text>
+<text x="40" y="540" font-size="13" fill="#1f2937">Spot N+1 with LogTo / SQL Profiler: the same SELECT repeated with a different parameter value.</text>
+<text x="24" y="588" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">never touch a lazy navigation inside a loop; load it with Include or, better, project only the columns you need.</tspan></text>
+</svg>

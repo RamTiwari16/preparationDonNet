@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title>BFS vs DFS on the Same Graph</title>
+<desc>Breadth-first search explores the graph A to F level by level with a queue, while depth-first search follows one path as deep as possible with a stack, giving different visit orders.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arrG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arrP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker><marker id="arrT" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="559" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="38" font-size="20" font-weight="700" fill="#0f172a">BFS vs DFS on the Same Graph</text>
+<rect x="24" y="52" width="414" height="330" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="76" font-size="15" fill="#1d4ed8" font-weight="700">BFS: Queue (FIFO)</text>
+<text x="40" y="95" font-size="13" fill="#334155">visit all neighbours first, level by level</text>
+<line x1="134" y1="140" x2="89" y2="202" stroke="#2563eb" stroke-width="3"/>
+<line x1="134" y1="140" x2="179" y2="202" stroke="#2563eb" stroke-width="3"/>
+<line x1="89" y1="202" x2="64" y2="270" stroke="#2563eb" stroke-width="3"/>
+<line x1="89" y1="202" x2="122" y2="270" stroke="#2563eb" stroke-width="3"/>
+<line x1="179" y1="202" x2="194" y2="270" stroke="#2563eb" stroke-width="3"/>
+<line x1="122" y1="270" x2="194" y2="270" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle cx="134" cy="140" r="17" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="134" y="145" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<circle cx="108" cy="134" r="10" fill="#2563eb"/>
+<text x="108" y="138.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<circle cx="89" cy="202" r="17" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+<text x="89" y="207" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<circle cx="62" cy="202" r="10" fill="#2563eb"/>
+<text x="62" y="206.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<circle cx="179" cy="202" r="17" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+<text x="179" y="207" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">C</text>
+<circle cx="206" cy="202" r="10" fill="#2563eb"/>
+<text x="206" y="206.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<circle cx="64" cy="270" r="17" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="64" y="275" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">D</text>
+<circle cx="64" cy="298" r="10" fill="#2563eb"/>
+<text x="64" y="302.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="122" cy="270" r="17" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="122" y="275" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">E</text>
+<circle cx="122" cy="298" r="10" fill="#2563eb"/>
+<text x="122" y="302.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<circle cx="194" cy="270" r="17" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="194" y="275" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">F</text>
+<circle cx="194" cy="298" r="10" fill="#2563eb"/>
+<text x="194" y="302.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<rect x="42" y="318" width="58" height="22" rx="11" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+<text x="71" y="334" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="700">level 0</text>
+<rect x="106" y="318" width="58" height="22" rx="11" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.2"/>
+<text x="135" y="334" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="700">level 1</text>
+<rect x="170" y="318" width="58" height="22" rx="11" fill="#fef3c7" stroke="#d97706" stroke-width="1.2"/>
+<text x="199" y="334" font-size="13" fill="#b45309" text-anchor="middle" font-weight="700">level 2</text>
+<text x="42" y="364" font-size="13" fill="#475569" font-style="italic">E-F is skipped: F already seen</text>
+<text x="232" y="128" font-size="13" fill="#475569" font-weight="700">step</text>
+<text x="268" y="128" font-size="13" fill="#475569" font-weight="700">visit</text>
+<text x="312" y="128" font-size="13" fill="#475569" font-weight="700">queue after</text>
+<rect x="226" y="138" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="153" font-size="13" fill="#334155">start</text>
+<text x="268" y="153" font-size="13" fill="#1d4ed8" font-weight="700"></text>
+<text x="312" y="153" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A]</text>
+<rect x="226" y="162" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="177" font-size="13" fill="#334155">1</text>
+<text x="268" y="177" font-size="13" fill="#1d4ed8" font-weight="700">A</text>
+<text x="312" y="177" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[B, C]</text>
+<rect x="226" y="186" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="201" font-size="13" fill="#334155">2</text>
+<text x="268" y="201" font-size="13" fill="#1d4ed8" font-weight="700">B</text>
+<text x="312" y="201" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[C, D, E]</text>
+<rect x="226" y="210" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="225" font-size="13" fill="#334155">3</text>
+<text x="268" y="225" font-size="13" fill="#1d4ed8" font-weight="700">C</text>
+<text x="312" y="225" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[D, E, F]</text>
+<rect x="226" y="234" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="249" font-size="13" fill="#334155">4</text>
+<text x="268" y="249" font-size="13" fill="#1d4ed8" font-weight="700">D</text>
+<text x="312" y="249" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[E, F]</text>
+<rect x="226" y="258" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="273" font-size="13" fill="#334155">5</text>
+<text x="268" y="273" font-size="13" fill="#1d4ed8" font-weight="700">E</text>
+<text x="312" y="273" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[F]</text>
+<rect x="226" y="282" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="232" y="297" font-size="13" fill="#334155">6</text>
+<text x="268" y="297" font-size="13" fill="#1d4ed8" font-weight="700">F</text>
+<text x="312" y="297" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[ ]</text>
+<rect x="462" y="52" width="414" height="330" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="478" y="76" font-size="15" fill="#6d28d9" font-weight="700">DFS: Stack (LIFO) / recursion</text>
+<text x="478" y="95" font-size="13" fill="#334155">go as deep as possible, then backtrack</text>
+<line x1="572" y1="140" x2="527" y2="202" stroke="#7c3aed" stroke-width="3"/>
+<line x1="572" y1="140" x2="617" y2="202" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+<line x1="527" y1="202" x2="502" y2="270" stroke="#7c3aed" stroke-width="3"/>
+<line x1="527" y1="202" x2="560" y2="270" stroke="#7c3aed" stroke-width="3"/>
+<line x1="617" y1="202" x2="632" y2="270" stroke="#7c3aed" stroke-width="3"/>
+<line x1="560" y1="270" x2="632" y2="270" stroke="#7c3aed" stroke-width="3"/>
+<circle cx="572" cy="140" r="17" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="572" y="145" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">A</text>
+<circle cx="546" cy="134" r="10" fill="#7c3aed"/>
+<text x="546" y="138.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">1</text>
+<circle cx="527" cy="202" r="17" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="527" y="207" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">B</text>
+<circle cx="500" cy="202" r="10" fill="#7c3aed"/>
+<text x="500" y="206.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">2</text>
+<circle cx="617" cy="202" r="17" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="617" y="207" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">C</text>
+<circle cx="644" cy="202" r="10" fill="#7c3aed"/>
+<text x="644" y="206.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">6</text>
+<circle cx="502" cy="270" r="17" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="502" y="275" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">D</text>
+<circle cx="502" cy="298" r="10" fill="#7c3aed"/>
+<text x="502" y="302.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">3</text>
+<circle cx="560" cy="270" r="17" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="560" y="275" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">E</text>
+<circle cx="560" cy="298" r="10" fill="#7c3aed"/>
+<text x="560" y="302.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">4</text>
+<circle cx="632" cy="270" r="17" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+<text x="632" y="275" font-size="15" fill="#0f172a" text-anchor="middle" font-weight="700">F</text>
+<circle cx="632" cy="298" r="10" fill="#7c3aed"/>
+<text x="632" y="302.6" font-size="13" fill="#ffffff" text-anchor="middle" font-weight="700">5</text>
+<text x="480" y="340" font-size="13" fill="#475569" font-style="italic"><tspan x="480" dy="0">A-C is skipped: C already seen</tspan><tspan x="480" dy="17">via the long path A-B-E-F-C</tspan></text>
+<text x="670" y="128" font-size="13" fill="#475569" font-weight="700">step</text>
+<text x="706" y="128" font-size="13" fill="#475569" font-weight="700">visit</text>
+<text x="750" y="128" font-size="13" fill="#475569" font-weight="700">stack (top right)</text>
+<rect x="664" y="138" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="153" font-size="13" fill="#334155">1</text>
+<text x="706" y="153" font-size="13" fill="#6d28d9" font-weight="700">A</text>
+<text x="750" y="153" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A]</text>
+<rect x="664" y="162" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="177" font-size="13" fill="#334155">2</text>
+<text x="706" y="177" font-size="13" fill="#6d28d9" font-weight="700">B</text>
+<text x="750" y="177" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A, B]</text>
+<rect x="664" y="186" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="201" font-size="13" fill="#334155">3</text>
+<text x="706" y="201" font-size="13" fill="#6d28d9" font-weight="700">D</text>
+<text x="750" y="201" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A, B, D]</text>
+<rect x="664" y="210" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="225" font-size="13" fill="#334155"></text>
+<text x="706" y="225" font-size="13" fill="#6d28d9" font-weight="700">pop</text>
+<text x="750" y="225" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A, B] dead end</text>
+<rect x="664" y="234" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="249" font-size="13" fill="#334155">4</text>
+<text x="706" y="249" font-size="13" fill="#6d28d9" font-weight="700">E</text>
+<text x="750" y="249" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A, B, E]</text>
+<rect x="664" y="258" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="273" font-size="13" fill="#334155">5</text>
+<text x="706" y="273" font-size="13" fill="#6d28d9" font-weight="700">F</text>
+<text x="750" y="273" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A, B, E, F]</text>
+<rect x="664" y="282" width="200" height="21" rx="4" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+<text x="670" y="297" font-size="13" fill="#334155">6</text>
+<text x="706" y="297" font-size="13" fill="#6d28d9" font-weight="700">C</text>
+<text x="750" y="297" font-size="13" fill="#1f2937" font-family="Consolas, Menlo, monospace" xml:space="preserve">[A,B,E,F,C]</text>
+<rect x="24" y="396" width="414" height="104" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="420" font-size="14" fill="#1d4ed8" font-weight="700">Use BFS when</text>
+<text x="40" y="442" font-size="13" fill="#1f2937"><tspan x="40" dy="0">shortest path in an unweighted graph</tspan><tspan x="40" dy="20">(fewest edges), level-order, nearest match.</tspan><tspan x="40" dy="20">O(V + E) time, memory O(width of graph).</tspan></text>
+<rect x="462" y="396" width="414" height="104" rx="10" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="478" y="420" font-size="14" fill="#6d28d9" font-weight="700">Use DFS when</text>
+<text x="478" y="442" font-size="13" fill="#1f2937"><tspan x="478" dy="0">cycle detection, topological sort, connected</tspan><tspan x="478" dy="20">components, exhaustive search / backtracking.</tspan><tspan x="478" dy="20">O(V + E) time, memory O(depth of graph).</tspan></text>
+<text x="24" y="540" font-size="13" fill="#1f2937"><tspan fill="#475569" font-weight="700" font-style="italic">Interview takeaway: </tspan><tspan fill="#475569" font-style="italic">swap the queue for a stack and BFS becomes DFS; always keep a visited set so cycles do not loop forever.</tspan></text>
+</svg>

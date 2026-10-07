@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 528" width="900" height="528" role="img">
+<title>Blue-Green, Canary and Rolling Deployments</title>
+<desc>Three release strategies side by side: switching all traffic between two environments, shifting a growing percentage to a canary, and replacing pods gradually.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr-blue" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr-amber" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr-purple" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="527" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<text x="24" y="36" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" fill="#0f172a" font-weight="bold" xml:space="preserve">Blue-Green, Canary and Rolling Deployments</text>
+<rect x="24" y="56" width="276" height="408" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="40" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#1d4ed8" font-weight="bold" xml:space="preserve">Blue-green</text>
+<text x="40" y="100" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">two full environments, flip the router</text>
+<rect x="102" y="112" width="120" height="36" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="162.0" y="131.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Load balancer</text>
+<rect x="40" y="200" width="112" height="64" rx="10" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="96.0" y="222.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">Blue</text>
+<text x="96.0" y="245.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">v1 (idle)</text>
+<rect x="172" y="200" width="112" height="64" rx="10" fill="#bbf7d0" stroke="#16a34a" stroke-width="1.5"/>
+<text x="228.0" y="222.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">Green</text>
+<text x="228.0" y="245.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">v2 (live)</text>
+<line x1="134" y1="148" x2="96" y2="198" stroke="#475569" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+<line x1="190" y1="148" x2="228" y2="198" stroke="#16a34a" stroke-width="3" marker-end="url(#arr-green)"/>
+<rect x="82.9" y="165.5" width="26.2" height="21" rx="4" fill="#ffffff"/>
+<text x="96" y="180.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" text-anchor="middle" font-weight="bold" xml:space="preserve">0%</text>
+<rect x="207.8" y="165.5" width="40.3" height="21" rx="4" fill="#ffffff"/>
+<text x="228" y="180.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15803d" text-anchor="middle" font-weight="bold" xml:space="preserve">100%</text>
+<circle cx="48" cy="300" r="11" fill="#2563eb"/>
+<text x="48" y="304.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="66" y="305" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve">deploy v2 to idle green, test it</text>
+<circle cx="48" cy="328" r="11" fill="#15803d"/>
+<text x="48" y="332.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="66" y="333" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve">switch 100% of traffic at once</text>
+<circle cx="48" cy="356" r="11" fill="#dc2626"/>
+<text x="48" y="360.5" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="66" y="361" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve">rollback = switch back to blue</text>
+<text x="40" y="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15803d" xml:space="preserve"><tspan x="40" dy="0">+ instant switch and rollback,</tspan><tspan x="40" dy="18">   zero downtime</tspan></text>
+<text x="40" y="438" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#b91c1c" xml:space="preserve"><tspan x="40" dy="0">- 2x infrastructure; DB schema</tspan><tspan x="40" dy="18">   must suit both versions</tspan></text>
+<rect x="312" y="56" width="276" height="408" rx="10" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="328" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#92400e" font-weight="bold" xml:space="preserve">Canary</text>
+<text x="328" y="100" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">small slice of users first</text>
+<rect x="390" y="112" width="120" height="36" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="450.0" y="131.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Load balancer</text>
+<rect x="328" y="200" width="112" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="384.0" y="222.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">Stable</text>
+<text x="384.0" y="245.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">v1</text>
+<rect x="460" y="200" width="112" height="64" rx="10" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+<text x="516.0" y="222.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">Canary</text>
+<text x="516.0" y="245.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" xml:space="preserve">v2</text>
+<line x1="422" y1="148" x2="384" y2="198" stroke="#2563eb" stroke-width="3" marker-end="url(#arr-blue)"/>
+<line x1="478" y1="148" x2="516" y2="198" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+<rect x="367.4" y="165.5" width="33.3" height="21" rx="4" fill="#ffffff"/>
+<text x="384" y="180.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">95%</text>
+<rect x="502.9" y="165.5" width="26.2" height="21" rx="4" fill="#ffffff"/>
+<text x="516" y="180.6" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">5%</text>
+<rect x="332.0" y="288.0" width="48" height="24" rx="12.0" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="356" y="304.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">5%</text>
+<line x1="381" y1="300" x2="394" y2="300" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+<rect x="396.0" y="288.0" width="48" height="24" rx="12.0" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="420" y="304.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">25%</text>
+<line x1="445" y1="300" x2="458" y2="300" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+<rect x="460.0" y="288.0" width="48" height="24" rx="12.0" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="484" y="304.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">50%</text>
+<line x1="509" y1="300" x2="522" y2="300" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+<rect x="524.0" y="288.0" width="48" height="24" rx="12.0" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="548" y="304.55" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="bold" xml:space="preserve">100%</text>
+<text x="328" y="336" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="328" dy="0">watch error rate + latency at each</tspan><tspan x="328" dy="18">step; auto-rollback if metrics drop</tspan></text>
+<text x="328" y="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15803d" xml:space="preserve"><tspan x="328" dy="0">+ real-user test, tiny blast radius</tspan><tspan x="328" dy="18">   data-driven promotion</tspan></text>
+<text x="328" y="438" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#b91c1c" xml:space="preserve"><tspan x="328" dy="0">- needs metrics, traffic splitting,</tspan><tspan x="328" dy="18">   two versions live at once</tspan></text>
+<rect x="600" y="56" width="276" height="408" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="616" y="80" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#0f766e" font-weight="bold" xml:space="preserve">Rolling</text>
+<text x="616" y="100" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" xml:space="preserve">replace instances a few at a time</text>
+<rect x="678" y="112" width="120" height="36" rx="8" fill="#ffffff" stroke="#475569" stroke-width="1.5"/>
+<text x="738.0" y="131.3" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" text-anchor="middle" font-weight="bold" xml:space="preserve">Load balancer</text>
+<text x="616" y="193" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="bold" xml:space="preserve">t1</text>
+<rect x="648" y="172" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="671" y="192" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<rect x="702" y="172" width="46" height="30" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="725" y="192" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">v1</text>
+<rect x="756" y="172" width="46" height="30" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="779" y="192" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">v1</text>
+<rect x="810" y="172" width="46" height="30" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="833" y="192" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">v1</text>
+<text x="616" y="237" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="bold" xml:space="preserve">t2</text>
+<rect x="648" y="216" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="671" y="236" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<rect x="702" y="216" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="725" y="236" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<rect x="756" y="216" width="46" height="30" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="779" y="236" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">v1</text>
+<rect x="810" y="216" width="46" height="30" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="833" y="236" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="bold" xml:space="preserve">v1</text>
+<text x="616" y="281" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#334155" font-weight="bold" xml:space="preserve">t3</text>
+<rect x="648" y="260" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="671" y="280" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<rect x="702" y="260" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="725" y="280" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<rect x="756" y="260" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="779" y="280" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<rect x="810" y="260" width="46" height="30" rx="6" fill="#99f6e4" stroke="#0d9488" stroke-width="1.5"/>
+<text x="833" y="280" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#0f766e" text-anchor="middle" font-weight="bold" xml:space="preserve">v2</text>
+<line x1="738" y1="148" x2="738" y2="168" stroke="#475569" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="616" y="320" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#1f2937" xml:space="preserve"><tspan x="616" dy="0">K8s Deployment default:</tspan><tspan x="616" dy="18">maxSurge / maxUnavailable control</tspan><tspan x="616" dy="18">the pace; readiness probe gates it</tspan></text>
+<text x="616" y="400" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#15803d" xml:space="preserve"><tspan x="616" dy="0">+ no extra environment, built into</tspan><tspan x="616" dy="18">   K8s and App Service</tspan></text>
+<text x="616" y="438" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="13" fill="#b91c1c" xml:space="preserve"><tspan x="616" dy="0">- slow rollback; v1 and v2 serve</tspan><tspan x="616" dy="18">   traffic together during rollout</tspan></text>
+<text x="24" y="508" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#475569" font-style="italic" xml:space="preserve">Interview takeaway: blue-green = instant flip, canary = gradual % with metrics, rolling = replace instances in place.</text>
+</svg>

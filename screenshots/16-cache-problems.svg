@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 556" width="900" height="556" role="img">
+<title>Three Classic Cache Failure Modes</title>
+<desc>Three panels showing cache stampede, cache penetration and cache avalanche with the standard fix for each.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="555" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">Three Classic Cache Failure Modes</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Each failure ends the same way (the database gets hammered) but starts differently.</text>
+<rect x="24" y="84" width="276" height="420" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="40" y="112" font-size="15" fill="#78350f" font-weight="bold">1. Cache stampede</text>
+<text x="40" y="134" font-size="13" fill="#334155">One hot key expires, N misses at once</text>
+<rect x="34" y="360" width="256" height="132" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="46" y="394.68" font-size="13" fill="#1f2937"><tspan x="46" dy="0" font-weight="bold">Fix</tspan><tspan x="46" dy="18">- Lock per key: one request reloads,</tspan><tspan x="46" dy="18">  the rest wait (single-flight)</tspan><tspan x="46" dy="18">- TTL jitter + refresh before expiry</tspan><tspan x="46" dy="18">- .NET: HybridCache merges misses</tspan></text>
+<rect x="48" y="150" width="48" height="24" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="72" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="72" dy="0">req</tspan></text>
+<polyline points="72,174 72,218" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<polyline points="72,254 72,290" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="108" y="150" width="48" height="24" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="132" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="132" dy="0">req</tspan></text>
+<polyline points="132,174 132,218" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<polyline points="132,254 132,290" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="168" y="150" width="48" height="24" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="192" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="192" dy="0">req</tspan></text>
+<polyline points="192,174 192,218" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<polyline points="192,254 192,290" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="228" y="150" width="48" height="24" rx="6" fill="#ffffff" stroke="#d97706" stroke-width="1.5"/>
+<text x="252" y="166.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="252" dy="0">req</tspan></text>
+<polyline points="252,174 252,218" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<polyline points="252,254 252,290" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="40" y="218" width="244" height="36" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="162" y="240.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="162" dy="0">Cache: key EXPIRED = miss</tspan></text>
+<path d="M40,298 L40,344 A122,8 0 0 0 284,344 L284,298 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<ellipse cx="162" cy="298" rx="122" ry="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="162" y="320.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="162" dy="0" font-weight="bold">SQL Server</tspan><tspan x="162" dy="17">4 identical queries: CPU spike</tspan></text>
+<rect x="312" y="84" width="276" height="420" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="328" y="112" font-size="15" fill="#4c1d95" font-weight="bold">2. Cache penetration</text>
+<text x="328" y="134" font-size="13" fill="#334155">Keys that never exist always miss</text>
+<rect x="322" y="360" width="256" height="132" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="334" y="385.68" font-size="13" fill="#1f2937"><tspan x="334" dy="0" font-weight="bold">Fix</tspan><tspan x="334" dy="18">- Cache the null result, short TTL</tspan><tspan x="334" dy="18">  (30-60 s) so repeats stop at Redis</tspan><tspan x="334" dy="18">- Bloom filter: reject keys that</tspan><tspan x="334" dy="18">  cannot exist before touching the DB</tspan><tspan x="334" dy="18">- Validate ids; rate-limit callers</tspan></text>
+<rect x="328" y="150" width="244" height="30" rx="8" fill="#ffffff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="450" y="169.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="450" dy="0" font-family="Consolas, Menlo, monospace">GET /users/987654321</tspan></text>
+<polyline points="360,180 360,218" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_purple)"/>
+<circle cx="360" cy="199" r="11" fill="#7c3aed"/>
+<text x="360" y="203.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<text x="378" y="204" font-size="13" fill="#334155">id does not exist</text>
+<rect x="328" y="218" width="244" height="36" rx="8" fill="#ffffff" stroke="#0d9488" stroke-width="1.5"/>
+<text x="450" y="240.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="450" dy="0">Cache: miss, every time</tspan></text>
+<polyline points="360,254 360,290" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_purple)"/>
+<circle cx="360" cy="272" r="11" fill="#7c3aed"/>
+<text x="360" y="276.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<text x="378" y="277" font-size="13" fill="#334155">DB query</text>
+<path d="M328,298 L328,344 A122,8 0 0 0 572,344 L572,298 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<ellipse cx="450" cy="298" rx="122" ry="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="450" y="320.38" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="450" dy="0" font-weight="bold">SQL Server</tspan><tspan x="450" dy="17">empty result, nothing cached</tspan></text>
+<polyline points="548,290 548,256" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="5 3" marker-end="url(#arr_red)"/>
+<text x="540" y="277" font-size="13" fill="#7f1d1d" text-anchor="end">3 repeat</text>
+<rect x="600" y="84" width="276" height="420" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="616" y="112" font-size="15" fill="#7f1d1d" font-weight="bold">3. Cache avalanche</text>
+<text x="616" y="134" font-size="13" fill="#334155">Mass expiry or cache node failure</text>
+<rect x="610" y="360" width="256" height="132" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="622" y="385.68" font-size="13" fill="#1f2937"><tspan x="622" dy="0" font-weight="bold">Fix</tspan><tspan x="622" dy="18">- TTL = base + random jitter</tspan><tspan x="622" dy="18">  (e.g. 300 s +/- 20%)</tspan><tspan x="622" dy="18">- Stagger warm-up of hot keys</tspan><tspan x="622" dy="18">- Redis replicas (HA) + circuit</tspan><tspan x="622" dy="18">  breaker to protect the DB</tspan></text>
+<rect x="616" y="150" width="44" height="28" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="638" y="168.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="638" dy="0">k1</tspan></text>
+<polyline points="638,178 638,208" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="666" y="150" width="44" height="28" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="688" y="168.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="688" dy="0">k2</tspan></text>
+<polyline points="688,178 688,208" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="716" y="150" width="44" height="28" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="738" y="168.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="738" dy="0">k3</tspan></text>
+<polyline points="738,178 738,208" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="766" y="150" width="44" height="28" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="788" y="168.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="788" dy="0">k4</tspan></text>
+<polyline points="788,178 788,208" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="816" y="150" width="44" height="28" rx="6" fill="#ffffff" stroke="#dc2626" stroke-width="1.5"/>
+<text x="838" y="168.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="838" dy="0">k5</tspan></text>
+<polyline points="838,178 838,208" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_red)"/>
+<rect x="616" y="208" width="244" height="28" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="738" y="227" font-size="13" fill="#7f1d1d" text-anchor="middle" font-weight="bold">all expire at t = 60 min</text>
+<rect x="616" y="248" width="244" height="104" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+<line x1="628" y1="336" x2="852" y2="336" stroke="#94a3b8" stroke-width="1.2"/>
+<polyline points="628,324 720,324 734,274 748,324 800,324 852,324" fill="none" stroke="#dc2626" stroke-width="2" stroke-linejoin="round"/>
+<text x="628" y="268" font-size="13" fill="#334155" font-weight="bold">DB load</text>
+<text x="760" y="284" font-size="13" fill="#7f1d1d">spike at expiry</text>
+<text x="852" y="348" font-size="13" fill="#475569" text-anchor="end">time</text>
+<text x="32" y="536" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: stampede = per-key lock, penetration = null-cache / Bloom filter, avalanche = TTL jitter + HA.</text>
+</g>
+</svg>

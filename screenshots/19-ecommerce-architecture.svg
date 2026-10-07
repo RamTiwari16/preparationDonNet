@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 664" width="900" height="664" role="img">
+<title>E-commerce Microservices Architecture</title>
+<desc>E-commerce microservices behind an API gateway, each with its own database, with an event-driven checkout saga over a message broker.</desc>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker><marker id="arr_teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d9488"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker><marker id="arr_amber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d97706"/></marker><marker id="arr_red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker><marker id="arr_purple" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7c3aed"/></marker></defs>
+<rect x="0.5" y="0.5" width="899" height="663" rx="12" fill="#ffffff" stroke="#d0d7de"/>
+<g font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="32" y="40" font-size="20" fill="#0f172a" font-weight="bold">E-commerce Microservices Architecture</text>
+<text x="32" y="62" font-size="13.5" fill="#475569">Synchronous calls for the request, events for the checkout saga; every service owns its data.</text>
+<rect x="24" y="88" width="128" height="48" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="88" y="108.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="88" dy="0" font-weight="bold">User</tspan><tspan x="88" dy="17">web / mobile</tspan></text>
+<rect x="200" y="88" width="676" height="48" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="538" y="117.04" font-size="14" fill="#4c1d95" text-anchor="middle"><tspan x="538" dy="0" font-weight="bold">API Gateway: JWT validation, routing, rate limiting</tspan></text>
+<polyline points="152,112 200,112" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="176" cy="112" r="11" fill="#2563eb"/>
+<text x="176" y="116.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+<rect x="24" y="196" width="128" height="56" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="88" y="220.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="88" dy="0" font-weight="bold">Auth service</tspan><tspan x="88" dy="17">login, tokens</tspan></text>
+<polyline points="88,252 88,292" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M40,299 L40,343 A48,7 0 0 0 136,343 L136,299 Z" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<ellipse cx="88" cy="299" rx="48" ry="7" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="88" y="328.48" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="88" dy="0">Users DB</tspan></text>
+<rect x="168.8" y="196" width="128" height="56" rx="8" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<text x="232.8" y="220.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232.8" dy="0" font-weight="bold">Product service</tspan><tspan x="232.8" dy="17">catalog, prices</tspan></text>
+<rect x="184.8" y="270" width="96" height="30" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="232.8" y="289.68" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232.8" dy="0">Redis cache</tspan></text>
+<polyline points="232.8,252 232.8,270" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M184.8,323 L184.8,365 A48,7 0 0 0 280.8,365 L280.8,323 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<ellipse cx="232.8" cy="323" rx="48" ry="7" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="232.8" y="351.48" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232.8" dy="0">Catalog DB</tspan></text>
+<polyline points="232.8,300 232.8,316" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" stroke-dasharray="3 2" marker-end="url(#arr)"/>
+<rect x="313.6" y="196" width="128" height="56" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="377.6" y="220.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="377.6" dy="0" font-weight="bold">Cart service</tspan><tspan x="377.6" dy="17">basket items</tspan></text>
+<polyline points="377.6,252 377.6,292" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M329.6,299 L329.6,343 A48,7 0 0 0 425.6,343 L425.6,299 Z" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<ellipse cx="377.6" cy="299" rx="48" ry="7" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+<text x="377.6" y="328.48" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="377.6" dy="0">Redis (cart)</tspan></text>
+<rect x="458.4" y="196" width="128" height="56" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="522.4" y="220.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="522.4" dy="0" font-weight="bold">Order service</tspan><tspan x="522.4" dy="17">create, status</tspan></text>
+<polyline points="522.4,252 522.4,292" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M474.4,299 L474.4,343 A48,7 0 0 0 570.4,343 L570.4,299 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<ellipse cx="522.4" cy="299" rx="48" ry="7" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="522.4" y="328.48" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="522.4" dy="0">Orders DB</tspan></text>
+<rect x="603.2" y="196" width="128" height="56" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="667.2" y="220.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="667.2" dy="0" font-weight="bold">Payment service</tspan><tspan x="667.2" dy="17">charge, refund</tspan></text>
+<polyline points="667.2,252 667.2,292" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M619.2,299 L619.2,343 A48,7 0 0 0 715.2,343 L715.2,299 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<ellipse cx="667.2" cy="299" rx="48" ry="7" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+<text x="667.2" y="328.48" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="667.2" dy="0">Payments DB</tspan></text>
+<rect x="748" y="196" width="128" height="56" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<text x="812" y="220.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="812" dy="0" font-weight="bold">Inventory service</tspan><tspan x="812" dy="17">stock levels</tspan></text>
+<polyline points="812,252 812,292" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<path d="M764,299 L764,343 A48,7 0 0 0 860,343 L860,299 Z" fill="#f1f5f9" stroke="#475569" stroke-width="1.5"/>
+<ellipse cx="812" cy="299" rx="48" ry="7" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+<text x="812" y="328.48" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="812" dy="0">Stock DB</tspan></text>
+<polyline points="88,136 88,196" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<polyline points="232.8,136 232.8,196" fill="none" stroke="#475569" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr)"/>
+<polyline points="377.6,136 377.6,196" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<polyline points="522.4,136 522.4,196" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_blue)"/>
+<circle cx="377.6" cy="166" r="11" fill="#2563eb"/>
+<text x="377.6" y="170.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+<circle cx="522.4" cy="166" r="11" fill="#2563eb"/>
+<text x="522.4" y="170.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+<text x="244.8" y="171" font-size="13" fill="#334155">browse</text>
+<text x="100" y="171" font-size="13" fill="#334155">login</text>
+<rect x="24" y="420" width="852" height="48" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="36" y="440" font-size="14" fill="#78350f" font-weight="bold">Message broker</text>
+<text x="36" y="458" font-size="13" fill="#78350f">(Service Bus / RabbitMQ)</text>
+<text x="522.4" y="454" font-size="13" fill="#78350f" text-anchor="middle" font-weight="bold">OrderPlaced</text>
+<text x="667.2" y="454" font-size="13" fill="#78350f" text-anchor="middle" font-weight="bold">PaymentCompleted</text>
+<text x="812" y="454" font-size="13" fill="#78350f" text-anchor="middle" font-weight="bold">StockReserved</text>
+<polyline points="578.4,252 578.4,420" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="578.4" cy="395" r="11" fill="#b45309"/>
+<text x="578.4" y="399.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+<polyline points="611.2,420 611.2,252" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="611.2" cy="395" r="11" fill="#b45309"/>
+<text x="611.2" y="399.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">5</text>
+<polyline points="723.2,252 723.2,420" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="723.2" cy="395" r="11" fill="#b45309"/>
+<text x="723.2" y="399.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">6</text>
+<polyline points="756,420 756,252" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="756" cy="395" r="11" fill="#b45309"/>
+<text x="756" y="399.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">7</text>
+<polyline points="868,252 868,420" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<polyline points="232.8,468 232.8,500" fill="none" stroke="#0d9488" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_teal)"/>
+<text x="242.8" y="490" font-size="13" fill="#334155">ProductUpdated</text>
+<path d="M176.8,507 L176.8,551 A56,7 0 0 0 288.8,551 L288.8,507 Z" fill="#ccfbf1" stroke="#0d9488" stroke-width="1.5"/>
+<ellipse cx="232.8" cy="507" rx="56" ry="7" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+<text x="232.8" y="527.98" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="232.8" dy="0" font-weight="bold">Search index</tspan><tspan x="232.8" dy="17">full-text</tspan></text>
+<rect x="24" y="500" width="136" height="58" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="92" y="525.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="92" dy="0">Database per</tspan><tspan x="92" dy="17">service</tspan></text>
+<rect x="300" y="500" width="340" height="120" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+<text x="314" y="519.68" font-size="13" fill="#1f2937"><tspan x="314" dy="0">1 POST /checkout, 2 read cart</tspan><tspan x="314" dy="18">3 create order (Pending) + outbox row</tspan><tspan x="314" dy="18">4 OrderPlaced, 5 charge card</tspan><tspan x="314" dy="18">6 PaymentCompleted, 7 reserve stock</tspan><tspan x="314" dy="18">8 email sent; order set to Confirmed</tspan><tspan x="314" dy="18" fill="#7f1d1d">Fail: PaymentFailed -&gt; cancel order (saga)</tspan></text>
+<polyline points="766,468 766,500" fill="none" stroke="#d97706" stroke-width="1.5" stroke-linejoin="round" marker-end="url(#arr_amber)"/>
+<circle cx="766" cy="484" r="11" fill="#b45309"/>
+<text x="766" y="488.6" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">8</text>
+<rect x="656" y="500" width="220" height="58" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="766" y="525.18" font-size="13" fill="#1f2937" text-anchor="middle"><tspan x="766" dy="0" font-weight="bold">Notification service</tspan><tspan x="766" dy="17">email / SMS / push</tspan></text>
+<text x="32" y="644" font-size="13.5" fill="#475569" font-style="italic">Interview takeaway: sync for the user request, async events + saga for checkout; outbox keeps DB writes and events consistent.</text>
+</g>
+</svg>
