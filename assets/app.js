@@ -24,6 +24,17 @@
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* ignore */ } }
   };
   var done = store.get('ip.done', {});
+  var simpleView = store.get('ip.simple', false) === true;
+
+  /* ---------- simple view (show only the easy explanations) ---------- */
+  function applySimpleView() {
+    body.classList.toggle('simple-view', simpleView);
+    $$('.simple-toggle').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(simpleView));
+      b.textContent = simpleView ? 'Detailed view' : 'Simple view';
+      b.classList.toggle('primary', simpleView);
+    });
+  }
   if (typeof done !== 'object' || done === null) done = {};
 
   /* ---------- theme ---------- */
@@ -224,6 +235,7 @@
       view.innerHTML = '';
       view.appendChild(tpl.content.cloneNode(true));
       decorateSection(view, s);
+      applySimpleView();
       current = id;
       store.set('ip.last', id);
     }
@@ -280,6 +292,12 @@
     var copy = t.closest && t.closest('.copy');
     if (copy) { var code = copy.closest('.codeblock').querySelector('pre code'); copyText(code.textContent, copy); return; }
     var act = t.closest && t.closest('[data-act]');
+    if (act && act.getAttribute('data-act') === 'simple-view') {
+      simpleView = !simpleView;
+      store.set('ip.simple', simpleView);
+      applySimpleView();
+      return;
+    }
     if (act) {
       var open = act.getAttribute('data-act') === 'expand-qa';
       $$('#section-view details.callout.q').forEach(function (d) { d.open = open; });

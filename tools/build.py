@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 Build index.html for the .NET Full Stack Interview Prep site.
 
@@ -173,7 +173,20 @@ def make_md() -> MarkdownIt:
         anchor = ""
         if env.get("collect_headings") and env["headings"]:
             anchor = f' <a class="anchor" href="#/s{env["sec"]}/{env["headings"][-1]["id"]}" aria-label="Link to this heading">#</a>'
-        return anchor + self.renderToken(tokens, idx, options, env)
+        out = anchor + self.renderToken(tokens, idx, options, env)
+        simple = env.get("simple")
+        if env.get("collect_headings") and simple and env["headings"]:
+            key = norm_heading(env["headings"][-1]["title"])
+            entry = simple.get(key)
+            if entry and not entry["used"]:
+                entry["used"] = True
+                env["simple_count"] = env.get("simple_count", 0) + 1
+                out += (
+                    '<div class="callout simple"><div class="chead"><span class="tag">Easy</span>'
+                    '<span class="ttl">Explained simply</span></div>'
+                    f'<div class="cbody">{entry["html"]}</div></div>\n'
+                )
+        return out
 
     def table_open(self, tokens, idx, options, env):
         return '<div class="table-wrap"><table>\n'
@@ -288,8 +301,54 @@ def render_inline(text: str) -> str:
     return MD.renderInline(text)
 
 
+def norm_heading(text: str) -> str:
+    text = re.sub(r"[`*_]", "", text).lower()
+    return re.sub(r"\s+", " ", text).strip().rstrip(".:?")
+
+
+SIMPLE_DIR = CONTENT / "simple"
+
+
+def load_simple(sec_id: str) -> dict:
+    """Parse content/simple/NN*.md into {normalised heading: {title, html, used}}."""
+    entries: dict = {}
+    if not SIMPLE_DIR.exists():
+        return entries
+    for f in sorted(SIMPLE_DIR.glob(f"{sec_id}*.md")):
+        title, buf, fence = None, [], None
+
+        def flush():
+            if title is not None:
+                key = norm_heading(title)
+                if key in entries:
+                    warn(f"simple/{f.name}: duplicate entry '{title}' ignored")
+                else:
+                    sub = {"sec": sec_id, "used_ids": set(), "headings": [], "collect_headings": False}
+                    entries[key] = {"title": title, "html": MD.render("\n".join(buf), sub), "used": False}
+
+        for line in f.read_text(encoding="utf-8").replace("\r\n", "\n").split("\n"):
+            m = FENCE_RE.match(line)
+            if m:
+                marker = m.group(2)
+                if fence is None:
+                    fence = (marker[0], len(marker))
+                elif marker[0] == fence[0] and len(marker) >= fence[1] and m.group(3).strip() == "":
+                    fence = None
+                buf.append(line)
+                continue
+            if fence is None and line.startswith("### "):
+                flush()
+                title, buf = line[4:].strip(), []
+                continue
+            buf.append(line)
+        flush()
+    return entries
+
+
 def render_section(sec_id: str, files: list[Path]):
-    env = {"sec": sec_id, "used_ids": set(), "headings": [], "collect_headings": True, "code_blocks": 0}
+    simple = load_simple(sec_id)
+    env = {"sec": sec_id, "used_ids": set(), "headings": [], "collect_headings": True, "code_blocks": 0,
+           "simple": simple, "simple_count": 0}
     out: list[str] = []
     stats = {"qa": 0, "examples": 0, "scenarios": 0, "words": 0}
     for f in files:
@@ -321,6 +380,9 @@ def render_section(sec_id: str, files: list[Path]):
                         f'<div class="callout {css}"><div class="chead"><span class="tag">{label}</span>'
                         f'<span class="ttl">{title_html}</span></div><div class="cbody">{inner}</div></div>\n'
                     )
+    for e in env["simple"].values():
+        if not e["used"]:
+            warn(f"simple/{sec_id}: no heading matches easy entry '{e['title']}'")
     return "".join(out), env, stats
 
 
@@ -400,7 +462,7 @@ def main() -> int:
 
     for sec_id, title, short, prio, group in SECTIONS:
         files = files_by_sec.get(sec_id, [])
-        body, env, stats = ("", {"headings": [], "code_blocks": 0}, {"qa": 0, "examples": 0, "scenarios": 0, "words": 0})
+        body, env, stats = ("", {"headings": [], "code_blocks": 0, "simple_count": 0}, {"qa": 0, "examples": 0, "scenarios": 0, "words": 0})
         if files:
             body, env, stats = render_section(sec_id, files)
         else:
@@ -421,11 +483,12 @@ def main() -> int:
                 "id": sec_id, "title": title, "short": short, "prio": prio, "group": group,
                 "topics": len(tracked), "trackIds": [h["id"] for h in tracked],
                 "qa": stats["qa"], "code": env["code_blocks"], "images": len(imgs),
-                "minutes": read_min,
+                "minutes": read_min, "easy": env.get("simple_count", 0),
                 "toc": [{"l": h["level"], "id": h["id"], "t": h["title"]} for h in heads if h["level"] <= 3],
             }
         )
         totals["topics"] += len(tracked)
+        totals["easy"] = totals.get("easy", 0) + env.get("simple_count", 0)
         totals["qa"] += stats["qa"]
         totals["code"] += env["code_blocks"]
         totals["diagrams"] += diagrams
@@ -437,9 +500,10 @@ def main() -> int:
         head = (
             f'<header class="sec-head"><div class="sec-num">{sec_id}</div><div class="sec-title">'
             f'<h1>{html.escape(title)}</h1><p class="sec-meta"><span class="chip {prio}">{PRIORITY[prio]} priority</span>'
-            f'<span>{len(tracked)} topics</span><span>{stats["qa"]} interview Q&amp;As</span>'
+            f'<span>{len(tracked)} topics</span><span>{env.get("simple_count", 0)} easy explanations</span><span>{stats["qa"]} interview Q&amp;As</span>'
             f'<span>{env["code_blocks"]} code samples</span><span>{len(imgs)} visuals</span><span>~{read_min} min read</span></p></div>'
-            f'<div class="sec-tools"><button type="button" class="btn" data-act="expand-qa">Expand all Q&amp;A</button>'
+            f'<div class="sec-tools"><button type="button" class="btn simple-toggle" data-act="simple-view" aria-pressed="false">Simple view</button>'
+            f'<button type="button" class="btn" data-act="expand-qa">Expand all Q&amp;A</button>'
             f'<button type="button" class="btn" data-act="collapse-qa">Collapse all</button></div></header>\n'
         )
         templates.append(
@@ -476,7 +540,7 @@ def main() -> int:
     print(
         f"  sections: {len(SECTIONS)} | topics: {totals['topics']} | Q&As: {totals['qa']} | "
         f"code blocks: {totals['code']} | diagrams: {totals['diagrams']} | screenshots: {totals['shots']} | "
-        f"words: {totals['words']:,}"
+        f"easy boxes: {totals.get('easy', 0)} | words: {totals['words']:,}"
     )
     if WARNINGS:
         print(f"\n{len(WARNINGS)} warning(s):")
